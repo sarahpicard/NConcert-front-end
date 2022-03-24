@@ -7,6 +7,13 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
+import Home from './pages/Home/Home'
+import MyEvents from './pages/MyEvents/MyEvents'
+import Favorites from './pages/Favorites/Favorites'
+import Events from './pages/Events/Events'
+import ProfilePage from './pages/ProfilePage/ProfilePage'
+import EditProfile from './pages/EditProfile/EditProfile'
+import EventDetail from './pages/EventDetail/EventDetail'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -43,6 +50,13 @@ const App = () => {
           path="/changePassword"
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
         />
+        <Route path='/' element={<Home />} />
+        <Route path='/myevents' element={<MyEvents />} />
+        <Route path='/favorites' element={<Favorites />} />
+        <Route path='/events' element={<Events />} />
+        <Route path='/profile' element={<ProfilePage />} />
+        <Route path='/editprofile' element={<EditProfile />} />
+        <Route path='/eventdetail' element={<EventDetail />} />
       </Routes>
     </>
   )
