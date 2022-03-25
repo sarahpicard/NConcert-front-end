@@ -17,11 +17,17 @@ const Events = () => {
     .then(allEvents => setEvents(allEvents))
   }, [])
 
+  useEffect(() => {
+    eventService.getAllEvents()
+    .then(allLinks => setLinks(allLinks))
+  }, [])
+
   return (
     <>
       <h1>Events Page</h1>
       <button>See events</button>
       <p>{console.log("events: ", events)}</p>
+      {console.log("links: ", links)}
     </>
   )
 }
