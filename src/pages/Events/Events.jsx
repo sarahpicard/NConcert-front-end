@@ -1,6 +1,7 @@
 // import * as eventService from "./services/eventServices"
 import { useState, useEffect } from "react"
 import * as eventService from '../../services/eventServices.js'
+import EventDetails from "../../components/EventDetails/EventDetails.jsx"
 
 const Events = () => {
   const [events, setEvents] = useState([])
@@ -20,6 +21,9 @@ const Events = () => {
     <>
       <h1>Events Page</h1>
       <button>See events</button>
+      {events.map((event) => 
+        <EventDetails event={event}/>
+      )}
       <p>{console.log("events: ", events)}</p>
       {console.log("links: ", links)}
     </>
