@@ -2,8 +2,16 @@
 const EventDetail = (props) => {
   return(
     <>
-      <div>Event Details</div>
-      <h1>{console.log(props)}</h1>
+      <h1>{props.events[0].name}</h1>
+      <h2>{props.events[0]._embedded.venues[0].name}</h2>
+      <h2>{props.events[0].dates.start.localDate}</h2>
+      <h2>{props.events[0].dates.start.localTime}</h2>
+      <a href={`${props.events[0].url}`}>Buy Tickets</a>
+      <div>
+        <img src={props.events[0].images[0].url} alt="" />
+      </div>
+      <h4>Accessibility Information: {props.events[0]._embedded.venues[0].accessibleSeatingDetail}</h4>
+      <h4>Additional Information: {props.events[0].info}</h4>
     </>
   )
 }
