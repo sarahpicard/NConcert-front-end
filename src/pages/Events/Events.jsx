@@ -4,15 +4,17 @@ import * as eventService from '../../services/eventServices.js'
 import EventDetails from "../../components/EventDetails/EventDetails.jsx"
 
 const Events = (props) => {
-
-
   return (
     <>
       <h1>Events Page</h1>
-      <button>See events</button>
+      <form action="#">
+        <input type="text" placeholder="search event"/>
+        <button>Search</button>
+      </form>
       {props.events.map((event) => 
         <EventDetails event={event}/>
       )}
+      <button>Next Page</button>
     </>
   )
 }
