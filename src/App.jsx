@@ -67,7 +67,7 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/myevents' element={<MyEvents />} />
         <Route path='/favorites' element={<Favorites />} />
-        <Route path='/events' element={<Events events={events}/>} />
+        <Route path='/events' element={<Events events={events} links={links} />} />
         <Route path='/profile' element={<ProfilePage />} />
         <Route path='/editprofile' element={<EditProfile />} />
         <Route path='/event/_id' element={<EventDetail events={events}/>} />
