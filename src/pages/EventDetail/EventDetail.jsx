@@ -1,6 +1,10 @@
-const EventDetail = () => {
+
+const EventDetail = (props) => {
   return(
-    <h1>Event Detail Page</h1>
+    <>
+      <div>Event Details</div>
+      <h1>{console.log(props)}</h1>
+    </>
   )
 }
 

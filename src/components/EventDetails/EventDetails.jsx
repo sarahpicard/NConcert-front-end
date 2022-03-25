@@ -5,10 +5,10 @@ const eventDetails = (props) => {
   return ( 
     <>
     <h2>{props.event.name}</h2>
-    <Link to="/eventdetail" state={props.event}>Event Detail</Link>
+    <Link to="/event/_id" state={{props}}>Event Detail</Link>
     {/* <a href={props.event.url}>Ticket</a> */}
     </>
   );
 }
- 
+
 export default eventDetails;

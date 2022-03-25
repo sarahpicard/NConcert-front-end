@@ -7,6 +7,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
+import * as eventService from './services/eventServices.js'
 import Home from './pages/Home/Home'
 import MyEvents from './pages/MyEvents/MyEvents'
 import Favorites from './pages/Favorites/Favorites'
@@ -14,11 +15,13 @@ import Events from './pages/Events/Events'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
 import EditProfile from './pages/EditProfile/EditProfile'
 import EventDetail from './pages/EventDetail/EventDetail'
-import { getAllEvents } from './services/eventServices'
+
 
 const App = () => {
-  const navigate = useNavigate()
   const [user, setUser] = useState(authService.getUser())
+  const navigate = useNavigate()
+  const [events, setEvents] = useState([])
+  const [links, setLinks] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -29,6 +32,16 @@ const App = () => {
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
+
+  useEffect(() => {
+    eventService.getAllEvents()
+    .then(allEvents => setEvents(allEvents))
+  }, [])
+
+  useEffect(() => {
+    eventService.getAllEvents()
+    .then(allLinks => setLinks(allLinks))
+  }, [])
 
   return (
     <>
@@ -54,10 +67,10 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/myevents' element={<MyEvents />} />
         <Route path='/favorites' element={<Favorites />} />
-        <Route path='/events' element={<Events />} />
+        <Route path='/events' element={<Events events={events}/>} />
         <Route path='/profile' element={<ProfilePage />} />
         <Route path='/editprofile' element={<EditProfile />} />
-        <Route path='/eventdetail' element={<EventDetail />} />
+        <Route path='/event/_id' element={<EventDetail events={events}/>} />
       </Routes>
     </>
   )
