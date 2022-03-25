@@ -6,15 +6,14 @@ const Events = () => {
   const [events, setEvents] = useState([])
   const [links, setLinks] = useState([])
 
-  // const handleGetEvents = async () => {
-  //   // console.log("hit")
-  //   const allEvents = await getAllEvents()
-  //   setEvents(allEvents)
-  // }
-
   useEffect(() => {
     eventService.getAllEvents()
     .then(allEvents => setEvents(allEvents))
+  }, [])
+
+  useEffect(() => {
+    eventService.getAllEvents()
+    .then(allLinks => setLinks(allLinks))
   }, [])
 
   return (
@@ -22,6 +21,7 @@ const Events = () => {
       <h1>Events Page</h1>
       <button>See events</button>
       <p>{console.log("events: ", events)}</p>
+      {console.log("links: ", links)}
     </>
   )
 }
