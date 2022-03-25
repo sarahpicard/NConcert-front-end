@@ -11,6 +11,7 @@ const Events = () => {
     .then(allEvents => setEvents(allEvents))
   }, [])
 
+  //add links to state
   useEffect(() => {
     eventService.getAllEvents()
     .then(allLinks => setLinks(allLinks))
