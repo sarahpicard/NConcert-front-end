@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
@@ -15,6 +16,7 @@ import Events from './pages/Events/Events'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
 import EditProfile from './pages/EditProfile/EditProfile'
 import EventDetail from './pages/EventDetail/EventDetail'
+
 
 
 const App = () => {
