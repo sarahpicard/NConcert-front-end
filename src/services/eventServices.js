@@ -4,6 +4,15 @@ async function getAllEvents() {
   const res = await fetch(BASE_URL)
   return await res.json()
 }
+// async function searchEvents() {
+//   const res = await fetch(BASE_URL).json?keyword={SOMETHING}&city={SOMETHING}&apikey=Kim5J88GrD7Fd32jnkeNCTtc4QARtrEv {
+//     method: 'POST'
+//   }
+// }
+// this is not right - we will need to refactor the correct url to make sure that it has accurate info and possibly assign variables for keyword and city 
+
+
+
 
 // async function searchEvents(){
 //   const res = await fetch(BASE_URL, {
@@ -15,4 +24,5 @@ async function getAllEvents() {
 
 export {
   getAllEvents,
+  // searchEvents
 }
