@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
 import { Link } from 'react-router-dom'
+import UserCard from '../../components/UserCard/UserCard'
+import { Col } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 
 
 const Profiles = () => {
@@ -11,21 +14,26 @@ const Profiles = () => {
     .then(profiles => setProfiles(profiles))
   }, [])
 
+
   return (
-    <>
+    <div>
       <h1>Hello. This is a list of all the profiles.</h1>
       {profiles.length ? 
-        <>
-          {profiles.map(profile=>
-          <Link to={`/profile/${profile._id}`}>
-            <p key={profile._id}>{profile.name}</p>
-          </Link>
-          )}
-        </>
+          <div className="container">
+            <div className="row">
+              <div className="col"></div>
+                {profiles.map(profile=>
+                  <Col>
+                    <UserCard profileName={profile.name} id={profile._id}>
+                    </UserCard>
+                  </Col>
+                )}
+              </div>
+            </div>
       :
         <p>No profiles yet</p>
       }
-    </>
+    </div>
   )
 }
  
