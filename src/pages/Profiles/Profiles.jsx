@@ -5,6 +5,8 @@ import UserCard from '../../components/UserCard/UserCard'
 import { Col } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 
+import './Profiles.css'
+
 
 const Profiles = () => {
   const [profiles, setProfiles] = useState([])
