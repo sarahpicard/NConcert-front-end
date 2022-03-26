@@ -43,6 +43,8 @@ const App = () => {
     .then(allLinks => setLinks(allLinks))
   }, [])
 
+
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -60,6 +62,7 @@ const App = () => {
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}
         />
+        <Route path="/profile/edit" element={<EditProfile/>}/>
         <Route
           path="/changePassword"
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}

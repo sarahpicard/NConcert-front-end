@@ -5,9 +5,6 @@ import EventDetails from "../../components/EventDetails/EventDetails.jsx"
 import Search from "../Search/Search.jsx"
 
 const Events = (props) => {
-  const [search, setSearch] = useState({query: ''})
-  const [searchResults, setSearchResults] = useState([])
-
   return (
     <>
       <h1>Events Page</h1>
