@@ -19,9 +19,8 @@ const Profiles = () => {
     <div>
       <h1>Hello. This is a list of all the profiles.</h1>
       {profiles.length ? 
-          <div className="container">
+          <div className="container profiles-cards">
             <div className="row">
-              <div className="col"></div>
                 {profiles.map(profile=>
                   <Col>
                     <UserCard profileName={profile.name} id={profile._id}>
