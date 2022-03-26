@@ -1,0 +1,17 @@
+Search functionality - 
+FILES: 
+Events.jsx (events pages dir)
+Search.jsx (sarch pages dir)
+eventServices.js (services dir)
+
+changed these and they all need minor refactoring 
+
+
+
+03/26/2022
+#1 import in app.js (Search from Search.jsx)
+#2 write a route in APP (for search element={search}) - to the search page for now, we can refactor after search is actually working?
+
+
+
+- need to store state in the same place where any info is being displayed (may need to store state in the Events page where events are being rendered, or in APP.js so that every page has access to the search functionality and ability to spit back results)
