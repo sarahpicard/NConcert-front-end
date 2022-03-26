@@ -12,6 +12,11 @@ async function getSearch(keyword, city) {
   return await res.json()
 }
 
+async function getSearchLinks(keyword,city) {
+  const res = await fetch(`${BASE_URL}/search/${keyword}/${city}links`)
+  return await res.json()
+}
+
 async function getNextPage(_links){
   const res = await fetch(`${BASE_URL}/search/${_links}`)
   return await res.json()
@@ -20,5 +25,6 @@ async function getNextPage(_links){
 export {
   getAllEvents,
   getSearch, 
+  getSearchLinks,
   getNextPage
 }

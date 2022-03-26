@@ -1,10 +1,8 @@
 import * as eventService from '../../services/eventServices'
-import { useState, useEffect } from 'react'
-import EventDetails from "../../components/EventDetails/EventDetails.jsx"
+import { useState } from 'react'
 
 const Search = (props) => {
   const [keywordData, setKeywordData] = useState({})
-  const[links, setLinks] = useState([])
   const [searchData, setSearchData] = useState({
     keyword: '',
     city: ''
@@ -27,22 +25,6 @@ const Search = (props) => {
     }
   }
 
-  const handleNextPage= async e => {
-    e.preventDefault()
-    try {
-      eventService.getSearch(searchData._links)
-      .then (searchData => {
-        setSearchData (searchData)
-      })
-    }catch (err) {
-    console.log(err)
-    }
-  }
-  useEffect(() => {
-    eventService.getSearch()
-    .then(allLinks => setLinks(allLinks))
-  }, [])
-
   const { keyword } = searchData
   const { city } = searchData
 
@@ -58,10 +40,6 @@ const Search = (props) => {
         <input type="text" value={city} name="city" placeholder="search city" onChange={handleChange}/>
         <button disabled={isKeywordFormValid()}>Search</button>
       </form>
-      {searchData._embedded.events.map((event) =>
-        <EventDetails event={event} />
-      )}
-      <button>Next Page</button>
     </>
   )
 }
