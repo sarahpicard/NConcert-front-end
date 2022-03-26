@@ -73,7 +73,7 @@ const App = () => {
         <Route path='/events' element={<Events events={events} />} />
         <Route path='/profile' element={<ProfilePage />} />
         <Route path='/editprofile' element={<EditProfile />} />
-        <Route path='/event/_id' element={<EventDetail events={events}/>} />
+        <Route path='/events/:id' element={<EventDetail />} />
       </Routes>
     </>
   )

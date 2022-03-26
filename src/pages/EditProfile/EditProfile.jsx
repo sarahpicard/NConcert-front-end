@@ -2,19 +2,17 @@ import { useState } from 'react'
 // import * as profileService from '../../services/profileService'
 
 const EditProfile = (props) => {
-  const [genreData, setGenreData] = useState({
-    genre: ''
-  })
-  const [artistData, setArtistData] = useState({
-    artist: ''
+  const [profileData, setProfileData] = useState({
+    genre: '',
+    artist: '',
+    bio: '',
   })
 
-  const handleAddGenre = (evt) => {
-    setGenreData({...genreData, [evt.target.name]: evt.target.value})
+  const handleAddProfileData = (evt) => {
+    setProfileData({...profileData, [evt.target.name]: evt.target.value})
   }
 
-  const submitGenre = async evt => {
-    //this code is modeled off Sarahs search functions
+  const submitProfileData = (evt) => {
     evt.preventDefault()
     try {
       // profileService call here 
@@ -23,63 +21,26 @@ const EditProfile = (props) => {
     }
   }
 
-  // const submitGenre = evt => {
-  //   this code is from the puppies with auth example of sending form data and importing to database
-  //   evt.preventDefault()
-  //   const genreFormData = new FormData()
-  //   genreFormData('genre', genreData.genre)
-  //   handleAddGenre(genreFormData)
-  // }
-
-  const { genre } = handleAddGenre
-
-  const handleAddArtist = (evt) => {
-    setArtistData({...artistData, [evt.target.name]: evt.target.value})
-  }
-
-  const submitArtist = (evt) => {
-    //this code is modeled off Sarahs search functions
-    evt.preventDefault()
-    try {
-      // profileService call here 
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
-  const { artist } = handleAddArtist
+  const { bio } = profileData
+  const { genre } = profileData
+  const { artist } = profileData
   
-  // const submitArtist = evt => {
-  //   evt.preventDefault()
-  //   const artistFormData = new FormData()
-  //   artistFormData('artist', artistData.artist)
-  //   handleAddArtist(artistFormData)
-  // }
-
-  const isGenreValid = () => {
-    return !(genre)
-  }
-
-  const isArtistValid = () => {
-    return !(artist)
-  }
 
   return(
     <>
       <h1>Edit Profile</h1>
       <h4>Add your favorite artists and genres!</h4>
-      <form onSubmit={submitGenre}>
+      <form onSubmit={submitProfileData}>
+        <label>Bio:
+          <input type="text" value={bio} name="bio" autoComplete="off" onChange={handleAddProfileData}/>
+        </label>
         <label>Genre:
-          <input type="text" value={genre} name="genre" autoComplete="off" onChange={handleAddGenre}/>
+          <input type="text" value={genre} name="genre" autoComplete="off" onChange={handleAddProfileData}/>
         </label>
-        <button type="submit" disabled={isGenreValid} >Add Genre</button>
-      </form>
-      <br />
-      <form autoComplete="off" onSubmit={submitArtist}>
         <label>Artist:
-          <input type="text" value={artist} name="artist"  onChange={handleAddArtist} />
+          <input type="text" value={artist} name="artist"  onChange={handleAddProfileData} />
         </label>
-        <button type="submit" disabled={isArtistValid}>Add Artist</button>
+        <button type="submit">Add Artist</button>
       </form>
     </>
   )
