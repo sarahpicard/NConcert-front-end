@@ -1,32 +1,53 @@
-import { useState, useRef } from "react/cjs/react.production.min"
-import * as profileService from '../../services/profileService'
+import { useState } from 'react'
+// import * as profileService from '../../services/profileService'
 
-const EditProfile = () => {
-  // const genreForm = useRef()
-  // const [genreData, setGenreData] = useState({
-  //   genre: ''
-  // })
-  // const artistForm = useRef()
-  // const [artistData, setArtistData] = useState({
-  //   artist: ''
-  // })
+const EditProfile = (props) => {
+  const [genreData, setGenreData] = useState({
+    genre: ''
+  })
+  const [artistData, setArtistData] = useState({
+    artist: ''
+  })
 
-  // const handleAddGenre = async newGenreData => {
-  //   const newGenre = await profileService.createGenre(newGenreData)
-  //   setGenreData([...genreData, newGenre])
-  // }
+  const handleAddGenre = (evt) => {
+    setGenreData({...genreData, [evt.target.name]: evt.target.value})
+  }
+
+  const submitGenre = async evt => {
+    //this code is modeled off Sarahs search functions
+    evt.preventDefault()
+    try {
+      // profileService call here 
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   // const submitGenre = evt => {
+  //   this code is from the puppies with auth example of sending form data and importing to database
   //   evt.preventDefault()
   //   const genreFormData = new FormData()
   //   genreFormData('genre', genreData.genre)
   //   handleAddGenre(genreFormData)
   // }
 
-  // const handleAddArtist = async newArtistData => {
-  //   const newArtist = await profileService.createArtist(newArtistData)
-  //   setArtistData([...artistData, newArtist])
-  // }
+  const { genre } = handleAddGenre
+
+  const handleAddArtist = (evt) => {
+    setArtistData({...artistData, [evt.target.name]: evt.target.value})
+  }
+
+  const submitArtist = (evt) => {
+    //this code is modeled off Sarahs search functions
+    evt.preventDefault()
+    try {
+      // profileService call here 
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const { artist } = handleAddArtist
   
   // const submitArtist = evt => {
   //   evt.preventDefault()
@@ -35,24 +56,30 @@ const EditProfile = () => {
   //   handleAddArtist(artistFormData)
   // }
 
+  const isGenreValid = () => {
+    return !(genre)
+  }
+
+  const isArtistValid = () => {
+    return !(artist)
+  }
+
   return(
     <>
       <h1>Edit Profile</h1>
       <h4>Add your favorite artists and genres!</h4>
-      <form>
-      {/* <form autoComplete="off" ref={genreForm} onSubmit={submitGenre}> */}
+      <form onSubmit={submitGenre}>
         <label>Genre:
-          <input type="text" name="genre" />
+          <input type="text" value={genre} name="genre" autoComplete="off" onChange={handleAddGenre}/>
         </label>
-        <button type="submit">Add Genre</button>
+        <button type="submit" disabled={isGenreValid} >Add Genre</button>
       </form>
       <br />
-      <form>
-      {/* <form autoComplete="off" ref={artistForm} onSubmit={submitArtist}> */}
+      <form autoComplete="off" onSubmit={submitArtist}>
         <label>Artist:
-          <input type="text" name="artist" />
+          <input type="text" value={artist} name="artist"  onChange={handleAddArtist} />
         </label>
-        <button type="submit">Add Artist</button>
+        <button type="submit" disabled={isArtistValid}>Add Artist</button>
       </form>
     </>
   )
