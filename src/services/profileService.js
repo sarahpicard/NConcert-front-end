@@ -9,4 +9,22 @@ async function getAllProfiles() {
   return await res.json()
 }
 
-export { getAllProfiles }
+// function createGenre(genre) {
+//   return fetch(BASE_URL, {
+//     method: 'POST',
+//     body: genre
+//   },)
+// }
+
+// function createArtist(artist) {
+//   return fetch(BASE_URL, {
+//     method: 'POST',
+//     body: artist
+//   },)
+// }
+
+export {
+  getAllProfiles,
+  // createGenre,
+  // createArtist
+}
