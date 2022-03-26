@@ -7,7 +7,7 @@ const eventDetails = (props) => {
   return ( 
     <>
     <h2>{props.event.name}</h2>
-    <Link to={`/events/${props.event.id}`} state={{props}}>
+    <Link to={`/events/${props.event.id}`} element={props.event} state={{props}}>
       <button>Event Detail</button>
     </Link>
     <p>
