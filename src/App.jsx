@@ -62,7 +62,7 @@ const App = () => {
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}
         />
-        <Route path="/profile/edit" element={<EditProfile/>}/>
+        <Route path="/profile/edit" user={user} element={<EditProfile/>}/>
         <Route
           path="/changePassword"
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
@@ -70,9 +70,9 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/myevents' element={<MyEvents />} />
         <Route path='/favorites' element={<Favorites />} />
-        <Route path='/events' element={<Events events={events} />} />
+        <Route path='/events' element={<Events  />} />
         <Route path='/profile' element={<ProfilePage />} />
-        <Route path='/editprofile' element={<EditProfile />} />
+        <Route path='/profile/:id' element={<EditProfile />}/>
         <Route path='/event/:id' element={<EventDetail events={events}/>} />
       </Routes>
     </>

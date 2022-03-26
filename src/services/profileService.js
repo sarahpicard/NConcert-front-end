@@ -15,23 +15,16 @@ async function showProfile(){
   return await res.json()
 }
 
-// function createGenre(genre) {
-//   return fetch(BASE_URL, {
-//     method: 'POST',
-//     body: genre
-//   },)
-// }
-
-function createArtist(artist) {
-  return fetch(BASE_URL, {
-    method: 'POST',
-    body: artist
-  },)
+function createProfileData(artist) {
+  console.log('sanity check')
+  // return fetch(BASE_URL, {
+  //   method: 'POST',
+  //   body: artist
+  // },)
 }
 
 export {
   getAllProfiles,
-  // createGenre,
-  createArtist,
-  showProfile
+  createProfileData,
+  showProfile,
 }
