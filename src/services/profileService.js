@@ -25,13 +25,24 @@ async function createProfileData(profile) {
     },
     body: JSON.stringify(profile)
   },)
+    //do we need a response if we don't expect anything back?
   .then(res => res.json())
 }
 
-function addFriend (user, profile) {
+async function addFriend (user, profile) {
   console.log("user: ", user)
   console.log("profile: ", profile)
-  return fetch(`${BASE_URL}/${user}/add`)
+  return await fetch(`${BASE_URL}/add`, 
+  {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify()
+  },)
+  //do we need a response if we don't expect anything back?
+  .then(res => res.json)
 }
 
 export {
