@@ -17,10 +17,15 @@ async function showProfile(profile){
 
 function createProfileData(profile) {
   console.log('profileService: sanity check')
-  return fetch(`${BASE_URL}/${profile}`, {
+  return fetch(`${BASE_URL}/${profile}/create`, {
     method: 'POST',
-    headers: {'content-type': 'application/json'}, body: JSON.stringify(profile)
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify(profile)
   },)
+  .then(res => res.json())
 }
 
 export {
