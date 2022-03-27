@@ -17,7 +17,6 @@ const ProfilePage = (props) => {
     .then(profileData => setProfile(profileData))
   })
 
-
   const handleAddProfileData = (evt) => {
     setProfileData({...profileData, [evt.target.name]: evt.target.value})
   }
@@ -39,30 +38,59 @@ const ProfilePage = (props) => {
 
   return (
     <>
+    {console.log(location.state.profile)}
     {props.user.profile === location.state.profile._id  ? 
       <>
         <h1>My Profile</h1>
-        <h1>Edit Profile</h1>
-          <h4>Add your favorite artists and genres!</h4>
-          <form onSubmit={submitProfileData}>
-            <label>Bio:
-              <input type="text" value={bio} name="bio" autoComplete="off" onChange={handleAddProfileData}/>
-            </label>
-            <label>Genre:
-              <input type="text" value={genre} name="genre" autoComplete="off" onChange={handleAddProfileData}/>
-            </label>
-            <label>Artist:
-              <input type="text" value={artist} name="artist"  onChange={handleAddProfileData} />
-            </label>
-            <button type="submit">Update Profile</button>
-          </form>
+          { location.state.profile.bio === undefined?
+            <>
+            <h1>Edit Profile</h1>
+              <h4>Add your favorite artists and genres!</h4>
+                <form onSubmit={submitProfileData}>
+                  <label>Bio:
+                    <input type="text" value={bio} name="bio" autoComplete="off" onChange={handleAddProfileData}/>
+                  </label>
+                  <label>Genre:
+                    <input type="text" value={genre} name="genre" autoComplete="off" onChange={handleAddProfileData}/>
+                  </label>
+                  <label>Artist:
+                    <input type="text" value={artist} name="artist"  onChange={handleAddProfileData} />
+                  </label>
+                  <button type="submit">Update Profile</button>
+                </form>
+              </>
+            :
+              <p>Update Profile</p>
+            } 
+          <div>
+            <p>Bio: {location.state.profile.bio}</p>
+            <p>Favorite Artists: {location.state.profile.artist.map(artist => 
+              <>{artist.artist}<br/></>
+              )}
+            </p>
+            <p>Favorite Genres: {location.state.profile.genre.map(genre => 
+              <>{genre.genre}<br/></>
+              )}
+            </p>
+          </div>
       </>
       :
       <>
         {console.log("userId: ", props.user)}
-        {console.log("profileId: ", location.state.profile._id)}
-        <h1>Other Person's Profile</h1>
-        <button>Add Friend</button>
+        {console.log("profile: ", location.state.profile)}
+        <h1>{location.state.profile.name}'s Profile</h1>
+        <div>
+          <p>Bio: {location.state.profile.bio}</p>
+          <p>Favorite Artists: {location.state.profile.artist.map(artist => 
+             <>{artist.artist}</>
+            )}
+          </p>
+          <p>Favorite Genres: {location.state.profile.genre.map(genre => 
+            <>{genre.genre}</>
+            )}
+          </p>
+          <button>Add Friend</button>
+        </div>
       </>
     }
   </>
