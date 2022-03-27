@@ -3,11 +3,12 @@ import * as eventService from '../../services/eventServices.js'
 import EventDetails from "../../components/EventDetails/EventDetails.jsx"
 import Search from "../Search/Search.jsx"
 
+
 const Events = (props) => {
   return (
     <>
       <h1>Events Page</h1>
-      <Search />
+      <Search events={props.events}/>
     </>
   )
 }

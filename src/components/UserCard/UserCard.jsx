@@ -4,10 +4,7 @@ import './UserCard.css'
 const UserCard = (props) => {
   return (
     <div>
-      {/* <div className="container">
-        <div className="row">
-          <div className="col-md-3"> */}
-            <div className="card" style={{ width: '18rem'}}>
+            <div className="card individual-cards" style={{ width: '18rem'}}>
               <img src="https://i.imgur.com/tVYJuSL.png" alt="avatar" />
               <div className="card-body">
                 <h5 className="card-title">{props.profileName}</h5>
@@ -17,9 +14,6 @@ const UserCard = (props) => {
               </div>
             </div>
           </div>
-    //     </div>
-    //   </div>
-    // </div>
   )
 }
 
