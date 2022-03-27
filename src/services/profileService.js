@@ -28,8 +28,15 @@ async function createProfileData(profile) {
   .then(res => res.json())
 }
 
+function addFriend (user, profile) {
+  console.log("user: ", user)
+  console.log("profile: ", profile)
+  return fetch(`${BASE_URL}/${user}/add`)
+}
+
 export {
   getAllProfiles,
   createProfileData,
   showProfile,
+  addFriend,
 }
