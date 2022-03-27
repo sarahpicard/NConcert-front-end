@@ -15,9 +15,9 @@ async function showProfile(profile){
   return await res.json()
 }
 
-function createProfileData(profile) {
+async function createProfileData(profile) {
   console.log('profileService: sanity check')
-  return fetch(`${BASE_URL}/${profile}/create`, {
+  return await fetch(`${BASE_URL}/${profile}/create`, {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
