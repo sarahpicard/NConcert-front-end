@@ -7,23 +7,24 @@ const ProfilePage = (props) => {
   let location = useLocation()
   
   useEffect(() => {
-    console.log(location)
     showProfile(location.state.profile)
     .then(profileData => setProfile(profileData))
   })
 
   return (
     <>
-    {props.user  ? 
+    {props.user.profile === location.state.profile._id  ? 
       <>
-        {console.log(props.user._id)}
-        {console.log(profile)}
+        {console.log("userId: ", props.user._id)}
+        {console.log("profileId: ", location.state.profile._id)}
         <h1>My Profile</h1>
       </>
       :
       <>
-        {console.log(props.user)}
-        {console.log(props.profile)}
+        {console.log("userId: ", props.user.profile)}
+        {console.log("profileId: ", location.state.profile._id)}
+        {/* {console.log(props.user)}
+        {console.log(props.profile)} */}
         <h1>Other Person's Profile</h1>
       </>
     }

@@ -11,7 +11,6 @@ async function getAllProfiles() {
 }
 
 async function showProfile(profile){
-  console.log(profile)
   const res = await fetch(`${BASE_URL}/${profile}`)
   return await res.json()
 }

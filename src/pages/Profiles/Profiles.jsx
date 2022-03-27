@@ -9,10 +9,7 @@ const Profiles = () => {
 
   useEffect(()=> {
     profileService.getAllProfiles()
-    .then(profiles => {
-      console.log(profiles)
-      setProfiles(profiles)
-    })
+    .then(profiles => {setProfiles(profiles)})
   }, [])
   
 
