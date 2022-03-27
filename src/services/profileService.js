@@ -15,12 +15,12 @@ async function showProfile(profile){
   return await res.json()
 }
 
-function createProfileData(artist) {
-  console.log('sanity check')
-  // return fetch(BASE_URL, {
-  //   method: 'POST',
-  //   body: artist
-  // },)
+function createProfileData(profile) {
+  console.log('profileService: sanity check')
+  return fetch(`${BASE_URL}/${profile}`, {
+    method: 'POST',
+    headers: {'content-type': 'application/json'}, body: JSON.stringify(profile)
+  },)
 }
 
 export {

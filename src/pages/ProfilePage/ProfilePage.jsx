@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { showProfile } from "../../services/profileService"
+import * as profileService from '../../services/profileService'
 
 const ProfilePage = (props) => {
   const [profile, setProfile] = useState()
@@ -24,7 +25,8 @@ const ProfilePage = (props) => {
   const submitProfileData = (evt) => {
     evt.preventDefault()
     try {
-      // profileService call here 
+      profileService.createProfileData(profileData)
+      .then(profileData => setProfileData(profileData))
     } catch (err) {
       console.log(err)
     }
@@ -52,7 +54,7 @@ const ProfilePage = (props) => {
             <label>Artist:
               <input type="text" value={artist} name="artist"  onChange={handleAddProfileData} />
             </label>
-            <button type="submit">Add Artist</button>
+            <button type="submit">Update Profile</button>
           </form>
       </>
       :
@@ -60,6 +62,7 @@ const ProfilePage = (props) => {
         {console.log("userId: ", props.user)}
         {console.log("profileId: ", location.state.profile._id)}
         <h1>Other Person's Profile</h1>
+        <button>Add Friend</button>
       </>
     }
   </>
