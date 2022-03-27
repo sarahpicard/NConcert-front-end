@@ -10,8 +10,9 @@ async function getAllProfiles() {
   return await res.json()
 }
 
-async function showProfile(){
-  const res = await fetch(`${BASE_URL}/profile`)
+async function showProfile(profile){
+  console.log(profile)
+  const res = await fetch(`${BASE_URL}/${profile}`)
   return await res.json()
 }
 
