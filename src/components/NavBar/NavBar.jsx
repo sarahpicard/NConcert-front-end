@@ -1,31 +1,63 @@
 import { Link } from 'react-router-dom'
+import { ProSidebar, SidebarHeader, SidebarFooter, SidebarContent, MenuItem } from 'react-pro-sidebar'
 
+import 'react-pro-sidebar/dist/css/styles.css'
+import './NavBar.css'
 
 const NavBar = ({ user, handleLogout }) => {
   return (
     <>
       {user ?
-        <nav>
+      <ProSidebar className='custom-nav-bar'>
+        <SidebarHeader>
+          <Link to='/'>N'Concert</Link><br />
+          Welcome, {user.name}
+        </SidebarHeader>
+        <SidebarContent>
           <ul>
-            <li>Welcome, {user.name}</li>
-            <li><Link to="/profiles">Users (friendsToggle)</Link></li>
-            <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
-            <li><Link to="/changePassword">Change Password</Link></li>
-            <li><Link to='/'>N'Concert</Link></li>
-            <li><Link to='/myevents'>My Events</Link></li>
-            <li><Link to='/favorites'>Favorites</Link></li>
-            <li><Link to='/events'>Events</Link></li>
+            <MenuItem>
+              <Link to="/profiles">Users (friendsToggle)</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to="" onClick={handleLogout}>LOG OUT</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to="/changePassword">Change Password</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to='/myevents'>My Events</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to='/favorites'>Favorites</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to='/events'>Events</Link>
+            </MenuItem>
           </ul>
-        </nav>
+        </SidebarContent>
+      </ProSidebar>
       :
-        <nav>
+      <ProSidebar>
+        <SidebarHeader>
+          <Link to='/'>N'Concert</Link>
+        </SidebarHeader>
+        <SidebarContent>
           <ul>
-            <li><Link to='/'>N'Concert</Link></li>
-            <li><Link to="/login">Log In</Link></li>
-            <li><Link to="/signup">Sign Up</Link></li>
-            <li><Link to='/events'>Events</Link></li>
+            <MenuItem>
+              <Link to="/login">Log In</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to="/signup">Sign Up</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to="/signup">Sign Up</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to='/events'>Events</Link>
+            </MenuItem>
           </ul>
-        </nav>
+        </SidebarContent>
+      </ProSidebar>
       }
     </>
   )

@@ -2,7 +2,6 @@ import { useState, useEffect} from 'react'
 import * as profileService from '../../services/profileService'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
-import UserCard from '../../components/UserCard/UserCard'
 import { Col } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 
