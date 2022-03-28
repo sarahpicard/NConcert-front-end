@@ -31,6 +31,15 @@ const ProfilePage = (props) => {
     }
   }
 
+  const handleAddFriend = (evt) => {
+    evt.preventDefault()
+    try {
+      profileService.addFriend(location.state.profile._id, location.state.profile.name, location.state.profile.bio)
+    } catch (err) {
+      console.log(err)
+    } 
+  }
+
   const { bio } = profileData
   const { genre } = profileData
   const { artist } = profileData
@@ -38,7 +47,7 @@ const ProfilePage = (props) => {
 
   return (
     <>
-    {console.log(location.state.profile)}
+    {/* {console.log(location.state.profile)} */}
     {props.user.profile === location.state.profile._id  ? 
       <>
         <h1>My Profile</h1>
@@ -76,8 +85,8 @@ const ProfilePage = (props) => {
       </>
       :
       <>
-        {console.log("userId: ", props.user)}
-        {console.log("profile: ", location.state.profile)}
+        {/* {console.log("userId: ", props.user)}
+        {console.log("profile: ", location.state.profile)} */}
         <h1>{location.state.profile.name}'s Profile</h1>
         <div>
           <p>Bio: {location.state.profile.bio}</p>
@@ -89,7 +98,8 @@ const ProfilePage = (props) => {
             <>{genre.genre}</>
             )}
           </p>
-          <button>Add Friend</button>
+          <button onClick={handleAddFriend}>Add Friend</button>
+          <p>(Note: this will allow {location.state.profile.name} to see the events you are interested in and attending)</p>
         </div>
       </>
     }
