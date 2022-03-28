@@ -5,8 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import './Search.css'
 
-
-
 const Search = (props) => {
   const [keywordData, setKeywordData] = useState([])
   const [searchData, setSearchData] = useState([{
@@ -15,19 +13,6 @@ const Search = (props) => {
   }])
   const [searchResults, setSearchResults] = useState([{}])
   const [page, setPage] = useState(0)
-
-  // let page = 0
-
-  // if (page > 0) {
-  //   if (page > eventService.getSearch.json.page.totalPages-1) {
-  //     page = 0
-  //   }
-  // }
-
-  // const handleNextPage = () => {
-  //   eventService.getSearch(++page)
-  // }
-
 
   // handle change of input
   const handleChange = (evt) => {
@@ -46,13 +31,32 @@ const Search = (props) => {
     } catch (err) {
       console.log(err)
     }
-    nextPage()
   }
 
   function nextPage(){
-    setPage(page + 1)
-    console.log("page: ", page)
+    console.log("next page: ", page)
+    return setPage(page + 1)
   }
+
+  function prevPage(){
+    console.log("prev page: ", page)
+    if (page >= 1) {
+      return setPage(page - 1)
+    } 
+  }
+
+  useEffect(() => {
+    try {
+      eventService.getSearch(searchData.keyword, searchData.city, page)
+      .then(searchData => {
+        setKeywordData(searchData)
+        setSearchResults(searchData)
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }, [page])
+
 
   const { keyword } = searchData
   const { city } = searchData
@@ -62,9 +66,9 @@ const Search = (props) => {
     return !(keyword)
   }
 
-  console.log("search data", searchData)
-  console.log("search results", searchResults.length)
-  console.log("searchData: ", searchData)
+  // console.log("search data", searchData)
+  // console.log("search results", searchResults.length)
+  // console.log("searchData: ", searchData)
   
   return (
     <>
@@ -107,12 +111,12 @@ const Search = (props) => {
                 </div>
               </section>
             )}
-            <button onClick={handleSubmit}>Next Page</button>
+            <button onClick={prevPage}>Prev Page</button>
+            <button onClick={nextPage}>Next Page</button>
           </div>
           :
           <p>Nothing Searched</p>
         }
-        <button id='next' href='#'>Next Page</button>
       </div>
     </>
   )
