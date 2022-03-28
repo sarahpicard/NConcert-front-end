@@ -13,10 +13,6 @@ const Search = (props) => {
   const [searchResults, setSearchResults] = useState([{}])
   const [page, setPage] = useState(0)
 
-  useEffect(() => {
-    eventService.getSearch()
-    .then(keywordData => {setSearchResults(keywordData)})
-  }, [])
   
   // handle change of input
   const handleChange = (evt) => {
