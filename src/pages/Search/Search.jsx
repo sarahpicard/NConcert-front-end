@@ -13,6 +13,7 @@ const Search = (props) => {
     city: ''
   }])
   const [searchResults, setSearchResults] = useState([{}])
+  const [page, setPage] = useState(0)
 
   // let page = 0
 
@@ -36,16 +37,21 @@ const Search = (props) => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      eventService.getSearch(searchData.keyword, searchData.city)
-        .then(searchData => {
-          setKeywordData(searchData)
-          setSearchResults(searchData)
-        })
+      eventService.getSearch(searchData.keyword, searchData.city, page)
+      .then(searchData => {
+        setKeywordData(searchData)
+        setSearchResults(searchData)
+      })
     } catch (err) {
       console.log(err)
     }
+    nextPage()
   }
 
+  function nextPage(){
+    setPage(page + 1)
+    console.log("page: ", page)
+  }
 
   const { keyword } = searchData
   const { city } = searchData
@@ -55,7 +61,10 @@ const Search = (props) => {
     return !(keyword)
   }
 
-
+  console.log("search data", searchData)
+  console.log("search results", searchResults.length)
+  console.log("searchData: ", searchData)
+  
   return (
     <>
       <div>
@@ -97,6 +106,7 @@ const Search = (props) => {
                 </div>
               </section>
             )}
+            <button onClick={handleSubmit}>Next Page</button>
           </div>
           :
           <p>Nothing Searched</p>

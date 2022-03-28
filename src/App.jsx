@@ -22,8 +22,7 @@ import EventDetail from './pages/EventDetail/EventDetail'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
-  const [events, setEvents] = useState([])
-  const [links, setLinks] = useState([])
+
 
   const handleLogout = () => {
     authService.logout()
@@ -35,15 +34,7 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  useEffect(() => {
-    eventService.getAllEvents()
-    .then(allEvents => setEvents(allEvents))
-  }, [])
 
-  useEffect(() => {
-    eventService.getAllEvents()
-    .then(allLinks => setLinks(allLinks))
-  }, [])
 
 
 
@@ -72,11 +63,11 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/myevents' element={<MyEvents />} />
         <Route path='/favorites' element={<Favorites />} />
-        <Route path='/events' element={<Events  events={events}/>} />
+        <Route path='/events' element={<Events />} />
         <Route path='/profile' element={<ProfilePage />} />
         <Route path='/profile/:id' element={<ProfilePage user={user}/>}/>
         <Route path="/profile/:id/edit" element={<EditProfile user={user}/>}/>
-        <Route path='/event/:id' element={<EventDetail events={events}/>} />
+        <Route path='/event/:id' element={<EventDetail />} />
       </Routes>
     </>
   )
