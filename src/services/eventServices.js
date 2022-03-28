@@ -16,12 +16,6 @@ async function showEvent(event) {
 }
 
 
-// async function getNextPage(_links){
-//   console.log("eventServices")
-//   const res = await fetch(`${BASE_URL}/search/${_links}`)
-//   return await res.json()
-// }
-
 export {
   getSearch, 
   showEvent
