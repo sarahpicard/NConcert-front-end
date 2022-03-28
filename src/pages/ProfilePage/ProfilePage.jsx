@@ -104,6 +104,7 @@ const ProfilePage = (props) => {
             <>{genre.genre}</>
             )}
           </p>
+          <p>Spotify: <a href={location.state.profile.spotify}>{location.state.profile.name}'s Playlist</a></p>
           <button onClick={handleAddFriend}>Add Friend</button>
           <p>(Note: this will allow {location.state.profile.name} to see the events you are interested in and attending)</p>
         </div>
