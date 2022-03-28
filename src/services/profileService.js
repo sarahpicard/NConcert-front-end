@@ -29,8 +29,8 @@ async function createProfileData(profile) {
   .then(res => res.json())
 }
 
-async function addFriend (profileId, profileName, profileBio) {
-  return await fetch(`${BASE_URL}/add/${profileId}/${profileName}/${profileBio}`, 
+async function addFriend (profileId, profileName, profileBio, profileSpotify) {
+  return await fetch(`${BASE_URL}/add/${profileId}/${profileName}/${profileBio}/${profileSpotify}`, 
   {
     method: 'POST',
     headers: {

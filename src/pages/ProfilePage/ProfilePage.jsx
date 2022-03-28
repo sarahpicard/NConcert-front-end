@@ -10,6 +10,7 @@ const ProfilePage = (props) => {
     genre: '',
     artist: '',
     bio: '',
+    spotify: ''
   })
   
   useEffect(() => {
@@ -34,7 +35,7 @@ const ProfilePage = (props) => {
   const handleAddFriend = (evt) => {
     evt.preventDefault()
     try {
-      profileService.addFriend(location.state.profile._id, location.state.profile.name, location.state.profile.bio)
+      profileService.addFriend(location.state.profile._id, location.state.profile.name, location.state.profile.bio, location.profile.state.spotify)
     } catch (err) {
       console.log(err)
     } 
@@ -43,11 +44,12 @@ const ProfilePage = (props) => {
   const { bio } = profileData
   const { genre } = profileData
   const { artist } = profileData
+  const { spotify } = profileData
   
 
   return (
     <>
-    {/* {console.log(location.state.profile)} */}
+    {console.log(profileData)}
     {props.user.profile === location.state.profile._id  ? 
       <>
         <h1>My Profile</h1>
@@ -65,6 +67,9 @@ const ProfilePage = (props) => {
                   <label>Artist:
                     <input type="text" value={artist} name="artist"  onChange={handleAddProfileData} />
                   </label>
+                  <label>Spotify Playlist:
+                    <input type="text" value={spotify} name="spotify"  onChange={handleAddProfileData} />
+                  </label>
                   <button type="submit">Update Profile</button>
                 </form>
               </>
@@ -81,6 +86,7 @@ const ProfilePage = (props) => {
               <>{genre.genre}<br/></>
               )}
             </p>
+            <p>Spotify: <a href={location.state.profile.spotify}>My Favorite Playlist</a></p>
           </div>
       </>
       :
