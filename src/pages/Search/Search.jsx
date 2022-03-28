@@ -69,7 +69,6 @@ const Search = (props) => {
 
   return (
     <>
-    {console.log(searchResults._embedded.events)}
       <div>
         <form action="#" onSubmit={handleSubmit}>
           <input type="text" value={keyword} name="keyword" placeholder="search event" onChange={handleChange} />
