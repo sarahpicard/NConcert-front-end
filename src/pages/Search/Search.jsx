@@ -1,7 +1,5 @@
 import * as eventService from '../../services/eventServices'
-import { useEffect, useState } from 'react'
-import Events from '../Events/Events'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useState } from 'react'
 
 import './Search.css'
 
@@ -57,8 +55,6 @@ const Search = (props) => {
   }
 
 
-  // console.log("search data", searchData)
-  // console.log("search results", searchResults.length)
   return (
     <>
       <div>
@@ -75,22 +71,22 @@ const Search = (props) => {
               <section>
                 <div className="container py-2">
                   <article className="postcard">
-                      <a href="#" className="postcard_img_link">
-                        <img 
-                        className="postcard_img" 
-                        src={event.images.find(image => image.height > 110 && image.width > 100).url} 
-                        alt="concert-image" 
-                        style={{width: '260px', height: '200px'}}
-                        />
-                      </a>
+                    <a href={`/event/${event.id}`} className="postcard_img_link">
+                      <img
+                        className="postcard_img"
+                        alt="concert"
+                        src={event.images.find(image => image.height > 110 && image.width > 100).url}
+                        style={{ width: '260px', height: '200px' }}
+                      />
+                    </a>
                     <div className='postcard-information'>
                       <h1 className='postcard_title'>
-                        <a href="#">{event.name}</a>
+                        <a href={`/event/${event.id}`}>{event.name}</a>
                       </h1>
                       <div className="postcard_subtitle small">
                         <p>{event.dates.start.localTime}</p>
                         <p>{event.dates.start.localDate}</p>
-                        <a className="see-more-link" href='#'>See More</a>
+                        <a className="see-more-link" href={`/event/${event.id}`}>See More</a>
                       </div>
                       <div className="postcard_preview-txt">
                         some information about the event...
