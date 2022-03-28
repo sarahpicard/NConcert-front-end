@@ -34,7 +34,7 @@ const ProfilePage = (props) => {
   const handleAddFriend = (evt) => {
     evt.preventDefault()
     try {
-      profileService.addFriend(props.user.profile, location.state.profile._id)
+      profileService.addFriend(location.state.profile._id, location.state.profile.name, location.state.profile.bio)
     } catch (err) {
       console.log(err)
     } 
