@@ -1,5 +1,6 @@
 import * as eventService from '../../services/eventServices'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import './Search.css'
 
@@ -71,18 +72,18 @@ const Search = (props) => {
               <section>
                 <div className="container py-2">
                   <article className="postcard">
-                    <a href={`/event/${event.id}`} className="postcard_img_link">
-                      <img
-                        className="postcard_img"
-                        alt="concert"
-                        src={event.images.find(image => image.height > 110 && image.width > 100).url}
-                        style={{ width: '260px', height: '200px' }}
-                      />
-                    </a>
+                    <Link to={`/event/${event.id}`} className="postcard_img_link" state={event}>
+                        <img
+                          className="postcard_img"
+                          alt="concert"
+                          src={event.images.find(image => image.height > 110 && image.width > 100).url}
+                          style={{ width: '260px', height: '200px' }}
+                          />
+                    </Link>
                     <div className='postcard-information'>
-                      <h1 className='postcard_title'>
-                        <a href={`/event/${event.id}`}>{event.name}</a>
-                      </h1>
+                      <Link to={`/event/${event.id}`} state={event}>
+                        <h1 className='postcard_title'>{event.name}</h1>
+                      </Link>
                       <div className="postcard_subtitle small">
                         <p>{event.dates.start.localTime}</p>
                         <p>{event.dates.start.localDate}</p>
@@ -108,6 +109,3 @@ const Search = (props) => {
 
 export default Search
 
-// href on img - should make clickable to event details 
-// event title should be clickable to event details 
-// see more link (eventually will be an arrow on right side of card - also brings user to event detail)

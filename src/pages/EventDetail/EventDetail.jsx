@@ -3,7 +3,7 @@ const EventDetail = (props) => {
   return(
     <>
       <h1>Event details here</h1>
-      {/* <h1>{props.events.name}</h1> */}
+      {/* <h1>{props.event.name}</h1>  */}
       {/* <h2>{props.events[0]._embedded.venues[0].name}</h2>
       <h2>{props.events[0].dates.start.localDate}</h2>
       <h2>{props.events[0].dates.start.localTime}</h2>
