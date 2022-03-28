@@ -9,8 +9,15 @@ async function getSearch(keyword, city, page) {
   return await res.json()
 }
 
+async function showEvent(event) {
+  console.log(event)
+  const res = await fetch(`${BASE_URL}/${event}`)
+  return await res.json()
+}
+
 
 export {
   getSearch, 
+  showEvent
   // getNextPage
 }

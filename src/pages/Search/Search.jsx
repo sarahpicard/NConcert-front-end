@@ -1,5 +1,5 @@
 import * as eventService from '../../services/eventServices'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import './Search.css'
@@ -13,6 +13,11 @@ const Search = (props) => {
   const [searchResults, setSearchResults] = useState([{}])
   const [page, setPage] = useState(0)
 
+  useEffect(() => {
+    eventService.getSearch()
+    .then(keywordData => {setSearchResults(keywordData)})
+  }, [])
+  
   // handle change of input
   const handleChange = (evt) => {
     setSearchData({ ...searchData, [evt.target.name]: evt.target.value })
@@ -65,12 +70,10 @@ const Search = (props) => {
     return !(keyword)
   }
 
-  // console.log("search data", searchData)
-  // console.log("search results", searchResults.length)
-  // console.log("searchData: ", searchData)
-  
+
   return (
     <>
+    {/* {console.log(searchResults._embedded.events)} */}
       <div>
         <form action="#" onSubmit={handleSubmit}>
           <input type="text" value={keyword} name="keyword" placeholder="search event" onChange={handleChange} />
@@ -83,9 +86,10 @@ const Search = (props) => {
           <div>
             {searchResults._embedded.events.map(event =>
               <section>
+                {console.log(event)}
                 <div className="container py-2">
                   <article className="postcard">
-                    <Link to={`/event/${event.id}`} className="postcard_img_link" state={{event}}>
+                    <Link to={`/events/${event.id}`} className="postcard_img_link" state={{event}}>
                         <img
                           className="postcard_img"
                           alt="concert"
@@ -94,13 +98,14 @@ const Search = (props) => {
                           />
                     </Link>
                     <div className='postcard-information'>
-                      <Link to={`/event/${event.id}`} state={{event}}>
+                      {console.log(searchResults._embedded.events)}
+                      <Link to={`/events/${event.id}`} state={{event}}>
                         <h1 className='postcard_title'>{event.name}</h1>
                       </Link>
                       <div className="postcard_subtitle small">
                         <p>{event.dates.start.localTime}</p>
                         <p>{event.dates.start.localDate}</p>
-                        <a className="see-more-link" href={`/event/${event.id}`}>See More</a>
+                        <a className="see-more-link" href={`/events/${event.id}`} state={{event}}>See More</a>
                       </div>
                       <div className="postcard_preview-txt">
                         some information about the event...
