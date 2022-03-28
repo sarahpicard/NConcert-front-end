@@ -16,8 +16,6 @@ const Profiles = () => {
     .then(profiles => {setProfiles(profiles)})
   }, [])
   
-
-
   return (
     <div>
       <h1>Hello. This is a list of all the profiles.</h1>

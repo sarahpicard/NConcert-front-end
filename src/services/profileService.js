@@ -11,53 +11,36 @@ async function getAllProfiles() {
 }
 
 async function showProfile(profile){
+  console.log("profile: ", profile)
   const res = await fetch(`${BASE_URL}/${profile}`)
   return await res.json()
 }
 
 async function createProfileData(profile) {
-  console.log('profileService: sanity check')
+  console.log('profile: ', profile)
   return await fetch(`${BASE_URL}/${profile}/create`, {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
       Authorization: `Bearer ${tokenService.getToken()}`
     },
+    body: JSON.stringify(profile)
   },)
-    //do we need a response if we don't expect anything back?
   .then(res => res.json())
 }
 
-// route to send profile data as individual params
-async function addFriend (profileId, profileName, profileBio, profileSpotify) {
-  return await fetch(`${BASE_URL}/add/${profileId}/${profileName}/${profileBio}/${profileSpotify}`, 
+async function addFriend (profileId, profileName, profileBio) {
+  return await fetch(`${BASE_URL}/add/${profileId}/${profileName}/${profileBio}`, 
   {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
       Authorization: `Bearer ${tokenService.getToken()}`
     },
-    //need to stringify profile to access object
-    body: JSON.stringify(profileSpotify)
+    body: JSON.stringify()
   },)
-  //do we need a response if we don't expect anything back?
   .then(res => res.json)
 }
-
-//route to send profile data as an object - is this possible?
-// async function addFriend (profile) {
-//   return await fetch(`${BASE_URL}/add/${profile}`, 
-//   {
-//     method: 'POST',
-//     headers: {
-//       'content-type': 'application/json',
-//       Authorization: `Bearer ${tokenService.getToken()}`
-//     },
-//     body: JSON.stringify()
-//   },)
-//   //do we need a response if we don't expect anything back?
-//   .then(res => res.json)
-// }
 
 export {
   getAllProfiles,
