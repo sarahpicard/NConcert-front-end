@@ -32,14 +32,27 @@ const ProfilePage = (props) => {
     }
   }
 
+  //route to send data individually as params
   const handleAddFriend = (evt) => {
+    console.log("location.state.profile: ", location.state.profile)
     evt.preventDefault()
     try {
-      profileService.addFriend(location.state.profile._id, location.state.profile.name, location.state.profile.bio, location.profile.state.spotify)
+      profileService.addFriend(location.state.profile._id, location.state.profile.name, location.state.profile.bio, location.state.profile.spotify)
     } catch (err) {
       console.log(err)
     } 
   }
+
+  //route to send data as an object
+  // const handleAddFriend = (evt) => {
+  //   console.log("location.state.profile: ", location.state.profile)
+  //   evt.preventDefault()
+  //   try {
+  //     profileService.addFriend(location.state.profile)
+  //   } catch (err) {
+  //     console.log(err)
+  //   } 
+  // }
 
   const { bio } = profileData
   const { genre } = profileData
@@ -49,7 +62,7 @@ const ProfilePage = (props) => {
 
   return (
     <>
-    {console.log(profileData)}
+    {/* {console.log(profileData)} */}
     {props.user.profile === location.state.profile._id  ? 
       <>
         <h1>My Profile</h1>
