@@ -9,6 +9,12 @@ async function getSearch(keyword, city, page) {
   return await res.json()
 }
 
+async function showEvent(event) {
+  console.log(event)
+  const res = await fetch(`${BASE_URL}/${event}`)
+  return await res.json()
+}
+
 
 // async function getNextPage(_links){
 //   console.log("eventServices")
@@ -18,5 +24,6 @@ async function getSearch(keyword, city, page) {
 
 export {
   getSearch, 
+  showEvent
   // getNextPage
 }

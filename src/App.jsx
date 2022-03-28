@@ -67,7 +67,7 @@ const App = () => {
         <Route path='/profile' element={<ProfilePage />} />
         <Route path='/profile/:id' element={<ProfilePage user={user}/>}/>
         <Route path="/profile/:id/edit" element={<EditProfile user={user}/>}/>
-        <Route path='/event/:id' element={<EventDetail />} />
+        <Route path='/events/:id' element={<EventDetail />} />
       </Routes>
     </>
   )
