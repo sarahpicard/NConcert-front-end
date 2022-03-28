@@ -11,7 +11,7 @@ const EventDetail = () => {
     showEvent(location.state.event)
     .then(currentEvent => setCurrentEvent(currentEvent))
   }, [])
-  console.log(location.state.event)
+  // console.log(location.state.event)
   
 
 

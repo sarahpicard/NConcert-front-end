@@ -10,7 +10,7 @@ async function getSearch(keyword, city, page) {
 }
 
 async function showEvent(event) {
-  console.log(event)
+  // console.log(event)
   const res = await fetch(`${BASE_URL}/${event}`)
   return await res.json()
 }

@@ -72,9 +72,6 @@ const NavBar = ({ user, handleLogout }) => {
               <Link to="/signup">Sign Up</Link>
             </MenuItem>
             <MenuItem>
-              <Link to="/signup">Sign Up</Link>
-            </MenuItem>
-            <MenuItem>
               <Link to='/events'>Events</Link>
             </MenuItem>
           </ul>

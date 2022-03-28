@@ -13,10 +13,6 @@ const Search = (props) => {
   const [searchResults, setSearchResults] = useState([{}])
   const [page, setPage] = useState(0)
 
-  useEffect(() => {
-    eventService.getSearch()
-    .then(keywordData => {setSearchResults(keywordData)})
-  }, [])
   
   // handle change of input
   const handleChange = (evt) => {
@@ -73,7 +69,7 @@ const Search = (props) => {
 
   return (
     <>
-    {/* {console.log(searchResults._embedded.events)} */}
+    {console.log(searchResults._embedded.events)}
       <div>
         <form action="#" onSubmit={handleSubmit}>
           <input type="text" value={keyword} name="keyword" placeholder="search event" onChange={handleChange} />
@@ -86,7 +82,7 @@ const Search = (props) => {
           <div>
             {searchResults._embedded.events.map(event =>
               <section>
-                {console.log(event)}
+                {/* {console.log(event)} */}
                 <div className="container py-2">
                   <article className="postcard">
                     <Link to={`/events/${event.id}`} className="postcard_img_link" state={{event}}>
@@ -98,7 +94,7 @@ const Search = (props) => {
                           />
                     </Link>
                     <div className='postcard-information'>
-                      {console.log(searchResults._embedded.events)}
+                      {/* {console.log(searchResults._embedded.events)} */}
                       <Link to={`/events/${event.id}`} state={{event}}>
                         <h1 className='postcard_title'>{event.name}</h1>
                       </Link>
