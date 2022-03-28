@@ -90,21 +90,24 @@ const ProfilePage = (props) => {
             <p>Spotify: <a href={location.state.profile.spotify}>My Favorite Playlist</a></p>
           </div>
           <div className="friends">
-            {location.state.profile.friends.length ?
-              <h2>My Friends</h2>
-              {location.state.profile.friends.map(friend =>
-                <>
-                  <p>{friend.name}</p>
-                  <p>{friend.bio}</p>
-                  <Link to={`/profile/${friend.profileId}`}>
-                  <p>View Profile</p>
-                  </Link>
-                </>
-              )}
-            :
-                <>
-                  <h2>No Friends Yet</h2>
-                </>
+            {location.state.profile.friends.length ? 
+              <>
+                <h2>My Friends Here</h2>
+                {console.log(location.state.profile.friends)}
+                {location.state.profile.friends.map(friend => 
+                  <>
+                    <p>{friend.name}</p>
+                    <p>{friend.bio}</p>
+                    <Link to={`/profile/${friend.profileId}`}>
+                      View Profile
+                    </Link>
+                  </>
+                )}
+              </>
+             :
+              <>
+                <h2>No Friends Yet</h2>
+              </>
             }
           </div>
       </>
