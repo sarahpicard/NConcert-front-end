@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { showProfile } from "../../services/profileService"
 import * as profileService from '../../services/profileService'
+import { Link } from "react-router-dom"
 
 const ProfilePage = (props) => {
   const [profile, setProfile] = useState()
@@ -23,6 +24,7 @@ const ProfilePage = (props) => {
   }
 
   const submitProfileData = (evt) => {
+    console.log(profileData)
     evt.preventDefault()
     try {
       profileService.createProfileData(profileData)
@@ -32,37 +34,23 @@ const ProfilePage = (props) => {
     }
   }
 
-  //route to send data individually as params
   const handleAddFriend = (evt) => {
     console.log("location.state.profile: ", location.state.profile)
     evt.preventDefault()
     try {
-      profileService.addFriend(location.state.profile._id, location.state.profile.name, location.state.profile.bio, location.state.profile.spotify)
+      profileService.addFriend(location.state.profile._id, location.state.profile.name, location.state.profile.bio)
     } catch (err) {
       console.log(err)
     } 
   }
-
-  //route to send data as an object
-  // const handleAddFriend = (evt) => {
-  //   console.log("location.state.profile: ", location.state.profile)
-  //   evt.preventDefault()
-  //   try {
-  //     profileService.addFriend(location.state.profile)
-  //   } catch (err) {
-  //     console.log(err)
-  //   } 
-  // }
 
   const { bio } = profileData
   const { genre } = profileData
   const { artist } = profileData
   const { spotify } = profileData
   
-
   return (
     <>
-    {/* {console.log(profileData)} */}
     {props.user.profile === location.state.profile._id  ? 
       <>
         <h1>My Profile</h1>
@@ -89,7 +77,7 @@ const ProfilePage = (props) => {
             :
               <p>Update Profile</p>
             } 
-          <div>
+          <div className="profile-info">
             <p>Bio: {location.state.profile.bio}</p>
             <p>Favorite Artists: {location.state.profile.artist.map(artist => 
               <>{artist.artist}<br/></>
@@ -100,6 +88,24 @@ const ProfilePage = (props) => {
               )}
             </p>
             <p>Spotify: <a href={location.state.profile.spotify}>My Favorite Playlist</a></p>
+          </div>
+          <div className="friends">
+            {location.state.profile.friends.length ?
+              <h2>My Friends</h2>
+              {location.state.profile.friends.map(friend =>
+                <>
+                  <p>{friend.name}</p>
+                  <p>{friend.bio}</p>
+                  <Link to={`/profile/${friend.profileId}`}>
+                  <p>View Profile</p>
+                  </Link>
+                </>
+              )}
+            :
+                <>
+                  <h2>No Friends Yet</h2>
+                </>
+            }
           </div>
       </>
       :
