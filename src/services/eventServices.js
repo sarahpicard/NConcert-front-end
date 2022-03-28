@@ -1,21 +1,14 @@
+import * as tokenService from '../services/tokenService'
+
+
 const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/events`
 
-// get all events
-async function getAllEvents() {
-  const res = await fetch(BASE_URL)
-  return await res.json()
-}
-
 // search events
-async function getSearch(keyword, city) {
-  const res = await fetch(`${BASE_URL}/search/${keyword}/${city}`)
+async function getSearch(keyword, city, page) {
+  const res = await fetch(`${BASE_URL}/search/${keyword}/${city}/${page}`)
   return await res.json()
 }
 
-async function getSearchLinks(keyword,city) {
-  const res = await fetch(`${BASE_URL}/search/${keyword}/${city}links`)
-  return await res.json()
-}
 
 // async function getNextPage(_links){
 //   console.log("eventServices")
@@ -24,8 +17,6 @@ async function getSearchLinks(keyword,city) {
 // }
 
 export {
-  getAllEvents,
   getSearch, 
-  getSearchLinks,
   // getNextPage
 }

@@ -37,6 +37,7 @@ async function addFriend (profileId, profileName, profileBio) {
       'content-type': 'application/json',
       Authorization: `Bearer ${tokenService.getToken()}`
     },
+    //need to stringify profile to access object
     body: JSON.stringify()
   },)
   //do we need a response if we don't expect anything back?
