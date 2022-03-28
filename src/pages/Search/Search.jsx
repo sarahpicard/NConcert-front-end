@@ -77,9 +77,11 @@ const Search = (props) => {
           <button disabled={isKeywordFormValid()}>Search</button>
         </form>
       </div>
+      {console.log(Object.keys(searchResults)[0])}
       <div>
-        {searchResults.length === undefined ?
+        {Object.keys(searchResults)[0] === "_embedded" ?
           <div>
+            {console.log(searchResults)}
             {searchResults._embedded.events.map(event =>
               <section>
                 {/* {console.log(event)} */}

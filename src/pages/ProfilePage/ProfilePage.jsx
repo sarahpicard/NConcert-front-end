@@ -10,6 +10,7 @@ const ProfilePage = (props) => {
     genre: '',
     artist: '',
     bio: '',
+    spotify: ''
   })
   
   useEffect(() => {
@@ -31,23 +32,37 @@ const ProfilePage = (props) => {
     }
   }
 
+  //route to send data individually as params
   const handleAddFriend = (evt) => {
+    console.log("location.state.profile: ", location.state.profile)
     evt.preventDefault()
     try {
-      profileService.addFriend(location.state.profile._id, location.state.profile.name, location.state.profile.bio)
+      profileService.addFriend(location.state.profile._id, location.state.profile.name, location.state.profile.bio, location.state.profile.spotify)
     } catch (err) {
       console.log(err)
     } 
   }
 
+  //route to send data as an object
+  // const handleAddFriend = (evt) => {
+  //   console.log("location.state.profile: ", location.state.profile)
+  //   evt.preventDefault()
+  //   try {
+  //     profileService.addFriend(location.state.profile)
+  //   } catch (err) {
+  //     console.log(err)
+  //   } 
+  // }
+
   const { bio } = profileData
   const { genre } = profileData
   const { artist } = profileData
+  const { spotify } = profileData
   
 
   return (
     <>
-    {/* {console.log(location.state.profile)} */}
+    {/* {console.log(profileData)} */}
     {props.user.profile === location.state.profile._id  ? 
       <>
         <h1>My Profile</h1>
@@ -65,6 +80,9 @@ const ProfilePage = (props) => {
                   <label>Artist:
                     <input type="text" value={artist} name="artist"  onChange={handleAddProfileData} />
                   </label>
+                  <label>Spotify Playlist:
+                    <input type="text" value={spotify} name="spotify"  onChange={handleAddProfileData} />
+                  </label>
                   <button type="submit">Update Profile</button>
                 </form>
               </>
@@ -81,6 +99,7 @@ const ProfilePage = (props) => {
               <>{genre.genre}<br/></>
               )}
             </p>
+            <p>Spotify: <a href={location.state.profile.spotify}>My Favorite Playlist</a></p>
           </div>
       </>
       :
@@ -98,6 +117,7 @@ const ProfilePage = (props) => {
             <>{genre.genre}</>
             )}
           </p>
+          <p>Spotify: <a href={location.state.profile.spotify}>{location.state.profile.name}'s Playlist</a></p>
           <button onClick={handleAddFriend}>Add Friend</button>
           <p>(Note: this will allow {location.state.profile.name} to see the events you are interested in and attending)</p>
         </div>
