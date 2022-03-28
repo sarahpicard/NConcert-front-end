@@ -1,9 +1,25 @@
+import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import { getSearch } from '../../services/eventServices'
+
 
 const EventDetail = (props) => {
+  // const [event, setEvent] = useState()
+  // let location = useLocation()
+  // const [eventData, setEventData] = useState({
+  //   name: ''
+  // })
+
+  // useEffect(() => {
+  //   getSearch(location.state.event)
+  //   .then(eventData => setEventData(eventData))
+  // })
+
+
   return(
     <>
       <h1>Event details here</h1>
-      {/* <h1>{props.event.name}</h1>  */}
+      <h1>{props.event.name}</h1> 
       {/* <h2>{props.events[0]._embedded.venues[0].name}</h2>
       <h2>{props.events[0].dates.start.localDate}</h2>
       <h2>{props.events[0].dates.start.localTime}</h2>

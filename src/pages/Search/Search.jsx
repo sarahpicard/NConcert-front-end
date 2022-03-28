@@ -72,7 +72,7 @@ const Search = (props) => {
               <section>
                 <div className="container py-2">
                   <article className="postcard">
-                    <Link to={`/event/${event.id}`} className="postcard_img_link" state={event}>
+                    <Link to={`/event/${event.id}`} className="postcard_img_link" state={{event}}>
                         <img
                           className="postcard_img"
                           alt="concert"
@@ -81,7 +81,7 @@ const Search = (props) => {
                           />
                     </Link>
                     <div className='postcard-information'>
-                      <Link to={`/event/${event.id}`} state={event}>
+                      <Link to={`/event/${event.id}`} state={{event}}>
                         <h1 className='postcard_title'>{event.name}</h1>
                       </Link>
                       <div className="postcard_subtitle small">
