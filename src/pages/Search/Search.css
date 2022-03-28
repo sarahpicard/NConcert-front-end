@@ -36,6 +36,8 @@ a, a:hover {
 }
 .postcard__img_link {
   display: contents;
+  height: 180px;
+  width: 200px;
 }
 .see-more-link {
   float: right;
