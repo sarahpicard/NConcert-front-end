@@ -15,21 +15,33 @@ const Search = (props) => {
   }])
   const [searchResults, setSearchResults] = useState([{}])
 
+  // let page = 0
+
+  // if (page > 0) {
+  //   if (page > eventService.getSearch.json.page.totalPages-1) {
+  //     page = 0
+  //   }
+  // }
+
+  // const handleNextPage = () => {
+  //   eventService.getSearch(++page)
+  // }
+
 
   // handle change of input
   const handleChange = (evt) => {
-    setSearchData({...searchData, [evt.target.name]: evt.target.value})
+    setSearchData({ ...searchData, [evt.target.name]: evt.target.value })
   }
-  
+
   // handle submit
   const handleSubmit = async e => {
     e.preventDefault()
     try {
       eventService.getSearch(searchData.keyword, searchData.city)
-      .then(searchData => {
-        setKeywordData(searchData)
-        setSearchResults(searchData)
-      })
+        .then(searchData => {
+          setKeywordData(searchData)
+          setSearchResults(searchData)
+        })
     } catch (err) {
       console.log(err)
     }
@@ -38,34 +50,39 @@ const Search = (props) => {
 
   const { keyword } = searchData
   const { city } = searchData
-  
+
   // form validation
   const isKeywordFormValid = () => {
     return !(keyword)
   }
 
-  console.log("search data", searchData)
-  console.log("search results", searchResults.length)
+
+  // console.log("search data", searchData)
+  // console.log("search results", searchResults.length)
   return (
     <>
-    <div>
-      <form action="#" onSubmit={handleSubmit}>
-        <input type="text" value={keyword} name="keyword" placeholder="search event" onChange={handleChange}/>
-        <input type="text" value={city} name="city" placeholder="search city" onChange={handleChange}/>
-        <button disabled={isKeywordFormValid()}>Search</button>
-      </form>
-    </div>
       <div>
-        {searchResults.length === undefined ? 
+        <form action="#" onSubmit={handleSubmit}>
+          <input type="text" value={keyword} name="keyword" placeholder="search event" onChange={handleChange} />
+          <input type="text" value={city} name="city" placeholder="search city" onChange={handleChange} />
+          <button disabled={isKeywordFormValid()}>Search</button>
+        </form>
+      </div>
+      <div>
+        {searchResults.length === undefined ?
           <div>
-            {console.log(searchResults.length)}
             {searchResults._embedded.events.map(event =>
               <section>
                 <div className="container py-2">
                   <article className="postcard">
-                    <a href="#" className="postcard_img_link">
-                      <img className="postcard_img" src="https://i.imgur.com/glvb4Vt.jpg" alt="concert-image" />
-                    </a>
+                      <a href="#" className="postcard_img_link">
+                        <img 
+                        className="postcard_img" 
+                        src={event.images.find(image => image.height > 110 && image.width > 100).url} 
+                        alt="concert-image" 
+                        style={{width: '260px', height: '200px'}}
+                        />
+                      </a>
                     <div className='postcard-information'>
                       <h1 className='postcard_title'>
                         <a href="#">{event.name}</a>
@@ -73,20 +90,21 @@ const Search = (props) => {
                       <div className="postcard_subtitle small">
                         <p>{event.dates.start.localTime}</p>
                         <p>{event.dates.start.localDate}</p>
-                      <a className="see-more-link" href='#'>See More</a>
+                        <a className="see-more-link" href='#'>See More</a>
                       </div>
                       <div className="postcard_preview-txt">
                         some information about the event...
                       </div>
                     </div>
                   </article>
-                </div> 
+                </div>
               </section>
             )}
           </div>
           :
           <p>Nothing Searched</p>
         }
+        <button id='next' href='#'>Next Page</button>
       </div>
     </>
   )
