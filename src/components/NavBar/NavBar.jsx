@@ -1,133 +1,96 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { ProSidebar, SidebarHeader, SidebarFooter, SidebarContent, MenuItem, Menu } from 'react-pro-sidebar'
 
 import 'react-pro-sidebar/dist/css/styles.css'
 import './NavBar.css'
+import { faCropSimple } from '@fortawesome/free-solid-svg-icons'
+
 
 const NavBar = ({ user, handleLogout }) => {
-  const [menuCollapse, setMenuCollapse] = useState(false)
-
-  const menuIconClick = () => {
-    menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true)
-  }
   return (
     <>
-      {/* <div className="sidebar">
+    {user ?
+      <div className="sidebar">
         <div className="logo-content">
           <div className="logo">
-            <i className="bx bxl-deezer"></i>
-            <div className="logo_name">N'Concert</div>
+            <i className="bx bxl-deezer nav_icon_item"></i>
+            <div className="logo_name">
+              <Link to='/' className='link_tag_destination_home'>N'Concert</Link>
+            </div>
           </div>
-          <i className="bx bx-menu" id="nav-menu-btn"></i>
         </div>
         <ul className='nav_list'>
-          <li>
-            <a href="#">
-              <i className='bx bxs-face'></i>
+          <li className='nav_li_item'>
+            <Link to='/profiles' className='link_tag_destination'>
+              <i className='bx bxs-face nav_icon_item'></i>
               <span className="links_name">Profiles</span>
-            </a> */}
-            {/* <span className="tooltip">Profiles</span> */}
-          {/* </li>
-          <li>
-            <a href="#">
-              <i className='bx bxs-calendar-event'></i>
+            </Link>
+          </li>
+          <li className='nav_li_item'>
+            <Link to='/myevents' className='link_tag_destination'>
+              <i className='bx bxs-calendar-event nav_icon_item'></i>
               <span className="links_name">My Events</span>
-            </a> */}
-            {/* <span className="tooltip">Profiles</span> */}
-          {/* </li>
-          <li>
-            <a href="#">
-              <i className='bx bxs-star'></i>
+            </Link>
+          </li>
+          <li className='nav_li_item'>
+            <Link to='/favorites' className='link_tag_destination'>
+              <i className='bx bxs-star nav_icon_item'></i>
               <span className="links_name">Favorites</span>
-            </a> */}
-            {/* <span className="tooltip">Profiles</span> */}
-          {/* </li>
-          <li>
-            <a href="#">
-              <i className='bx bxs-file-find'></i>
+            </Link>
+          </li>
+          <li className='nav_li_item'>
+            <Link to='/events' className='link_tag_destination'>
+              <i className='bx bxs-file-find nav_icon_item'></i>
               <span className="links_name">Search Events</span>
-            </a> */}
-            {/* <span className="tooltip">Profiles</span> */}
-          {/* </li>
-          <li>
-            <a href="#">
-              <i className='bx bxs-lock-alt'></i>
+            </Link>
+          </li>
+          <li className='nav_li_item'>
+            <Link to='/changePassword' className='link_tag_destination'>
+              <i className='bx bxs-lock-alt nav_icon_item'></i>
               <span className="links_name">Change Password</span>
-            </a> */}
-            {/* <span className="tooltip">Profiles</span> */}
-          {/* </li>
+            </Link>
+          </li>
         </ul>
-        <i className="bx bxs-log-out">Logout</i>
-      </div> */}
-
-
-    <div id="header">
-      {user ?
-      <ProSidebar collapsed={menuCollapse}>
-        <SidebarHeader>
-          <div className='logotext'>
-            <Link to='/'>N'Concert</Link><br />
-            Welcome, {user.name}
+        <div className="profile_content">
+          <div className="profile">
+            <Link to='' onClick={handleLogout} className='link_tag_destination'>
+              <i className="bx bxs-log-out nav_icon_item" id="logout">Logout</i>
+            </Link>
           </div>
-          <div className="closemenu" onClick={menuIconClick}>
-            {menuCollapse ? (
-              <p>expand</p>
-            ) :
-              <p>collapse</p>
-            }
+        </div>
+      </div> 
+      : 
+      <div className="sidebar">
+      <div className="logo-content">
+        <div className="logo">
+          <i className="bx bxl-deezer nav_icon_item"></i>
+          <div className="logo_name">
+            <Link to='/' className='link_tag_destination'>N'Concert</Link>
           </div>
-        </SidebarHeader>
-        <SidebarContent>
-          <ul>
-            <MenuItem active={true}>
-              <Link to="/profiles">Users (friendsToggle)</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to="/changePassword">Change Password</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to='/myevents'>My Events</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to='/favorites'>Favorites</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to='/events'>Events</Link>
-            </MenuItem>
-          </ul>
-        </SidebarContent>
-        <SidebarFooter>
-          <ul>
-            <MenuItem>
-              <Link to="" onClick={handleLogout}>LOG OUT</Link>
-            </MenuItem>
-          </ul>
-        </SidebarFooter>
-      </ProSidebar>
-      :
-      <ProSidebar>
-        <SidebarHeader>
-          <div className='logotext'>
-            <Link to='/'>N'Concert</Link>
-          </div>
-        </SidebarHeader>
-        <SidebarContent>
-          <ul>
-            <MenuItem>
-              <Link to="/login">Log In</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to="/signup">Sign Up</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to='/events'>Events</Link>
-            </MenuItem>
-          </ul>
-        </SidebarContent>
-      </ProSidebar>
-      }
-    </div>
+        </div>
+      </div>
+      <ul className='nav_list'>
+        <li className='nav_li_item'>
+          <Link to='/login' className='link_tag_destination'>
+            <i className='bx bxs-log-in nav_icon_item'></i>
+            <span className="links_name">Login</span>
+          </Link>
+        </li>
+        <li className='nav_li_item'>
+          <Link to='/signup' className='link_tag_destination'>
+            <i className='bx bxs-message-square-add nav_icon_item'></i>
+            <span className="links_name">Sign Up</span>
+          </Link>
+        </li>
+        <li className='nav_li_item'>
+          <Link to='/events' className='link_tag_destination'>
+            <i className='bx bxs-file-find nav_icon_item'></i>
+            <span className="links_name">Search Events</span>
+          </Link>
+        </li>
+      </ul>
+    </div> 
+    }
     </>
   )
 }
