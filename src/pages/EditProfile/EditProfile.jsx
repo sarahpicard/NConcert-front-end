@@ -21,16 +21,6 @@ const EditProfile = (props) => {
     setProfileData({...profileData, [evt.target.name]: evt.target.value})
   }
 
-  const handleUpdateBio = (evt) => {
-    console.log("update bio")
-    evt.preventDefault()
-    try {
-      //api call here
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
   const handleAddGenre = (evt) => {
     console.log("add genre: ", profileData.genre)
     evt.preventDefault()
@@ -40,6 +30,7 @@ const EditProfile = (props) => {
       console.log(err)
     }
   }
+
 
   const handleAddArtist = (evt) => {
     console.log("add artist: ", profileData.artist)
@@ -51,11 +42,21 @@ const EditProfile = (props) => {
     }
   }
 
-  const handleUpdateSpotify = (evt) => {
-    console.log("update spotify")
+  const handleUpdateBio = (evt) => {
+    console.log("update bio: ", profileData.bio)
     evt.preventDefault()
     try {
-      //api call here
+      profileService.updateBio(profileData.bio)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const handleUpdateSpotify = (evt) => {
+    console.log("update spotify: ", profileData.spotify)
+    evt.preventDefault()
+    try {
+      profileService.updateSpotify(profileData.spotify)
     } catch (err) {
       console.log(err)
     }
