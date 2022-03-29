@@ -107,6 +107,34 @@ async function addArtist (artist) {
   .then(res => res.json)
 }
 
+async function updateBio (bio) {
+  console.log("bio: ", bio)
+  return await fetch(`${BASE_URL}/update/bio/${bio}`, 
+  {
+    method: 'PUT',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify()
+  },)
+  .then(res => res.json)
+}
+
+async function updateSpotify (spotify) {
+  console.log("spotify: ", spotify)
+  return await fetch(`${BASE_URL}/update/spotify/${spotify}/`, 
+  {
+    method: 'PUT',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify()
+  },)
+  .then(res => res.json)
+}
+
 export {
   getAllProfiles,
   createProfileData,
@@ -117,5 +145,6 @@ export {
   deleteGenre,
   addGenre,
   addArtist,
-
+  updateBio,
+  updateSpotify,
 }
