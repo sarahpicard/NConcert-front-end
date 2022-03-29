@@ -42,9 +42,23 @@ async function addFriend (profileId, profileName, profileBio) {
   .then(res => res.json)
 }
 
+async function deleteFriend (profileObjectId) {
+  return await fetch(`${BASE_URL}/delete/${profileObjectId}/`, 
+  {
+    method: 'DELETE',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify()
+  },)
+  .then(res => res.json)
+}
+
 export {
   getAllProfiles,
   createProfileData,
   showProfile,
   addFriend,
+  deleteFriend,
 }
