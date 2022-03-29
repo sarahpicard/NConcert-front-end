@@ -2,9 +2,10 @@
 
 const Artist = (props) => {
   return ( 
-    <>
-      <h1>Artist Info Here</h1>
-    </>
+    <div>
+      <p>{props.artist.artist}</p>
+      <button type="submit" onClick={() => props.handleDeleteArtist(props.artist._id)}>Delete Artist</button>
+    </div>
    );
 }
  

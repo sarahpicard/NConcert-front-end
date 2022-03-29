@@ -2,9 +2,10 @@
 
 const Genre = (props) => {
   return ( 
-    <>
-      <h1>Genre Info Here</h1>
-    </>
+    <div>
+      <p>{props.genre.genre}</p>
+      <button type="submit" onClick={() => props.handleDeleteGenre(props.genre._id)}>Delete Genre</button>
+    </div>
    );
 }
  

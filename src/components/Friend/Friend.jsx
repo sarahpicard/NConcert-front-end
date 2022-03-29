@@ -13,15 +13,6 @@ const Friend = (props) => {
     .then(profileData => setProfile(profileData))
   })
 
-  // const handleDeleteFriend = (evt) => {
-  //   evt.preventDefault()
-  //   try {
-  //     profileService.deleteFriend(props.friend._id)
-  //   } catch (err) {
-  //     console.log(err)
-  //   } 
-  // }
-
   return ( 
     <>
       <h2>{props.friend.name}</h2>
