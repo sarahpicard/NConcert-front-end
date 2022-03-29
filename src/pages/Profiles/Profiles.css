@@ -9,6 +9,14 @@
   font-size: 40px;
   color: black;
 }
+.profile-more-info-btn:hover {
+  color: #377f6e;
+}
 .individual-cards {
   text-align: center;
+  color: black;
+}
+.individual-cards:hover {
+  transform: scale(1.1);
+  color: #377f6e;
 }
