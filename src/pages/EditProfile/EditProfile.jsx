@@ -63,9 +63,9 @@ const EditProfile = (props) => {
         </label>
         <button type="submit">Add Artist</button>
       </form>
-      <form onSubmit={handleAddArtist}>
+      <form onSubmit={handleUpdateSpotify}>
         <label>New Spotify Playlist:
-          <input type="text" value={artist} name="artist" autoComplete="off" onChange={handleUpdateProfileData}/>
+          <input type="text" value={spotify} name="spotify" autoComplete="off" onChange={handleUpdateProfileData}/>
         </label>
         <button type="submit">Update Playlist</button>
       </form>
