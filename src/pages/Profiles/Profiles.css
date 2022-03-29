@@ -1,3 +1,14 @@
 .profiles-cards {
   margin-top: 3%;
 }
+.all-profiles-avatar-img {
+  height: 300px;
+  width: 285px;
+}
+.profile-more-info-btn {
+  font-size: 40px;
+  color: black;
+}
+.individual-cards {
+  text-align: center;
+}

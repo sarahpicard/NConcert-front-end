@@ -41,6 +41,8 @@ a, a:hover {
 }
 .see-more-link {
   float: right;
+  color: black;
+  margin-top: 1.4%;
 }
 
 @media screen and (min-width: 420px) {

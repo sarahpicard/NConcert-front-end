@@ -97,10 +97,12 @@ const Search = (props) => {
                       <Link to={`/events/${event.id}`} state={{event}}>
                         <h1 className='postcard_title'>{event.name}</h1>
                       </Link>
+                      <Link to={`/events/${event.id}`} state={{event}} className='see-more-link'>
+                          <i className='bx bx-chevrons-right bx-lg'></i>
+                      </Link>
                       <div className="postcard_subtitle small">
                         <p>{event.dates.start.localTime}</p>
                         <p>{event.dates.start.localDate}</p>
-                        <a className="see-more-link" href={`/events/${event.id}`} state={{event}}>See More</a>
                       </div>
                       <div className="postcard_preview-txt">
                         some information about the event...

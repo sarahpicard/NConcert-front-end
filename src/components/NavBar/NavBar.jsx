@@ -3,7 +3,6 @@ import { useState } from 'react'
 
 import 'react-pro-sidebar/dist/css/styles.css'
 import './NavBar.css'
-import { faCropSimple } from '@fortawesome/free-solid-svg-icons'
 
 
 const NavBar = ({ user, handleLogout }) => {
