@@ -13,7 +13,56 @@ const NavBar = ({ user, handleLogout }) => {
   }
   return (
     <>
-    <div id="header">
+      <div className="sidebar">
+        <div className="logo-content">
+          <div className="logo">
+            <i className="bx bxl-deezer"></i>
+            <div className="logo_name">N'Concert</div>
+          </div>
+          <i className="bx bx-menu" id="nav-menu-btn"></i>
+        </div>
+        <ul className='nav_list'>
+          <li>
+            <a href="#">
+              <i className='bx bxs-face'></i>
+              <span className="links_name">Profiles</span>
+            </a>
+            {/* <span className="tooltip">Profiles</span> */}
+          </li>
+          <li>
+            <a href="#">
+              <i className='bx bxs-calendar-event'></i>
+              <span className="links_name">My Events</span>
+            </a>
+            {/* <span className="tooltip">Profiles</span> */}
+          </li>
+          <li>
+            <a href="#">
+              <i className='bx bxs-star'></i>
+              <span className="links_name">Favorites</span>
+            </a>
+            {/* <span className="tooltip">Profiles</span> */}
+          </li>
+          <li>
+            <a href="#">
+              <i className='bx bxs-file-find'></i>
+              <span className="links_name">Search Events</span>
+            </a>
+            {/* <span className="tooltip">Profiles</span> */}
+          </li>
+          <li>
+            <a href="#">
+              <i className='bx bxs-lock-alt'></i>
+              <span className="links_name">Change Password</span>
+            </a>
+            {/* <span className="tooltip">Profiles</span> */}
+          </li>
+        </ul>
+        <i className="bx bxs-log-out">Logout</i>
+      </div>
+
+
+    {/* <div id="header">
       {user ?
       <ProSidebar collapsed={menuCollapse}>
         <SidebarHeader>
@@ -78,7 +127,7 @@ const NavBar = ({ user, handleLogout }) => {
         </SidebarContent>
       </ProSidebar>
       }
-    </div>
+    </div> */}
     </>
   )
 }

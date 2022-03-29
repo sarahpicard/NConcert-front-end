@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { getSearch, showEvent } from '../../services/eventServices'
+import Comments from '../../components/Comments/Comments'
 
 import './EventDetail.css'
 
@@ -102,6 +103,10 @@ const EventDetail = () => {
       <h6>No seating map available, please see event link for more details.</h6>
     </div>
     }
+
+    <div>
+      <Comments event={location.state.event}/>
+    </div>
     </>
   )
 }
