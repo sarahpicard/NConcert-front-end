@@ -25,6 +25,8 @@ const EditProfile = (props) => {
     setProfileData({...profileData, [evt.target.name]: evt.target.value})
   }
 
+  
+
   const { bio } = profileData
   const { genre } = profileData
   const { artist } = profileData
@@ -53,7 +55,7 @@ const EditProfile = (props) => {
       <>
         <h2>My Favorite Genres:</h2>
         {profile?.genre.map(genre => 
-          <Genre genre={genre} />
+          <Genre genre={genre} handleDeleteArtist={props.handleDeleteArtist} handleDeleteGenre={props.handleDeleteGenre}/>
         )}
       </>
       </div>
@@ -61,7 +63,7 @@ const EditProfile = (props) => {
       <>
         <h2>My Favorite Artists:</h2>
         {profile?.artist.map(artist => 
-          <Artist artist={artist} />
+          <Artist artist={artist} handleDeleteArtist={props.handleDeleteArtist} handleDeleteGenre={props.handleDeleteGenre}/>
         )}
       </>
       </div>

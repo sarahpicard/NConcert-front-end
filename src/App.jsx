@@ -44,6 +44,24 @@ const App = () => {
     } 
   }
 
+  const handleDeleteGenre = (genreId) => {
+    console.log(genreId)
+    try {
+      profileService.deleteGenre(genreId)
+    } catch (err) {
+      console.log(err)
+    } 
+  }
+
+  const handleDeleteArtist = (artistId) => {
+    console.log(artistId)
+    try {
+      profileService.deleteArtist(artistId)
+    } catch (err) {
+      console.log(err)
+    } 
+  }
+
 
 
   return (
@@ -74,7 +92,7 @@ const App = () => {
         <Route path='/events' element={<Events />} />
         <Route path='/profile' element={<ProfilePage />} />
         <Route path='/profile/:id' element={<ProfilePage user={user} handleDeleteFriend={handleDeleteFriend}/>}/>
-        <Route path="/profile/:id/edit" element={<EditProfile user={user}/>}/>
+        <Route path="/profile/:id/edit" element={<EditProfile user={user} handleDeleteArtist={handleDeleteArtist} handleDeleteGenre={handleDeleteGenre}/>}/>
         <Route path='/events/:id' element={<EventDetail />} />
       </Routes>
     </>

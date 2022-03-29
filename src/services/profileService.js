@@ -55,10 +55,39 @@ async function deleteFriend (profileObjectId) {
   .then(res => res.json)
 }
 
+async function deleteArtist (artistId) {
+  return await fetch(`${BASE_URL}/delete/${artistId}/`, 
+  {
+    method: 'DELETE',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify()
+  },)
+  .then(res => res.json)
+}
+
+async function deleteGenre (genreId) {
+  return await fetch(`${BASE_URL}/delete/${genreId}/`, 
+  {
+    method: 'DELETE',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify()
+  },)
+  .then(res => res.json)
+}
+
+
 export {
   getAllProfiles,
   createProfileData,
   showProfile,
   addFriend,
   deleteFriend,
+  deleteArtist,
+  deleteGenre,
 }
