@@ -70,7 +70,7 @@ const ProfilePage = (props) => {
   
   return (
     <>
-    {props.user.profile === location.state.profile._id  ? 
+    {props.user.profile === location.state.profile  ? 
       <>
         <h1>My Profile</h1>
           { !isComplete ?
