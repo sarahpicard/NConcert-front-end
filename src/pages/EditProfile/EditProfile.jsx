@@ -23,21 +23,45 @@ const EditProfile = (props) => {
 
   const handleUpdateBio = (evt) => {
     console.log("update bio")
+    evt.preventDefault()
+    try {
+      //api call here
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   const handleAddGenre = (evt) => {
-    console.log("add genre")
+    console.log("add genre: ", profileData.genre)
+    evt.preventDefault()
+    try {
+      profileService.addGenre(profileData.genre)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   const handleAddArtist = (evt) => {
-    console.log("add artist")
+    console.log("add artist: ", profileData.artist)
+    evt.preventDefault()
+    try {
+      profileService.addArtist(profileData.artist)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   const handleUpdateSpotify = (evt) => {
     console.log("update spotify")
+    evt.preventDefault()
+    try {
+      //api call here
+    } catch (err) {
+      console.log(err)
+    }
   }
 
-    const { bio } = profileData
+  const { bio } = profileData
   const { genre } = profileData
   const { artist } = profileData
   const { spotify } = profileData
@@ -69,21 +93,22 @@ const EditProfile = (props) => {
         </label>
         <button type="submit">Update Playlist</button>
       </form>
+      <br/>
       <div>
-      <>
+        <h2>Bio:</h2>
+        <p>{profile?.bio}</p>
+      </div>
+      <div>
         <h2>My Favorite Genres:</h2>
         {profile?.genre.map(genre => 
           <Genre genre={genre} handleDeleteGenre={props.handleDeleteGenre}/>
         )}
-      </>
       </div>
       <div>
-      <>
         <h2>My Favorite Artists:</h2>
         {profile?.artist.map(artist => 
           <Artist artist={artist} handleDeleteArtist={props.handleDeleteArtist}/>
         )}
-      </>
       </div>
     </>
   )

@@ -36,17 +36,12 @@ const ProfilePage = (props) => {
   }
 
   const submitProfileData = (evt) => {
-    console.log("profileData: ", profileData )
     evt.preventDefault()
     try {
       profileService.createProfileData(profileData)
       .then(profileData => {
-        console.log("profileData: ", profileData)
-        // setProfileData(profileData)
         setProfile(profileData)
-        // navigate(`/profile/${props.user.profile}`)
         setIsComplete(true)
-        console.log("isComplete submit: ", isComplete)
       })
     } catch (err) {
       console.log(err)
