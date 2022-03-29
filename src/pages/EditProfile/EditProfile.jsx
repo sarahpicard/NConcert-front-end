@@ -55,7 +55,7 @@ const EditProfile = (props) => {
       <>
         <h2>My Favorite Genres:</h2>
         {profile?.genre.map(genre => 
-          <Genre genre={genre} handleDeleteArtist={props.handleDeleteArtist} handleDeleteGenre={props.handleDeleteGenre}/>
+          <Genre genre={genre} handleDeleteGenre={props.handleDeleteGenre}/>
         )}
       </>
       </div>
@@ -63,7 +63,7 @@ const EditProfile = (props) => {
       <>
         <h2>My Favorite Artists:</h2>
         {profile?.artist.map(artist => 
-          <Artist artist={artist} handleDeleteArtist={props.handleDeleteArtist} handleDeleteGenre={props.handleDeleteGenre}/>
+          <Artist artist={artist} handleDeleteArtist={props.handleDeleteArtist}/>
         )}
       </>
       </div>

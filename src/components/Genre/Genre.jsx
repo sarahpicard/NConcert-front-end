@@ -4,7 +4,7 @@ const Genre = (props) => {
   return ( 
     <div>
       <p>{props.genre.genre}</p>
-      <button type="submit">Delete Genre</button>
+      <button type="submit" onClick={() => props.handleDeleteGenre(props.genre._id)}>Delete Genre</button>
     </div>
    );
 }

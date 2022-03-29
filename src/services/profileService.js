@@ -56,7 +56,7 @@ async function deleteFriend (profileObjectId) {
 }
 
 async function deleteArtist (artistId) {
-  return await fetch(`${BASE_URL}/delete/${artistId}/`, 
+  return await fetch(`${BASE_URL}/delete/artist/${artistId}/`, 
   {
     method: 'DELETE',
     headers: {
@@ -69,7 +69,7 @@ async function deleteArtist (artistId) {
 }
 
 async function deleteGenre (genreId) {
-  return await fetch(`${BASE_URL}/delete/${genreId}/`, 
+  return await fetch(`${BASE_URL}/delete/genre/${genreId}/`, 
   {
     method: 'DELETE',
     headers: {
