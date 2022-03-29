@@ -6,10 +6,10 @@ const Friend = (props) => {
   let location = useLocation()
 
   const handleDeleteFriend = (evt) => {
-    console.log(props.friend.profileId)
+    console.log(props.friend._id)
     evt.preventDefault()
     try {
-      profileService.deleteFriend(props.friend.profileId)
+      profileService.deleteFriend(props.friend._id)
     } catch (err) {
       console.log(err)
     } 
