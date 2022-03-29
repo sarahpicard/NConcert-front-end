@@ -15,9 +15,15 @@ async function showEvent(event) {
   return await res.json()
 }
 
+async function createComment(event) {
+  return await fetch(`${BASE_URL}/${event}/comments`, {
+    method: 'POST', 
+  },)
+}
 
 export {
   getSearch, 
-  showEvent
+  showEvent, 
+  createComment,
   // getNextPage
 }
