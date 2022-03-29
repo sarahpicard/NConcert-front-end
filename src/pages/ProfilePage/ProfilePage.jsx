@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { showProfile } from "../../services/profileService"
 import * as profileService from '../../services/profileService'
-import { Link } from "react-router-dom"
+import { Friend } from "../../components/Friend/Friend"
 
 const ProfilePage = (props) => {
   const [profile, setProfile] = useState()
@@ -11,7 +11,6 @@ const ProfilePage = (props) => {
     genre: '',
     artist: '',
     bio: '',
-    spotify: ''
   })
   
   useEffect(() => {
@@ -35,7 +34,6 @@ const ProfilePage = (props) => {
   }
 
   const handleAddFriend = (evt) => {
-    console.log("location.state.profile: ", location.state.profile)
     evt.preventDefault()
     try {
       profileService.addFriend(location.state.profile._id, location.state.profile.name, location.state.profile.bio)
@@ -95,13 +93,7 @@ const ProfilePage = (props) => {
                 <h2>My Friends Here</h2>
                 {console.log(location.state.profile.friends)}
                 {location.state.profile.friends.map(friend => 
-                  <>
-                    <p>{friend.name}</p>
-                    <p>{friend.bio}</p>
-                    <Link to={`/profile/${friend.profileId}`}>
-                      View Profile
-                    </Link>
-                  </>
+                  <Friend friend={friend} handleDeleteFriend={props.handleDeleteFriend}/>
                 )}
               </>
              :
@@ -113,8 +105,6 @@ const ProfilePage = (props) => {
       </>
       :
       <>
-        {/* {console.log("userId: ", props.user)}
-        {console.log("profile: ", location.state.profile)} */}
         <h1>{location.state.profile.name}'s Profile</h1>
         <div>
           <p>Bio: {location.state.profile.bio}</p>

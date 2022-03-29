@@ -9,6 +9,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import * as eventService from './services/eventServices.js'
+import * as profileService from './services/profileService'
 import Home from './pages/Home/Home'
 import MyEvents from './pages/MyEvents/MyEvents'
 import Favorites from './pages/Favorites/Favorites'
@@ -34,7 +35,14 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-
+  const handleDeleteFriend = (friendId) => {
+    console.log(friendId)
+    try {
+      profileService.deleteFriend(friendId)
+    } catch (err) {
+      console.log(err)
+    } 
+  }
 
 
 
@@ -65,7 +73,7 @@ const App = () => {
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/events' element={<Events />} />
         <Route path='/profile' element={<ProfilePage />} />
-        <Route path='/profile/:id' element={<ProfilePage user={user}/>}/>
+        <Route path='/profile/:id' element={<ProfilePage user={user} handleDeleteFriend={handleDeleteFriend}/>}/>
         <Route path="/profile/:id/edit" element={<EditProfile user={user}/>}/>
         <Route path='/events/:id' element={<EventDetail />} />
       </Routes>
