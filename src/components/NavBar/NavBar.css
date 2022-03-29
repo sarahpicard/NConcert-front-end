@@ -1,4 +1,4 @@
-li {
+/* li {
   list-style: none;
   height: 50px;
   width: 100%;
@@ -77,8 +77,11 @@ i {
   text-align: center;
   line-height: 50px;
   transform: translateX(-50%);
-}
+} */
 
+
+
+/* new code ABOVE */
 
 /* #header {
   position: absolute;

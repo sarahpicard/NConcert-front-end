@@ -1,11 +1,12 @@
 import * as eventServices from '../../services/eventServices'
 import { useEffect, useState } from 'react'
 
-const Comments = () => {
+const Comments = (props) => {
   const [commentData, setCommentData] = useState({
     name: '',
     // should set this to current user
     comment: '',
+    eventId: props.id,
   })
 
   const handleChange = (evt) => {
@@ -24,6 +25,7 @@ const Comments = () => {
 
   const { name } = commentData
   const { comment } = commentData
+  const { eventId } = commentData
 
   return (
     <>
@@ -36,8 +38,11 @@ const Comments = () => {
         </label>
         <button type='submit'>Submit Comment</button>
       </form>
-
-      {commentData ?
+      
+      {console.log(props.id)}
+      {console.log('event', props.currentEvent)}
+      {props.id === eventId ? 
+      // {commentData ?
         <table>
           <thead>
             <tr>
@@ -47,7 +52,6 @@ const Comments = () => {
             </tr>
           </thead>
           <tbody>
-            {console.log('name', name)}
             {/* {commentData.map(comment =>  */}
             <tr>
               <td>

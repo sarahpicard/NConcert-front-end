@@ -104,9 +104,9 @@ const EventDetail = () => {
     </div>
     }
 
-    <div>
-      <Comments event={location.state.event}/>
-    </div>
+    {/* <div>
+      <Comments event={location.state.event} id={location.state.event.id} currentEvent={location.state.event.id}/>
+    </div> */}
     </>
   )
 }
