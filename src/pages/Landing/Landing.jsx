@@ -16,11 +16,9 @@ const Landing = ({ user }) => {
   return (
     <>
       <h1>N'Concert</h1>
-      {console.log(profiles)}
-      {profiles.map(profile => {
-        console.log(profile)
-      })}
-
+      {console.log({user})}
+      <h1><a href={`/profile/${user.profile}`}>My Profile</a></h1>
+      <h1>Search Events!</h1>
       <Search />
     </>
   )
