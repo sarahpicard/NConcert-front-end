@@ -3,11 +3,10 @@ import { useEffect, useState } from "react"
 import { showProfile } from "../../services/profileService"
 import * as profileService from '../../services/profileService'
 import { Friend } from "../../components/Friend/Friend"
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const ProfilePage = (props) => {
-  const navigate = useNavigate()
   const [profile, setProfile] = useState()
   const [isComplete, setIsComplete] = useState(false)
   let location = useLocation()
@@ -71,13 +70,11 @@ const ProfilePage = (props) => {
   
   return (
     <>
-    {console.log(profile)}
-    {props.user.profile === location.state.profile._id  ? 
+    {props.user.profile === location.state.profile  ? 
       <>
         <h1>My Profile</h1>
           { !isComplete ?
             <>
-            {/* //useNavigate to edit page */}
             <h1>Edit Profile</h1>
               <h4>Add your favorite artists and genres!</h4>
                 <form onSubmit={submitProfileData}>
@@ -134,11 +131,11 @@ const ProfilePage = (props) => {
         <h1>{location.state.profile.name}'s Profile</h1>
         <div>
           <p>Bio: {location.state.profile.bio}</p>
-          <p>Favorite Artists: {location.state.profile.artist.map(artist => 
+          <p>Favorite Artists: {location.state.profile.artist?.map(artist => 
              <>{artist.artist}</>
             )}
           </p>
-          <p>Favorite Genres: {location.state.profile.genre.map(genre => 
+          <p>Favorite Genres: {location.state.profile.genre?.map(genre => 
             <>{genre.genre}</>
             )}
           </p>

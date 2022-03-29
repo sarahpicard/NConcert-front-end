@@ -30,8 +30,8 @@ const Profiles = () => {
                       <div className="card-body">
                         <h5 className="card-title" key={profile._id}>{profile.name}</h5>
                         <p className="card-text">Some kind of info about the person</p>
-                          <Link to={`/profile/${profile._id}`} state={{profile}}> link to profile
-                          </Link>
+                        <Link to={`/profile/${profile._id}`} state={{profile}}> link to profile
+                        </Link>
                       </div>
                   </div>
                 </div>
