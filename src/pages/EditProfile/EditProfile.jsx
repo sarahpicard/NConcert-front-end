@@ -12,10 +12,10 @@ const EditProfile = (props) => {
     spotify: '',
   })
 
-  // useEffect(() => {
-  //   showProfile(props.user.profile)
-  //   .then(profileData => setProfile(profileData))
-  // })
+  useEffect(() => {
+    profileService.showProfile(props.user.profile)
+    .then(data => setProfile(data))
+  }, [])
 
   const handleUpdateProfile = (evt) => {
     console.log("something here")
@@ -50,11 +50,20 @@ const EditProfile = (props) => {
         <button type="submit">Update Profile</button>
       </form>
       <div>
-        {console.log(props)}
-        <Artist />
+      <>
+        <h2>My Favorite Genres:</h2>
+        {profile?.genre.map(genre => 
+          <Genre genre={genre} />
+        )}
+      </>
       </div>
       <div>
-        <Genre />
+      <>
+        <h2>My Favorite Artists:</h2>
+        {profile?.artist.map(artist => 
+          <Artist artist={artist} />
+        )}
+      </>
       </div>
     </>
   )

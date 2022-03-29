@@ -2,8 +2,8 @@
 
 const Artist = (props) => {
   return ( 
-    <>
-      <h1>Artist Info Here</h1>
+<>
+      <p>{props.artist.artist}</p>
     </>
    );
 }
