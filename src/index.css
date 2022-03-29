@@ -6,7 +6,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-right: ;
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 240px);
+  left: 240px;
 }
 
 code {
