@@ -81,6 +81,31 @@ async function deleteGenre (genreId) {
   .then(res => res.json)
 }
 
+async function addGenre (genre) {
+  return await fetch(`${BASE_URL}/add/genre/${genre}/`, 
+  {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify()
+  },)
+  .then(res => res.json)
+}
+
+async function addArtist (artist) {
+  return await fetch(`${BASE_URL}/add/artist/${artist}/`, 
+  {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify()
+  },)
+  .then(res => res.json)
+}
 
 export {
   getAllProfiles,
@@ -90,4 +115,7 @@ export {
   deleteFriend,
   deleteArtist,
   deleteGenre,
+  addGenre,
+  addArtist,
+
 }

@@ -17,7 +17,8 @@ const Landing = ({ user }) => {
     <>
       <h1>N'Concert</h1>
       {console.log({user})}
-      <Link to={`/profile/${user.profile}`} state={user}>
+
+      <Link to={`/profile/${user?.profile}`} state={user}>
         My Profile
       </Link>
       <h1>Search Events!</h1>
