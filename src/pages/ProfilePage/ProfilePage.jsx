@@ -93,7 +93,7 @@ const ProfilePage = (props) => {
                 <h2>My Friends Here</h2>
                 {console.log(location.state.profile.friends)}
                 {location.state.profile.friends.map(friend => 
-                  <Friend friend={friend}/>
+                  <Friend friend={friend} handleDeleteFriend={props.handleDeleteFriend}/>
                 )}
               </>
              :
