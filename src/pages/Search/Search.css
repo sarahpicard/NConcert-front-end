@@ -1,6 +1,3 @@
-element {
-  --main-blue: #0076bd,
-}
 
 .postcard_subtitle , .postcard_preview-txt{
   color: black;
@@ -44,6 +41,12 @@ a, a:hover {
   color: black;
   margin-top: 1.4%;
 }
+.see-more-link:hover, .event-list-names:hover{
+  color: #377f6e;
+}
+.event-list-names {
+  color: black;
+}
 
 @media screen and (min-width: 420px) {
   .postcard {
@@ -86,11 +89,3 @@ a, a:hover {
     padding: 2rem 3.5rem;
   }
 }
-
-.blue .postcard__title:hover {
-	color: var(--main-blue);
-}
-.blue .postcard__bar {
-	background-color: var(--main-blue);
-}
-

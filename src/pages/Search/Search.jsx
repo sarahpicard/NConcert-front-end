@@ -81,7 +81,6 @@ const Search = (props) => {
           <div>
             {searchResults._embedded.events.map(event =>
               <section>
-                {/* {console.log(event)} */}
                 <div className="container py-2">
                   <article className="postcard">
                     <Link to={`/events/${event.id}`} className="postcard_img_link" state={{event}}>
@@ -93,9 +92,8 @@ const Search = (props) => {
                           />
                     </Link>
                     <div className='postcard-information'>
-                      {/* {console.log(searchResults._embedded.events)} */}
                       <Link to={`/events/${event.id}`} state={{event}}>
-                        <h1 className='postcard_title'>{event.name}</h1>
+                        <h1 className='postcard_title event-list-names'>{event.name}</h1>
                       </Link>
                       <Link to={`/events/${event.id}`} state={{event}} className='see-more-link'>
                           <i className='bx bx-chevrons-right bx-lg'></i>
