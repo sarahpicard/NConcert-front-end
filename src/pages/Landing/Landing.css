@@ -1,5 +1,26 @@
 .whole-landing-page {
-  margin-left: 5%;
-  margin-top: 40px;
-  padding-top: 20px;
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 60px;
+  padding: 50px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #e2f3ef;
+  border-radius: 70px;
+}
+.user_name_landing {
+  font-size: 50px;
+  font-weight: 600;
+}
+.btn-success {
+  background-color: #377f6e;
+}
+.btn-success:hover {
+  background-color: #317162;
+}
+.landing-button-text {
+  color: white;
+  text-decoration: none;
+}
+.landing-button-text:hover {
+  color: #e2f3ef;
 }

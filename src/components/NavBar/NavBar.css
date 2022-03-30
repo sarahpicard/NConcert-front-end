@@ -58,6 +58,12 @@
   -ms-transform: rotate(360deg);
   -webkit-transform: rotate(360deg);
 }
+.profile_content:hover .nav_icon_item_logout {
+  transition: 0.9s;
+  transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+}
 
 .nav_icon_item_logout {
   height: 70px;

@@ -18,16 +18,18 @@ const Landing = ({ user }) => {
   return (
     <div className='whole-landing-page'>
     {user ?
-      <div>
-        <h1>Hello, {user.name.charAt(0).toUpperCase() + user.name.slice(1)}! 👋</h1>
+      <div className='landing-color-page'>
+        <h1 className='user_name_landing'>Hello, {user.name.charAt(0).toUpperCase() + user.name.slice(1)}! 👋</h1>
         <h5>Welcome back!</h5>
-        <Link to={`/profile/${user?.profile}`} state={user}>
+        <button className='btn btn-success'>
+          <Link to={`/profile/${user?.profile}`} state={user} className="landing-button-text">
           View My Profile
-        </Link>
+          </Link>
+        </button>
       </div>
       : 
-      <div>
-        <h1>Hello, Stranger 👋</h1>
+      <div className='landing-color-page'>
+        <h1 className='user_name_landing'>Hello, Stranger 👋</h1>
         <h5>Welcome to the party!</h5>
       </div>
     }
