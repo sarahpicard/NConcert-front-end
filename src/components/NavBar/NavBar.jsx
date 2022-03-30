@@ -9,7 +9,7 @@ const NavBar = ({ user, handleLogout }) => {
   return (
     <>
     {user ?
-      <div className="sidebar">
+      <div className="sidebar whole-navigation-bar">
         <div className="logo-content">
           <div className="logo">
             <i className="bx bxl-deezer nav_icon_item"></i>
@@ -53,7 +53,10 @@ const NavBar = ({ user, handleLogout }) => {
         <div className="profile_content">
           <div className="profile">
             <Link to='' onClick={handleLogout} className='link_tag_destination'>
-              <i className="bx bxs-log-out nav_icon_item" id="logout">Logout</i>
+              <div  id="logout">
+                <i className="bx bxs-log-out nav_icon_item_logout"></i>
+                <span className='logout-btn'>Logout</span>
+              </div>
             </Link>
           </div>
         </div>

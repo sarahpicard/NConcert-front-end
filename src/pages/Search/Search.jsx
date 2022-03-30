@@ -82,7 +82,7 @@ const Search = (props) => {
             {searchResults._embedded.events.map(event =>
               <section>
                 <Link to={`/events/${event.id}`} className="postcard_img_link" state={{event}}>
-                <div className="container py-2">
+                <div className="container py-2 whole-event-card">
                   <article className="postcard">
                     <Link to={`/events/${event.id}`} className="postcard_img_link" state={{event}}>
                         <img

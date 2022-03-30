@@ -36,6 +36,13 @@ a, a:hover {
   height: 180px;
   width: 200px;
 }
+.whole-event-card {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+.whole-event-card:hover {
+  transform: scale(1.1);
+}
 .see-more-link {
   float: right;
   color: black;
@@ -46,6 +53,8 @@ a, a:hover {
 }
 .event-list-names {
   color: black;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 500;
 }
 
 @media screen and (min-width: 420px) {

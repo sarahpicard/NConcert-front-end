@@ -1,8 +1,14 @@
+.whole-navigation-bar, .logout-btn {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
 .nav_li_item {
   list-style: none;
   height: 50px;
   width: 100%;
-  margin: 0 5px;
+  margin: 0;
+  margin-top: 15%;
   position: relative;
   line-height: 50px;
 }
@@ -37,6 +43,12 @@
   line-height: 50px;
   text-align: center;
 }
+.nav_icon_item_logout {
+  height: 70px;
+  min-width: 70px;
+  line-height: 50px;
+  text-align: center;
+}
 .sidebar {
   position: fixed;
   top: 0;
@@ -53,17 +65,26 @@
   height: 50px;
   width: 100%;
   align-items: center;
+  margin-top: 18%;
 }
 .logo_content, .logo, i{
-  font-size: 25px;
+  font-size: 27px;
   margin-right: 5px;
 }
 
 .logo_name {
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 2%;
+  font-family: 'League Spartan', sans-serif;
+}
+.links_name {
+  font-size: 17px;
 }
 
+.profile_content {
+  margin-top: 5px;
+}
 #nav-menu-btn {
   position: absolute;
   color: #fff;
@@ -79,11 +100,21 @@
 
 #logout {
   position: absolute;
-  left: 70%;
+  left: 49%;
   bottom: 5px;
   transform: translateX(-50%);
   min-width: 50px;
   line-height: 50px;
   font-size: 20px;
   color: #fff;
+}
+.logout-btn {
+  position: absolute;
+  left: 75%;
+}
+
+@media screen and (max-height: 600px) {
+  .profile_content {
+    display: none;
+  }
 }
