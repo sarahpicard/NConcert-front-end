@@ -1,6 +1,6 @@
 .whole-navigation-bar, .logout-btn {
   font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .nav_li_item {
@@ -32,6 +32,9 @@
   transition: all 0.4s ease;
   border-radius: 12px;
 }
+.link_tag_destination_home:hover {
+  color: #e2f3ef;
+}
 .link_tag_destination:hover {
   background-color: #fff;
   color: #11101d;
@@ -43,6 +46,19 @@
   line-height: 50px;
   text-align: center;
 }
+.nav_li_item:hover .nav_icon_item {
+  transition: 0.9s;
+  transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+}
+.logo:hover .nav_icon_item {
+  transition: 0.9s;
+  transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+}
+
 .nav_icon_item_logout {
   height: 70px;
   min-width: 70px;
@@ -55,7 +71,7 @@
   left: 0;
   height: 100%;
   width: 240px;
-  background-color: #11101d;
+  background-color: #377f6e;
   padding: 6px 14px;
 }
 
@@ -65,7 +81,8 @@
   height: 50px;
   width: 100%;
   align-items: center;
-  margin-top: 18%;
+  margin-top: 25%;
+  margin-bottom: 20%;
 }
 .logo_content, .logo, i{
   font-size: 27px;

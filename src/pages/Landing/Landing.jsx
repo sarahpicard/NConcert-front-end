@@ -4,6 +4,8 @@ import Search from "../Search/Search.jsx"
 import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
 
+import './Landing.css'
+
 const Landing = ({ user }) => {
   const [profiles, setProfiles] = useState([])
 
@@ -14,7 +16,7 @@ const Landing = ({ user }) => {
 
 
   return (
-    <>
+    <div className='whole-landing-page'>
     {user ?
       <div>
         <h1>Hello, {user.name.charAt(0).toUpperCase() + user.name.slice(1)}! 👋</h1>
@@ -32,7 +34,7 @@ const Landing = ({ user }) => {
 
       <h1>Search Events!</h1>
       <Search />
-    </>
+    </div>
   )
 }
 
