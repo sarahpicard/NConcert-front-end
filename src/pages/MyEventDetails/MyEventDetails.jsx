@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import * as eventService from '../../services/eventServices'
 import { useLocation } from "react-router-dom"
+import * as profileService from '../../services/profileService'
 
 
 const MyEventDetails = (props) => {
@@ -9,16 +10,52 @@ const MyEventDetails = (props) => {
 
 
   useEffect(() => {
-    console.log(location.state.eventId)
     eventService.getEvent(location.state.eventId)
     .then(eventData => setEvent(eventData))
   }, [location.state.eventId])
 
-  return ( 
+  const handleInterestedEvent = (evt) => {
+    console.log("location.state.event: ", location.state.event)
+    evt.preventDefault()
+    try {
+      profileService.createInterested(location.state.event)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const handleAttendingEvent = (evt) => {
+    console.log("location.state.event: ", location.state.event)
+    evt.preventDefault()
+    try {
+      profileService.createAttending(location.state.event)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  return(
     <>
-      <h1>My Event Details Here</h1>
+      <h1>{props._name}</h1>
+      <img 
+        src={event[0]?.images?.find(image => image.height > 110 && image.width > 100).url} alt="concertImage" 
+        className='event-detail-images'
+      />
+      <button onClick={handleInterestedEvent}>
+        Interested
+      </button>
+      <button onClick={handleAttendingEvent}>
+        Attending
+      </button>
+      <h2>{location.state.name}</h2>
+      <p>{location.state.venue}</p>
+      <p>{location.state.city}, {location.state.state}</p>
+      <p>{location.state.date}</p>
+      <p>{location.state.time}</p>
+      <a href={location.state.url}>Buy Tickets</a>
+
     </>
-   );
+  )
 }
  
 export default MyEventDetails;
