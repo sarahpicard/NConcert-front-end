@@ -31,7 +31,7 @@ const Profiles = () => {
                         <img src="https://i.imgur.com/Wk1vQtF.png" alt="avatar" className='all-profiles-avatar-img'/>
                       </Link>
                         <div className="card-body">
-                          <h5 className="card-title" key={profile._id}>{profile.name}</h5>
+                          <h5 className="card-title" key={profile._id}>{profile.name.toUpperCase()}</h5>
                           <p className="card-text">this will be where profile bio goes </p>
                           <Link to={`/profile/${profile._id}`} state={{profile}}> 
                             <i className='bx bx-chevrons-down bx-lg profile-more-info-btn'></i>
