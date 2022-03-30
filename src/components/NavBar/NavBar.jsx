@@ -20,27 +20,27 @@ const NavBar = ({ user, handleLogout }) => {
         </div>
         <ul className='nav_list'>
           <li className='nav_li_item'>
-            <Link to='/profiles' className='link_tag_destination'>
-              <i className='bx bxs-face nav_icon_item'></i>
-              <span className="links_name">Profiles</span>
-            </Link>
-          </li>
-          <li className='nav_li_item'>
             <Link to='/myevents' className='link_tag_destination'>
               <i className='bx bxs-calendar-event nav_icon_item'></i>
               <span className="links_name">My Events</span>
             </Link>
           </li>
           <li className='nav_li_item'>
-            <Link to='/favorites' className='link_tag_destination'>
-              <i className='bx bxs-star nav_icon_item'></i>
-              <span className="links_name">Favorites</span>
-            </Link>
-          </li>
-          <li className='nav_li_item'>
             <Link to='/events' className='link_tag_destination'>
               <i className='bx bxs-file-find nav_icon_item'></i>
               <span className="links_name">Search Events</span>
+            </Link>
+          </li>
+          <li className='nav_li_item'>
+            <Link to='/friends' className='link_tag_destination'>
+              <i className='bx bxs-star nav_icon_item'></i>
+              <span className="links_name">My Friends</span>
+            </Link>
+          </li>
+          <li className='nav_li_item'>
+            <Link to='/profiles' className='link_tag_destination'>
+              <i className='bx bxs-face nav_icon_item'></i>
+              <span className="links_name">Find Users</span>
             </Link>
           </li>
           <li className='nav_li_item'>

@@ -18,7 +18,6 @@ const Profiles = () => {
   
   return (
     <div>
-      <h1>Hello. This is a list of all the profiles.</h1>
       {profiles.length ?
         <div className="container profiles-cards">
           <div className="row">
