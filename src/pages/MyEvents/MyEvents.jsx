@@ -3,10 +3,13 @@ import { useLocation } from "react-router-dom"
 import { Link } from "react-router-dom"
 import * as profileService from '../../services/profileService'
 import Event from "../../components/Event/Event"
+import * as eventService from '../../services/eventServices'
 
 const MyEvents = (props) => {
   const [profile, setProfile] = useState()
+  const [event,setEvent] = useState([])
   let location = useLocation()
+
 
   useEffect(() => {
     profileService.showProfile(props.user.profile)
@@ -14,6 +17,12 @@ const MyEvents = (props) => {
       setProfile(data)
     })
   }, [])
+
+  // useEffect(() => {
+  //   console.log(profile)
+  //   eventService.getEvent(props.event.eventId)
+  //   .then(eventData => setEvent(eventData))
+  // }, [event])
 
   return (
   <>
