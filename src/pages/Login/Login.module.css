@@ -6,20 +6,23 @@ body {
   
   min-height: 100vh;
   margin: auto;
+  max-width: 600px;
   
 }
 .container {
   margin: 200px;
-  width: 200px;
+  width: 400px;
   padding: 20px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: black;
+  background: black;
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
   color: white;
   position: relative;
   height: 200px;
+  border-radius: 20px;
     
 }
 
