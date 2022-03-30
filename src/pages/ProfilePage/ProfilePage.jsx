@@ -18,12 +18,11 @@ const ProfilePage = (props) => {
   })
   
   useEffect(() => {
-    showProfile(props.user.profile)
+    profileService.showProfile(props.user.profile)
     .then(data => {
       console.log('usEfffect data: ', data)
       setProfile(data)
       data.bio ? setIsComplete(true) : setIsComplete(false)
-      console.log("isComplete", isComplete)
     })
   }, [props.user.profile, isComplete])
 
@@ -65,7 +64,7 @@ const ProfilePage = (props) => {
   
   return (
     <>
-    {props.user.profile === location.state.profile  ? 
+    {props.user.profile === location.state.profile || props.user.profile === location.state.profile?._id ? 
       <>
         <h1>My Profile</h1>
           { !isComplete ?
