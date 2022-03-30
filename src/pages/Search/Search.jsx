@@ -73,7 +73,7 @@ const Search = (props) => {
         <form action="#" onSubmit={handleSubmit}>
           <input type="text" value={keyword} name="keyword" placeholder="search event" onChange={handleChange} className="search-field-input"/>
           <input type="text" value={city} name="city" placeholder="search city" onChange={handleChange} className="search-field-input"/>
-          <button disabled={isKeywordFormValid()}>Search</button>
+          <button disabled={isKeywordFormValid()} className="btn btn-success">Search</button>
         </form>
       </div>
       <div>
@@ -112,7 +112,7 @@ const Search = (props) => {
             <button onClick={nextPage}>Next Page</button>
           </div>
           :
-          <p>Nothing Searched</p>
+          <p className='nothing-searched-text'>search above to see event list</p>
         }
       </div>
     </div>

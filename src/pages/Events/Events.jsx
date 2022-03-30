@@ -7,7 +7,6 @@ import Search from "../Search/Search.jsx"
 const Events = (props) => {
   return (
     <div>
-      <h1>Events Page</h1>
       <Search events={props.events}/>
     </div>
   )

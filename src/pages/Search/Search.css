@@ -1,14 +1,14 @@
 .whole-search-component {
   margin-left: 7%;
   margin-right: 7%;
-  margin-top: 20px;
+  margin-top: 60px;
   padding: 10px;
   font-family: 'Roboto', sans-serif;
   background-color: #e2f3ef;
   border-radius: 70px;
   }
 .search-component-inputs {
-  margin-left: 4px;
+  text-align: center;
 }
 
 .postcard_subtitle , .postcard_preview-txt{
@@ -22,6 +22,12 @@
 a, a:hover {
 	text-decoration: none;
 	transition: color 0.3s ease-in-out;
+}
+.btn-success {
+  background-color: #377f6e;
+}
+.btn-success:hover {
+  background-color: #317162;
 }
 
 /* Cards */
@@ -75,9 +81,11 @@ a, a:hover {
   height: 40px;
   width: 300px;
   margin: 20px;
+  text-indent: 20px;
 }
-.search-field-input::placeholder {
-  padding-left: 20px;
+.nothing-searched-text {
+  text-align: center;
+  padding-top: 50px;
 }
 
 @media screen and (min-width: 420px) {
