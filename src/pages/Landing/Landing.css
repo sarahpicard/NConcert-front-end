@@ -7,6 +7,9 @@
   background-color: #e2f3ef;
   border-radius: 70px;
 }
+.landing-color-page {
+  margin-left: 50px;
+}
 .user_name_landing {
   font-size: 50px;
   font-weight: 600;
@@ -23,4 +26,8 @@
 }
 .landing-button-text:hover {
   color: #e2f3ef;
+}
+.h1-for-landing-search {
+  text-align: center;
+  margin-top: 60px;
 }

@@ -92,7 +92,7 @@ const App = () => {
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/events' element={<Events />} />
         <Route path='/profile' element={<ProfilePage />} />
-        <Route path='/profile/:id' element={<ProfilePage user={user} handleDeleteFriend={handleDeleteFriend}/>}/>
+        <Route path='/profile/:id' element={<ProfilePage user={user} handleDeleteFriend={handleDeleteFriend}/> }/>
         <Route path="/profile/:id/edit" element={<EditProfile user={user} handleDeleteArtist={handleDeleteArtist} handleDeleteGenre={handleDeleteGenre}/>}/>
         <Route path='/events/:id' element={<EventDetail />} />
         <Route path='/myevents/:id' element={<MyEventDetails user={user}/>}/>

@@ -12,8 +12,8 @@ async function getAllProfiles() {
 
 async function showProfile(profile){
   // console.log("profile: ", profile)
-  console.log("Data Type: ", typeof profile)
-  console.log('profile: ', profile)
+  // console.log("Data Type: ", typeof profile)
+  // console.log('profile: ', profile)
   // if (typeof profile === 'object') {
   //   console.log("true")
   // } else {

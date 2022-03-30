@@ -15,20 +15,20 @@ const MyEventDetails = (props) => {
   }, [location.state.eventId])
 
   const handleInterestedEvent = (evt) => {
-    console.log("location.state.event: ", location.state.event)
+    console.log("location.state.event: ", location.state.eventId)
     evt.preventDefault()
     try {
-      profileService.createInterested(location.state.event)
+      profileService.createInterested(location.state.eventId)
     } catch (err) {
       console.log(err)
     }
   }
 
   const handleAttendingEvent = (evt) => {
-    console.log("location.state.event: ", location.state.event)
+    console.log("location.state.event: ", location.state.eventId)
     evt.preventDefault()
     try {
-      profileService.createAttending(location.state.event)
+      profileService.createAttending(location.state.eventId)
     } catch (err) {
       console.log(err)
     }
