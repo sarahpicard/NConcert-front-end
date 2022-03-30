@@ -24,7 +24,7 @@ const MyEvents = (props) => {
         {profile?.events?.map(event => {
           return event?.attending === false && event?.interested === true ?
           // console.log("interested: ", event.attending)
-            <Event event={event}>Event Name</Event>
+            <Event event={event} key={event._id}/>
             :
             <></>
           } 
@@ -36,7 +36,7 @@ const MyEvents = (props) => {
         {profile?.events?.map(event => {
           return event?.attending === true && event?.interested === true ?
             // console.log("attending: ", event.interested )
-            <Event event={event} />
+            <Event event={event} key={event._id}/>
           // console.log("event.attending: ", event.attending)
             :
             <></>

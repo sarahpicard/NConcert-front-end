@@ -15,15 +15,24 @@ async function showEvent(event) {
   return await res.json()
 }
 
+// comments moved to ice box item for time concerns
 async function createComment(event) {
   return await fetch(`${BASE_URL}/${event}/comments`, {
     method: 'POST', 
   },)
 }
 
+async function getEvent (eventId) {
+  const res = await fetch(`${BASE_URL}/get/${eventId}`)
+  return await res.json()
+}
+
+
+
+
 export {
   getSearch, 
   showEvent, 
+  getEvent,
   createComment,
-  // getNextPage
 }
