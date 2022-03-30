@@ -19,7 +19,7 @@ const EventDetail = () => {
     console.log("location.state.event: ", location.state.event)
     evt.preventDefault()
     try {
-      profileService.createEventData(location.state.event)
+      profileService.createInterested(location.state.event)
     } catch (err) {
       console.log(err)
     }
@@ -29,7 +29,7 @@ const EventDetail = () => {
     console.log("location.state.event: ", location.state.event)
     evt.preventDefault()
     try {
-      //api call here
+      profileService.createAttending(location.state.event)
     } catch (err) {
       console.log(err)
     }
