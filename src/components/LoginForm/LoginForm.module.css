@@ -1,9 +1,9 @@
 .container {
-  display: flex;
+  display: flex left;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin: auto;
 }
 
 .label,
@@ -13,4 +13,7 @@
 
 .inputContainer {
   margin-bottom: 1rem;
+}
+:root {
+  font-size: 62.5%;
 }

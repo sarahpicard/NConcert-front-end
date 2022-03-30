@@ -26,17 +26,17 @@
   overflow: hidden;
 }
 .link_tag_destination, .link_tag_destination_home {
-  color: #fff;
+  color: #377f6e;
   display: flex;
   align-items: center;
   transition: all 0.4s ease;
   border-radius: 12px;
 }
 .link_tag_destination_home:hover {
-  color: #e2f3ef;
+  color: #377f6e;
 }
 .link_tag_destination:hover {
-  background-color: #fff;
+  background-color: #377f6e;
   color: #11101d;
 }
 .nav_icon_item {
@@ -45,6 +45,7 @@
   border-radius: 12px;
   line-height: 50px;
   text-align: center;
+  color: #11101d;
 }
 .nav_li_item:hover .nav_icon_item {
   transition: 0.9s;
@@ -77,7 +78,7 @@
   left: 0;
   height: 100%;
   width: 240px;
-  background-color: #377f6e;
+  background-color: #fff;
   padding: 6px 14px;
 }
 
@@ -129,7 +130,7 @@
   min-width: 50px;
   line-height: 50px;
   font-size: 20px;
-  color: #fff;
+  color: #377f6e;
 }
 .logout-btn {
   position: absolute;
