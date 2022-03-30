@@ -1,5 +1,4 @@
-{
-  "name": "jwt-auth-mern-template-front-end",
+{ "name": "jwt-auth-mern-template-front-end",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

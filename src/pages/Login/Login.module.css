@@ -29,7 +29,6 @@ body {
 @media only screen and (max-width: 500px) {
   .container {
     margin: 20px;
-   
   }
 }
 /* 768px is a common "breakpoint" width for tablets */
