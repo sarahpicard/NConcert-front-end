@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
 import Artist from '../../components/Artist/Artist'
 import Genre from '../../components/Genre/Genre'
+import { Link } from 'react-router-dom'
 
 const EditProfile = (props) => {
   const [profile, setProfile] = useState()
@@ -110,6 +111,10 @@ const EditProfile = (props) => {
         {profile?.artist.map(artist => 
           <Artist artist={artist} handleDeleteArtist={props.handleDeleteArtist}/>
         )}
+      </div>
+      <div>
+        <h2>My Spotify Playlist</h2>
+          <Link to={`/`}>Spotify</Link>
       </div>
     </>
   )

@@ -135,6 +135,32 @@ async function updateSpotify (spotify) {
   .then(res => res.json)
 }
 
+async function createInterested(event) {
+  console.log('event: ', event)
+  return await fetch(`${BASE_URL}/${event}/create/interested`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify(event)
+  },)
+  .then(res => res.json())
+}
+
+async function createAttending(event) {
+  console.log('event: ', event)
+  return await fetch(`${BASE_URL}/${event}/create/attending`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify(event)
+  },)
+  .then(res => res.json())
+}
+
 export {
   getAllProfiles,
   createProfileData,
@@ -147,4 +173,6 @@ export {
   addArtist,
   updateBio,
   updateSpotify,
+  createInterested,
+  createAttending,
 }
