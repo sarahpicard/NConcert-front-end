@@ -135,6 +135,19 @@ async function updateSpotify (spotify) {
   .then(res => res.json)
 }
 
+async function createEventData(event) {
+  console.log('event: ', event)
+  return await fetch(`${BASE_URL}/${event}/create/event`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify(event)
+  },)
+  .then(res => res.json())
+}
+
 export {
   getAllProfiles,
   createProfileData,
@@ -147,4 +160,5 @@ export {
   addArtist,
   updateBio,
   updateSpotify,
+  createEventData
 }

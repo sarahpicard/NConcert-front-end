@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { getSearch, showEvent } from '../../services/eventServices'
 import Comments from '../../components/Comments/Comments'
+import * as profileService from '../../services/profileService'
 
 import './EventDetail.css'
 
@@ -14,7 +15,25 @@ const EventDetail = () => {
     .then(currentEvent => setCurrentEvent(currentEvent))
   }, [])
   
+  const handleInterestedEvent = (evt) => {
+    console.log("location.state.event: ", location.state.event)
+    evt.preventDefault()
+    try {
+      profileService.createEventData(location.state.event)
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
+  const handleAttendingEvent = (evt) => {
+    console.log("location.state.event: ", location.state.event)
+    evt.preventDefault()
+    try {
+      //api call here
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   return(
     <>
@@ -22,6 +41,12 @@ const EventDetail = () => {
         src={location.state.event.images.find(image => image.height > 110 && image.width > 100).url} alt="concertImage" 
         className='event-detail-images'
       />
+      <button onClick={handleInterestedEvent}>
+        Interested
+      </button>
+      <button onClick={handleAttendingEvent}>
+        Attending
+      </button>
       <h2>{location.state.event.name}</h2>
     {location.state.event.classifications[0].genre.name ? 
       <p>Genre: {location.state.event.classifications[0].genre.name}</p>
@@ -65,6 +90,8 @@ const EventDetail = () => {
     :
     <p>Cannot buy tickets now</p>
     }
+
+    
 
     {location.state.event.products ?
       <button>
