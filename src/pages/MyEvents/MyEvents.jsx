@@ -17,14 +17,32 @@ const MyEvents = (props) => {
 
   return (
   <>
-    {console.log(profile?.events)}
+    {/* {console.log(profile?.events.attending)} */}
+    <h1>My Events</h1>
     <div>
-      <h1>Interested Events!</h1>
-      {profile?.events?.map(event => 
-        <Event event={event}/>
-        )}
+      <h2>Interested Events!</h2>
+        {profile?.events?.map(event => {
+          return event?.attending === false && event?.interested === true ?
+          // console.log("interested: ", event.attending)
+            <Event event={event}>Event Name</Event>
+            :
+            <></>
+          } 
+          )}
     </div>
-
+    <br />
+    <div>
+      <h2>Attending Events!</h2>
+        {profile?.events?.map(event => {
+          return event?.attending === true && event?.interested === true ?
+            // console.log("attending: ", event.interested )
+            <Event event={event} />
+          // console.log("event.attending: ", event.attending)
+            :
+            <></>
+          } 
+          )}
+    </div>
   </>
   )
 }
