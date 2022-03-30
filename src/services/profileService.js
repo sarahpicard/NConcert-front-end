@@ -27,17 +27,19 @@ async function createProfileData(profile) {
   .then(res => res.json())
 }
 
-async function addFriend (profileId, profileName, profileBio) {
-  return await fetch(`${BASE_URL}/add/${profileId}/${profileName}/${profileBio}`, 
+async function addFriend (profileId, profileName) {
+  console.log("sanity check", profileName)
+  
+  return await fetch(`${BASE_URL}/add/${profileId}`, 
   {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
       Authorization: `Bearer ${tokenService.getToken()}`
     },
-    body: JSON.stringify()
+    body: JSON.stringify({name: profileName})
   },)
-  .then(res => res.json)
+  .then(res => res.json())
 }
 
 async function deleteFriend (profileObjectId) {

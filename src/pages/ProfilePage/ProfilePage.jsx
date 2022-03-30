@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom'
 
 
 const ProfilePage = (props) => {
-  const [profile, setProfile] = useState()
+  const [profile, setProfile] = useState({})
+  const [friends, setFriends] = useState([])
   const [isComplete, setIsComplete] = useState(false)
   let location = useLocation()
   const [profileData, setProfileData] = useState({
@@ -16,15 +17,23 @@ const ProfilePage = (props) => {
     bio: '',
     spotify: '',
   })
+  const friendsProfileId = location.state.profile 
+  ? location.state.profile._id
+  : location.state.profileId
+
+  console.log('profile: ', profile)
   
   useEffect(() => {
     profileService.showProfile(props.user.profile)
     .then(data => {
       console.log('usEfffect data: ', data)
       setProfile(data)
+      setFriends(data.friends)
       data.bio ? setIsComplete(true) : setIsComplete(false)
     })
   }, [props.user.profile, isComplete])
+
+  console.log(friends)
 
   const handleAddProfileData = (evt) => {
     setProfileData({...profileData, [evt.target.name]: evt.target.value})
@@ -47,14 +56,16 @@ const ProfilePage = (props) => {
     }
   }
 
-  const handleAddFriend = (evt) => {
+  //use filter method on existing object to find id of item we want to delete
+
+  const handleAddFriend = async (evt) => {
     evt.preventDefault()
     try {
-      profileService.addFriend(location.state.profile._id, location.state.profile.name, location.state.profile.bio)
+      const data = await profileService.addFriend(location.state.profile._id, location.state.profile.name)
+      setFriends([...friends, data])
     } catch (err) {
       console.log(err)
     }
-    onProfileSubmit() 
   }
 
   const { bio } = profileData
@@ -94,22 +105,21 @@ const ProfilePage = (props) => {
             } 
           <div className="profile-info">
             <p>Bio: {profile?.bio}</p>
-            <p>Favorite Artists: {profile?.artist.map(artist => 
+            <p>Favorite Artists: {profile?.artist?.map(artist => 
               <>{artist?.artist}<br/></>
               )}
             </p>
-            <p>Favorite Genres: {profile?.genre.map(genre => 
+            <p>Favorite Genres: {profile?.genre?.map(genre => 
               <>{genre?.genre}<br/></>
               )}
             </p>
             <p>Spotify: <a href={profile?.spotify}>My Favorite Playlist</a></p>
           </div>
           <div className="friends">
-            {profile?.friends.length ? 
+            {profile?.friends?.length ? 
               <>
                 <h2>My Friends Here</h2>
-                {console.log(profile?.friends)}
-                {profile?.friends.map(friend => 
+                {profile?.friends?.map(friend => 
                   <Friend friend={friend} handleDeleteFriend={props.handleDeleteFriend}/>
                 )}
               </>
@@ -121,23 +131,7 @@ const ProfilePage = (props) => {
           </div>
       </>
       :
-      <>
-        <h1>{location.state.profile.name}'s Profile</h1>
-        <div>
-          <p>Bio: {location.state.profile.bio}</p>
-          <p>Favorite Artists: {location.state.profile.artist?.map(artist => 
-             <>{artist.artist}</>
-            )}
-          </p>
-          <p>Favorite Genres: {location.state.profile.genre?.map(genre => 
-            <>{genre.genre}</>
-            )}
-          </p>
-          <p>Spotify: <a href={location.state.profile.spotify}>{location.state.profile.name}'s Playlist</a></p>
-          <button onClick={handleAddFriend}>Add Friend</button>
-          <p>(Note: this will allow {location.state.profile.name} to see the events you are interested in and attending)</p>
-        </div>
-      </>
+      <Friend friendsProfileId={friendsProfileId}/>
     }
   </>
   )
