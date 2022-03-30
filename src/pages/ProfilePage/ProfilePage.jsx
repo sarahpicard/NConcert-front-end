@@ -65,7 +65,9 @@ const ProfilePage = (props) => {
   
   return (
     <>
-    {props.user.profile === location.state.profile  ? 
+    {console.log("props.user.profile: ", props.user.profile)}
+    {console.log("location.state.profile: ", location.state.profile?._id)}
+    {props.user.profile === location.state.profile || props.user.profile === location.state.profile?._id ? 
       <>
         <h1>My Profile</h1>
           { !isComplete ?
