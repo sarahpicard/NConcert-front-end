@@ -99,7 +99,6 @@ const App = () => {
         <Route path="/profile/:id/edit" element={<EditProfile user={user} handleDeleteArtist={handleDeleteArtist} handleDeleteGenre={handleDeleteGenre}/>}/>
         <Route path='/events/:id' element={<EventDetail />} />
         <Route path='/myevents/:id' element={<MyEventDetails user={user} handleDeleteEvent={handleDeleteEvent}/>}/>
-        
       </Routes>
     </>
   )
