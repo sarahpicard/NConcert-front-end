@@ -1,3 +1,15 @@
+.whole-search-component {
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 20px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #e2f3ef;
+  border-radius: 70px;
+  }
+.search-component-inputs {
+  margin-left: 4px;
+}
 
 .postcard_subtitle , .postcard_preview-txt{
   color: black;
@@ -56,6 +68,16 @@ a, a:hover {
   color: black;
   font-family: 'League Spartan', sans-serif;
   font-weight: 500;
+}
+.search-field-input {
+  border-radius: 70px;
+  border: none;
+  height: 40px;
+  width: 300px;
+  margin: 20px;
+}
+.search-field-input::placeholder {
+  padding-left: 20px;
 }
 
 @media screen and (min-width: 420px) {

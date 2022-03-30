@@ -68,11 +68,11 @@ const Search = (props) => {
 
 
   return (
-    <>
-      <div>
+    <div className='whole-search-component'>
+      <div className='search-component-inputs'>
         <form action="#" onSubmit={handleSubmit}>
-          <input type="text" value={keyword} name="keyword" placeholder="search event" onChange={handleChange} />
-          <input type="text" value={city} name="city" placeholder="search city" onChange={handleChange} />
+          <input type="text" value={keyword} name="keyword" placeholder="search event" onChange={handleChange} className="search-field-input"/>
+          <input type="text" value={city} name="city" placeholder="search city" onChange={handleChange} className="search-field-input"/>
           <button disabled={isKeywordFormValid()}>Search</button>
         </form>
       </div>
@@ -115,7 +115,7 @@ const Search = (props) => {
           <p>Nothing Searched</p>
         }
       </div>
-    </>
+    </div>
   )
 }
 
