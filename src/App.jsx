@@ -18,6 +18,7 @@ import ProfilePage from './pages/ProfilePage/ProfilePage'
 import EditProfile from './pages/EditProfile/EditProfile'
 import EventDetail from './pages/EventDetail/EventDetail'
 import MyEventDetails from './pages/MyEventDetails/MyEventDetails'
+import Friends from './pages/FriendsToggle/FriendsToggle'
 
 
 
@@ -99,7 +100,7 @@ const App = () => {
         <Route path="/profile/:id/edit" element={<EditProfile user={user} handleDeleteArtist={handleDeleteArtist} handleDeleteGenre={handleDeleteGenre}/>}/>
         <Route path='/events/:id' element={<EventDetail />} />
         <Route path='/myevents/:id' element={<MyEventDetails user={user} handleDeleteEvent={handleDeleteEvent}/>}/>
-        <Route path='/myevents/:id' element={<MyEventDetails user={user} handleDeleteEvent={handleDeleteEvent}/>}/>
+        <Route path='/friends' element={<Friends user={user} handleDeleteFriend={handleDeleteArtist} />} />
       </Routes>
     </>
   )
