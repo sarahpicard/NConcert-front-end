@@ -44,7 +44,7 @@ const SignupForm = props => {
       className={styles.container}
     >
       <div className={styles.inputContainer}>
-        <label htmlFor="name" className={styles.label}>Name</label>
+        <label htmlFor="name" className={styles.label}>First Name</label>
         <input
           type="text"
           autoComplete="off"

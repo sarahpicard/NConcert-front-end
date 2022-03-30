@@ -1,3 +1,25 @@
 .profiles-cards {
   margin-top: 3%;
 }
+.all-profiles-avatar-img {
+  height: 300px;
+  width: 285px;
+  border-top-left-radius: 6%;
+  border-top-right-radius: 6%;
+}
+.profile-more-info-btn {
+  font-size: 40px;
+  color: black;
+}
+.profile-more-info-btn:hover {
+  color: #377f6e;
+}
+.individual-cards {
+  text-align: center;
+  color: black;
+  border-radius: 5%;
+}
+.individual-cards:hover {
+  transform: scale(1.1);
+  color: #377f6e;
+}

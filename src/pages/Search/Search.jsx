@@ -81,8 +81,8 @@ const Search = (props) => {
           <div>
             {searchResults._embedded.events.map(event =>
               <section>
-                {/* {console.log(event)} */}
-                <div className="container py-2">
+                <Link to={`/events/${event.id}`} className="postcard_img_link" state={{event}}>
+                <div className="container py-2 whole-event-card">
                   <article className="postcard">
                     <Link to={`/events/${event.id}`} className="postcard_img_link" state={{event}}>
                         <img
@@ -93,14 +93,11 @@ const Search = (props) => {
                           />
                     </Link>
                     <div className='postcard-information'>
-                      {/* {console.log(searchResults._embedded.events)} */}
-                      <Link to={`/events/${event.id}`} state={{event}}>
-                        <h1 className='postcard_title'>{event.name}</h1>
-                      </Link>
+                        <h1 className='postcard_title event-list-names'>{event.name}</h1>
+                          <i className='bx bx-chevrons-right bx-lg see-more-link'></i>
                       <div className="postcard_subtitle small">
                         <p>{event.dates.start.localTime}</p>
                         <p>{event.dates.start.localDate}</p>
-                        <a className="see-more-link" href={`/events/${event.id}`} state={{event}}>See More</a>
                       </div>
                       <div className="postcard_preview-txt">
                         some information about the event...
@@ -108,6 +105,7 @@ const Search = (props) => {
                     </div>
                   </article>
                 </div>
+                </Link>
               </section>
             )}
             <button onClick={prevPage}>Prev Page</button>
