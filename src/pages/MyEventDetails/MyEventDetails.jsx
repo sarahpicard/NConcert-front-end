@@ -47,13 +47,13 @@ const MyEventDetails = (props) => {
       <button onClick={handleAttendingEvent}>
         Attending
       </button>
+      <button onClick={() => props.handleDeleteEvent(location.state.eventId)}>Delete Event</button>
       <h2>{location.state.name}</h2>
       <p>{location.state.venue}</p>
       <p>{location.state.city}, {location.state.state}</p>
       <p>{location.state.date}</p>
       <p>{location.state.time}</p>
       <a href={location.state.url}>Buy Tickets</a>
-
     </>
   )
 }

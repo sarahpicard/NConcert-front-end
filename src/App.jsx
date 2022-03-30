@@ -63,6 +63,9 @@ const App = () => {
     } 
   }
 
+  const handleDeleteEvent = (eventId) => {
+    console.log(eventId)
+  }
 
 
   return (
@@ -95,7 +98,8 @@ const App = () => {
         <Route path='/profile/:id' element={<ProfilePage user={user} handleDeleteFriend={handleDeleteFriend}/> }/>
         <Route path="/profile/:id/edit" element={<EditProfile user={user} handleDeleteArtist={handleDeleteArtist} handleDeleteGenre={handleDeleteGenre}/>}/>
         <Route path='/events/:id' element={<EventDetail />} />
-        <Route path='/myevents/:id' element={<MyEventDetails user={user}/>}/>
+        <Route path='/myevents/:id' element={<MyEventDetails user={user} handleDeleteEvent={handleDeleteEvent}/>}/>
+        
       </Routes>
     </>
   )

@@ -18,12 +18,6 @@ const MyEvents = (props) => {
     })
   }, [])
 
-  // useEffect(() => {
-  //   console.log(profile)
-  //   eventService.getEvent(props.event.eventId)
-  //   .then(eventData => setEvent(eventData))
-  // }, [event])
-
   return (
   <>
     {/* {console.log(profile?.events.attending)} */}
@@ -33,7 +27,7 @@ const MyEvents = (props) => {
         {profile?.events?.map(event => {
           return event?.attending === false && event?.interested === true ?
           // console.log("interested: ", event.attending)
-            <Event event={event} key={event._id}/>
+            <Event event={event} key={event._id} handleDeleteEvent={props.handleDeleteEvent}/>
             :
             <></>
           } 
