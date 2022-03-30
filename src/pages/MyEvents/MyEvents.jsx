@@ -3,10 +3,13 @@ import { useLocation } from "react-router-dom"
 import { Link } from "react-router-dom"
 import * as profileService from '../../services/profileService'
 import Event from "../../components/Event/Event"
+import * as eventService from '../../services/eventServices'
 
 const MyEvents = (props) => {
   const [profile, setProfile] = useState()
+  const [event,setEvent] = useState([])
   let location = useLocation()
+
 
   useEffect(() => {
     profileService.showProfile(props.user.profile)
@@ -24,7 +27,7 @@ const MyEvents = (props) => {
         {profile?.events?.map(event => {
           return event?.attending === false && event?.interested === true ?
           // console.log("interested: ", event.attending)
-            <Event event={event} key={event._id}/>
+            <Event event={event} key={event._id} handleDeleteEvent={props.handleDeleteEvent}/>
             :
             <></>
           } 

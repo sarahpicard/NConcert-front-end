@@ -17,7 +17,7 @@ import Events from './pages/Events/Events'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
 import EditProfile from './pages/EditProfile/EditProfile'
 import EventDetail from './pages/EventDetail/EventDetail'
-import Friends from './pages/FriendsToggle/FriendsToggle'
+import MyEventDetails from './pages/MyEventDetails/MyEventDetails'
 
 
 
@@ -63,6 +63,9 @@ const App = () => {
     } 
   }
 
+  const handleDeleteEvent = (eventId) => {
+    console.log(eventId)
+  }
 
 
   return (
@@ -95,8 +98,8 @@ const App = () => {
         <Route path='/profile/:id' element={<ProfilePage user={user} handleDeleteFriend={handleDeleteFriend}/> }/>
         <Route path="/profile/:id/edit" element={<EditProfile user={user} handleDeleteArtist={handleDeleteArtist} handleDeleteGenre={handleDeleteGenre}/>}/>
         <Route path='/events/:id' element={<EventDetail />} />
-        <Route path='/friends' element={<Friends user={user} handleDeleteFriend={handleDeleteArtist} />} />
-        {/* <Route path='/friends/:id' element={<ProfilePage user={user}/>} /> */}
+        <Route path='/myevents/:id' element={<MyEventDetails user={user} handleDeleteEvent={handleDeleteEvent}/>}/>
+        
       </Routes>
     </>
   )

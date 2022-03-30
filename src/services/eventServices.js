@@ -23,6 +23,7 @@ async function createComment(event) {
 }
 
 async function getEvent (eventId) {
+  console.log("eventId: ", eventId)
   const res = await fetch(`${BASE_URL}/get/${eventId}`)
   return await res.json()
 }
