@@ -1,6 +1,6 @@
 const Friends = () => {
   return (
-    <h1>Friends Page (toggle)</h1>
+    <h1>Friends Page</h1>
   )
 }
 
