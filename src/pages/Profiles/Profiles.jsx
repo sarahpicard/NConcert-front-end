@@ -33,9 +33,7 @@ const Profiles = () => {
                         <div className="card-body">
                           <h5 className="card-title" key={profile._id}>{profile.name.toUpperCase()}</h5>
                           <p className="card-text">this will be where profile bio goes </p>
-                          <Link to={`/profile/${profile._id}`} state={{profile}}> 
-                            <i className='bx bx-chevrons-down bx-lg profile-more-info-btn'></i>
-                          </Link>
+                          <i className='bx bx-chevrons-down bx-lg profile-more-info-btn'></i>
                         </div>
                     </div>
                   </Link>
