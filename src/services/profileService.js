@@ -11,14 +11,6 @@ async function getAllProfiles() {
 }
 
 async function showProfile(profile){
-  // console.log("profile: ", profile)
-  // console.log("Data Type: ", typeof profile)
-  // console.log('profile: ', profile)
-  // if (typeof profile === 'object') {
-  //   console.log("true")
-  // } else {
-  //   console.log("false")
-  // }
   const res = await fetch(`${BASE_URL}/${profile}`)
   return await res.json()
 }
@@ -167,6 +159,20 @@ async function createAttending(event) {
   .then(res => res.json())
 }
 
+async function deleteEvent (eventId) {
+  console.log("eventId: ",eventId)
+  return await fetch(`${BASE_URL}/delete/event/${eventId}/`, 
+  {
+    method: 'DELETE',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify()
+  },)
+  .then(res => res.json)
+}
+
 export {
   getAllProfiles,
   createProfileData,
@@ -181,4 +187,5 @@ export {
   updateSpotify,
   createInterested,
   createAttending,
+  deleteEvent
 }

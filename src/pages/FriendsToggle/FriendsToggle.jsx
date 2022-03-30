@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import * as profileService from '../../services/profileService'
 import { useLocation } from "react-router-dom"
 import { Link } from "react-router-dom"
-import { ProfilePage } from '../../pages/ProfilePage/ProfilePage'
+// import { ProfilePage } from './../../pages/ProfilePage/ProfilePage'
 import Profiles from "../Profiles/Profiles"
 import { Col } from "react-bootstrap"
 
@@ -14,6 +14,13 @@ const Friends = (props) => {
 
   useEffect(() => {
     profileService.showProfile(props.user.profile)
+    .then(data => {
+      setProfile(data)
+    })
+  }, [props.user.profile])
+
+  useEffect(() => {
+    profileService.showProfile(props.profile.profileId)
     .then(data => {
       setProfile(data)
     })
@@ -32,9 +39,8 @@ const Friends = (props) => {
                   {profile.friends.map(profile =>
                     <Col>
                       <div>
-                        <Link to={`/profile/${profile._id}`} state={{profile}}>
                           <div className="card individual-cards" style={{ width: '18rem'}}>
-                            <Link to={`/profile/${profile._id}`} state={{profile}}>
+                            <Link to={`/profile/${profile.profileId}`} state={{profile}}>
                               <img src="https://i.imgur.com/Wk1vQtF.png" alt="avatar" className='all-profiles-avatar-img'/>
                             </Link>
                               <div className="card-body">
@@ -43,14 +49,13 @@ const Friends = (props) => {
                                 <i className='bx bx-chevrons-down bx-lg profile-more-info-btn'></i>
                               </div>
                           </div>
-                        </Link>
                       </div>
                     </Col>
                   )}
                 </div>
               </div>
               :
-              <p>No profiles yet</p>
+              <p>No friends yet</p>
             }
           </div>
             )}

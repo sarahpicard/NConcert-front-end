@@ -47,7 +47,7 @@ const MyEventDetails = (props) => {
       <button onClick={handleAttendingEvent}>
         Attending
       </button>
-      <button onClick={() => props.handleDeleteEvent(location.state.eventId)}>Delete Event</button>
+      <button onClick={() => props.handleDeleteEvent(location.state._id)}>Delete Event</button>
       <h2>{location.state.name}</h2>
       <p>{location.state.venue}</p>
       <p>{location.state.city}, {location.state.state}</p>
