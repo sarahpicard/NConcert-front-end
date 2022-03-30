@@ -11,13 +11,19 @@ async function getAllProfiles() {
 }
 
 async function showProfile(profile){
-  console.log("profile: ", profile)
+  // console.log("profile: ", profile)
+  console.log("Data Type: ", typeof profile)
+  console.log('profile: ', profile)
+  // if (typeof profile === 'object') {
+  //   console.log("true")
+  // } else {
+  //   console.log("false")
+  // }
   const res = await fetch(`${BASE_URL}/${profile}`)
   return await res.json()
 }
 
 async function createProfileData(profile) {
-  console.log('profile: ', profile)
   return await fetch(`${BASE_URL}/${profile}/create`, {
     method: 'POST',
     headers: {

@@ -87,7 +87,7 @@ const App = () => {
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
         />
         <Route path='/' element={<Home />} />
-        <Route path='/myevents' element={<MyEvents />} />
+        <Route path='/myevents' element={<MyEvents user={user}/>} />
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/events' element={<Events />} />
         <Route path='/profile' element={<ProfilePage />} />
