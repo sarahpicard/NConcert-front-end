@@ -1,3 +1,15 @@
+.whole-search-component {
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 60px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #e2f3ef;
+  border-radius: 70px;
+  }
+.search-component-inputs {
+  text-align: center;
+}
 
 .postcard_subtitle , .postcard_preview-txt{
   color: black;
@@ -10,6 +22,12 @@
 a, a:hover {
 	text-decoration: none;
 	transition: color 0.3s ease-in-out;
+}
+.btn-success {
+  background-color: #377f6e;
+}
+.btn-success:hover {
+  background-color: #317162;
 }
 
 /* Cards */
@@ -56,6 +74,18 @@ a, a:hover {
   color: black;
   font-family: 'League Spartan', sans-serif;
   font-weight: 500;
+}
+.search-field-input {
+  border-radius: 70px;
+  border: none;
+  height: 40px;
+  width: 300px;
+  margin: 20px;
+  text-indent: 20px;
+}
+.nothing-searched-text {
+  text-align: center;
+  padding-top: 50px;
 }
 
 @media screen and (min-width: 420px) {
