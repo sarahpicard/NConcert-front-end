@@ -11,14 +11,6 @@ async function getAllProfiles() {
 }
 
 async function showProfile(profile){
-  // console.log("profile: ", profile)
-  // console.log("Data Type: ", typeof profile)
-  // console.log('profile: ', profile)
-  // if (typeof profile === 'object') {
-  //   console.log("true")
-  // } else {
-  //   console.log("false")
-  // }
   const res = await fetch(`${BASE_URL}/${profile}`)
   return await res.json()
 }
@@ -35,17 +27,19 @@ async function createProfileData(profile) {
   .then(res => res.json())
 }
 
-async function addFriend (profileId, profileName, profileBio) {
-  return await fetch(`${BASE_URL}/add/${profileId}/${profileName}/${profileBio}`, 
+async function addFriend (profileId, profileName) {
+  console.log("sanity check", profileName)
+  
+  return await fetch(`${BASE_URL}/add/${profileId}`, 
   {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
       Authorization: `Bearer ${tokenService.getToken()}`
     },
-    body: JSON.stringify()
+    body: JSON.stringify({name: profileName})
   },)
-  .then(res => res.json)
+  .then(res => res.json())
 }
 
 async function deleteFriend (profileObjectId) {
@@ -167,6 +161,20 @@ async function createAttending(event) {
   .then(res => res.json())
 }
 
+async function deleteEvent (eventId) {
+  console.log("eventId: ",eventId)
+  return await fetch(`${BASE_URL}/delete/event/${eventId}/`, 
+  {
+    method: 'DELETE',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify()
+  },)
+  .then(res => res.json)
+}
+
 export {
   getAllProfiles,
   createProfileData,
@@ -181,4 +189,5 @@ export {
   updateSpotify,
   createInterested,
   createAttending,
+  deleteEvent
 }

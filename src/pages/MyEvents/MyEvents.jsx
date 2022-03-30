@@ -18,9 +18,10 @@ const MyEvents = (props) => {
     })
   }, [])
 
+  
+
   return (
   <>
-    {/* {console.log(profile?.events.attending)} */}
     <h1>My Events</h1>
     <div>
       <h2>Interested Events!</h2>

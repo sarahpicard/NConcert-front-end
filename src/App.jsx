@@ -66,9 +66,13 @@ const App = () => {
 
   const handleDeleteEvent = (eventId) => {
     console.log(eventId)
+    try {
+      profileService.deleteEvent(eventId)
+    } catch (err) {
+      console.log(err)
+    } 
   }
-
-
+  
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -99,8 +103,9 @@ const App = () => {
         <Route path='/profile/:id' element={<ProfilePage user={user} handleDeleteFriend={handleDeleteFriend}/> }/>
         <Route path="/profile/:id/edit" element={<EditProfile user={user} handleDeleteArtist={handleDeleteArtist} handleDeleteGenre={handleDeleteGenre}/>}/>
         <Route path='/events/:id' element={<EventDetail />} />
-        <Route path='/myevents/:id' element={<MyEventDetails user={user} handleDeleteEvent={handleDeleteEvent}/>}/>
-        <Route path='/friends' element={<Friends user={user} handleDeleteFriend={handleDeleteArtist} />} />
+        <Route path='/myevents' element={<MyEvents user={user} handleDeleteEvent={handleDeleteEvent}/>}/>
+        <Route path='/myevents/:id' element={<MyEventDetails handleDeleteEvent={handleDeleteEvent} user={user}/>}/>
+        <Route path='/friends' element={<Friends user={user} handleDeleteFriend={handleDeleteFriend} />} />
       </Routes>
     </>
   )
