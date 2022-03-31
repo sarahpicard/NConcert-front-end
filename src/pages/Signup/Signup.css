@@ -8,3 +8,54 @@
   padding: 30px;
   font-family: 'Roboto', sans-serif;
 }
+@media screen and (max-width: 1050px) {
+  .whole-signup-page {
+    margin-left: 2%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .whole-signup-page {
+    margin-left: -15%;
+  }
+}
+@media screen and (max-width: 585px) {
+  .whole-signup-page {
+    margin-left: -35%;
+  }
+}
+@media screen and (max-width: 523px) {
+  .whole-signup-page {
+    margin-left: -45%;
+    margin-right: 18%;
+  }
+}
+@media screen and (max-width: 485px) {
+  .whole-signup-page {
+    margin-left: -65%;
+    margin-right: 12%;
+  }
+}
+@media screen and (max-width: 443px) {
+  .whole-signup-page {
+    margin-left: -86%;
+    margin-right: 9%;
+  }
+}
+@media screen and (max-width: 395px) {
+  .whole-signup-page {
+    margin-left: -113%;
+    margin-right: 9%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .whole-signup-page {
+    margin-left: -135%;
+    margin-right: 9%;
+  }
+}
+@media screen and (max-width: 328px) {
+  .whole-signup-page {
+    margin-left: -220%;
+    margin-right: 9%;
+  }
+}
