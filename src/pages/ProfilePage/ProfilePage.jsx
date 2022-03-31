@@ -115,7 +115,7 @@ const ProfilePage = (props) => {
               </Link>
             } 
           <div className="profile-info">
-            <p><span className="my-bio-header">Bio:</span> Sarah</p>
+            <p><span className="my-bio-header">Bio:</span> {profile?.bio}</p>
             <p><span className="my-bio-header">Favorite Artists:</span>{profile?.artist?.map(artist => 
               <>{artist?.artist}<br/></>
               )}
