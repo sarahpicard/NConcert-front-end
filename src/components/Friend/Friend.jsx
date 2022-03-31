@@ -24,6 +24,13 @@ const Friend = (props) => {
           <img className="friend-component-avatar postcard_img" src="https://i.imgur.com/Y5qHYjd.png" alt="Avatar" />
           <div className="friend-component-info">
             <h1 className="">{friend?.name}</h1><br />
+                {isFriend ? 
+                  <button className="unfriend-button btn btn-success" type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
+                
+                  :
+                  <button className="unfriend-button btn btn-success" onClick={props.handleAddFriend}>Add Friend</button>
+
+              }
             <div className="">
               <h6 className="friend-component-header card-text"><span>Bio: </span> {friend?.bio}</h6>
             </div><br />
@@ -33,7 +40,7 @@ const Friend = (props) => {
                   <div>
                     <h6 className="friend-component-header">Favorite Genres:</h6>
                     {friend?.genre?.map(genre =>
-                      <h6 className="btn btn-success btn-genre-artist">{genre.genre}</h6>
+                      <h6 className=" btn btn-genre-artist">{genre.genre}</h6>
                     )}
                   </div>
                   :
@@ -45,7 +52,7 @@ const Friend = (props) => {
                   <div>
                     <h6 className="friend-component-header">Favorite Artists:</h6>
                     {friend?.artist?.map(artist =>
-                      <h6 className="btn btn-success btn-genre-artist">{artist.artist}</h6>
+                      <h6 className=" btn btn-genre-artist">{artist.artist}</h6>
                     )}
                   </div>
                   :
@@ -63,6 +70,11 @@ const Friend = (props) => {
                 <h2>Friend Events Here</h2>
                 {friend?.events?.map(event =>
                       <h6 className="btn btn-success btn-genre-artist">{event?.name}</h6>
+              </div>
+              <div>
+                <h2 className="friend-events">My Events:</h2>
+                {friend?.events?.map(event =>
+                      <h6 className="btn  btn-genre-artist">{event.name}</h6>
                     )}
                 </>
                 :
@@ -72,7 +84,7 @@ const Friend = (props) => {
               <div>
           </div>
         </div>
-       </div>
+      </div>
       </article>
     </div>
     </>

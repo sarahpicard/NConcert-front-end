@@ -1,0 +1,27 @@
+.whole-edit-profile-page {
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 60px;
+  padding: 50px;
+  background-color: #e2f3ef;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 70px;
+}
+.editprofile-input {
+  border-radius: 70px;
+  border: none;
+  text-indent: 20px;
+}
+.edit-profile-label {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.btn-success {
+  background-color: #377f6e;
+}
+.btn-success:hover {
+  background-color: #317162;
+}
+.update-profile-divs {
+  margin-top: 15px;
+}

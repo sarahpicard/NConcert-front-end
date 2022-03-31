@@ -1,0 +1,79 @@
+.whole-profile-pg {
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 4%;
+  background-color: #e2f3ef;
+  padding: 60px;
+  padding-left: 120px;
+  padding-right: 120px;
+  border-radius: 70px;
+  font-family: 'Roboto', sans-serif;
+}
+.profile-pg-input {
+  border-radius: 70px;
+  border: none;
+  text-indent: 20px;
+  height: 30px;
+  margin-top: 6px;
+  margin-bottom: 5px;
+}
+.btn-success {
+  background-color: #377f6e;
+}
+.btn-success:hover {
+  background-color: #317162;
+}
+.profile-update-btn {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.my-profile-h1 {
+  font-weight: 600;
+  font-size: 50px;
+  margin-bottom: 35px;
+}
+.edit-profile-h1 {
+  font-size: 30px;
+  margin-top: 30px;
+}
+.add-artists-genres-h4 {
+  font-size: 20px;
+  font-style: italic;
+}
+.my-bio-header {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1200px) {
+  .whole-profile-pg {
+    margin-left: -10%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .whole-profile-pg {
+    margin-left: -20%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .whole-profile-pg {
+    margin-left: -28%;
+  }
+}
+@media screen and (max-width: 625px) {
+  .whole-profile-pg {
+    margin-left: -30%;
+  }
+}
+@media screen and (max-width: 530px) {
+  .whole-profile-pg {
+    margin-left: -55%;
+  }
+}
+@media screen and (max-width: 470px) {
+  .whole-profile-pg {
+    margin-left: -75%;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

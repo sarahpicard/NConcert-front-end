@@ -6,7 +6,7 @@ const FriendCard = (props) => {
       <div>
       <h3>{props.friend.name}</h3>
       <h6>{props.friend.bio}</h6>
-      <Link to={`/profile/${props.friend.profileId}`} state={props.friend.profileId}>Check Their Events!</Link>
+      <Link to={`/profile/${props.friend.profileId}`} state={props.friend.profileId}>Check Out Their Events!</Link>
       </div>
     </>
    );

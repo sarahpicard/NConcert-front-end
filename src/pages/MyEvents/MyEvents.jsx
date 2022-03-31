@@ -5,6 +5,8 @@ import * as profileService from '../../services/profileService'
 import Event from "../../components/Event/Event"
 import * as eventService from '../../services/eventServices'
 
+import './MyEvents.css'
+
 const MyEvents = (props) => {
   const [profile, setProfile] = useState()
   const [event,setEvent] = useState([])
@@ -30,11 +32,12 @@ const MyEvents = (props) => {
   }
 
   return (
-  <>
+  <div className="whole-myevents-page">
     {console.log("user: ", props.user)}
-    <h1>My Events</h1>
+    <h1 className="my-events-h1">My Events</h1>
+    <hr />
     <div>
-      <h2>Interested Events!</h2>
+      <h2 className="my-events-h2">Events I'm Interested In:</h2>
         {profile?.events?.map(event => {
           return event?.attending === false && event?.interested === true ?
           // console.log("interested: ", event.attending)
@@ -46,7 +49,7 @@ const MyEvents = (props) => {
     </div>
     <br />
     <div>
-      <h2>Attending Events!</h2>
+      <h2 className="my-events-h2">Events I'm Attending:</h2>
         {profile?.events?.map(event => {
           return event?.attending === true && event?.interested === true ?
             // console.log("attending: ", event.interested )
@@ -57,7 +60,7 @@ const MyEvents = (props) => {
           } 
           )}
     </div>
-  </>
+  </div>
   )
 }
 

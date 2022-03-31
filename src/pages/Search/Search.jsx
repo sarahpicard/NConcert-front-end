@@ -109,8 +109,8 @@ const Search = (props) => {
                 </Link>
               </section>
             )}
-            <button onClick={prevPage}>Prev Page</button>
-            <button onClick={nextPage}>Next Page</button>
+            <button className='btn btn-success' onClick={prevPage}>Prev Page</button>
+            <button className='btn btn-success' onClick={nextPage} style={{ margin: '15px'}}>Next Page</button>
           </div>
           :
           <p className='nothing-searched-text'>search above using keyword and city to show events</p>

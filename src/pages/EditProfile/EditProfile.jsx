@@ -4,6 +4,8 @@ import Artist from '../../components/Artist/Artist'
 import Genre from '../../components/Genre/Genre'
 import { Link } from 'react-router-dom'
 
+import './EditProfile.css'
+
 const EditProfile = (props) => {
   const [profile, setProfile] = useState()
   const [profileData, setProfileData] = useState({
@@ -95,54 +97,54 @@ const EditProfile = (props) => {
   const { spotify } = profileData
 
   return(
-    <>
+    <div className='whole-edit-profile-page'>
       <h4>Make Profile Updates:</h4>
-      <form onSubmit={handleUpdateBio}>
+      <form className='edit-profile-label' onSubmit={handleUpdateBio}>
         <label>Bio:
-          <input type="text" value={bio} name="bio" autoComplete="off" onChange={handleUpdateProfileData}/>
+          <input className='editprofile-input' type="text" value={bio} name="bio" autoComplete="off" onChange={handleUpdateProfileData}/>
         </label>
-        <button type="submit">Update Profile</button>
+        <button className='btn btn-success btn-sm' type="submit">Update Profile</button>
       </form>
-      <form onSubmit={handleAddGenre}>
+      <form className='edit-profile-label' onSubmit={handleAddGenre}>
         <label>Add a Genre:
-          <input type="text" value={genre} name="genre" autoComplete="off" onChange={handleUpdateProfileData}/>
+          <input className='editprofile-input' type="text" value={genre} name="genre" autoComplete="off" onChange={handleUpdateProfileData}/>
         </label>
-        <button type="submit">Add Genre</button>
+        <button className='btn btn-success btn-sm' type="submit">Add Genre</button>
       </form>
-      <form onSubmit={handleAddArtist}>
+      <form className='edit-profile-label' onSubmit={handleAddArtist}>
         <label>Add an Artist:
-          <input type="text" value={artist} name="artist" autoComplete="off" onChange={handleUpdateProfileData}/>
+          <input className='editprofile-input' type="text" value={artist} name="artist" autoComplete="off" onChange={handleUpdateProfileData}/>
         </label>
-        <button type="submit">Add Artist</button>
+        <button className='btn btn-success btn-sm' type="submit">Add Artist</button>
       </form>
-      <form onSubmit={handleUpdateSpotify}>
+      <form className='edit-profile-label' onSubmit={handleUpdateSpotify}>
         <label>New Spotify Playlist:
-          <input type="text" value={spotify} name="spotify" autoComplete="off" onChange={handleUpdateProfileData}/>
+          <input className='editprofile-input' type="text" value={spotify} name="spotify" autoComplete="off" onChange={handleUpdateProfileData}/>
         </label>
-        <button type="submit">Update Playlist</button>
+        <button className='btn btn-success btn-sm' type="submit">Update Playlist</button>
       </form>
       <br/>
       <div>
         <h2>Bio:</h2>
         <p>{profile?.bio}</p>
       </div>
-      <div>
+      <div className='update-profile-divs'>
         <h2>My Favorite Genres:</h2>
         {profile?.genre.map(genre => 
           <Genre genre={genre} handleDeleteGenre={handleDeleteGenre}/>
         )}
       </div>
-      <div>
+      <div className='update-profile-divs'>
         <h2>My Favorite Artists:</h2>
         {profile?.artist.map(artist => 
           <Artist artist={artist} handleDeleteArtist={handleDeleteArtist}/>
         )}
       </div>
-      <div>
+      <div className='update-profile-divs'>
         <h2>My Spotify Playlist</h2>
           <Link to={`/`}>Spotify</Link>
       </div>
-    </>
+    </div>
   )
 }
 
