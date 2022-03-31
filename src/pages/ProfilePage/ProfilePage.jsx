@@ -61,16 +61,17 @@ const ProfilePage = (props) => {
     evt.preventDefault()
     try {
       const data = await profileService.addFriend(location.state.profile._id, location.state.profile.name)
-      setFriends([...friends, data])
+      setProfile(data)
     } catch (err) {
       console.log(err)
     }
   }
 
-  const handleDeleteFriend = (friendId) => {
-    console.log("profile", friendId)
+  const handleDeleteFriend = async (friendId) => {
     try {
-      profileService.deleteFriend(friendId)
+      const data = await profileService.deleteFriend(friendId)
+      console.log('response data: ', data)
+      setProfile(data)
     } catch (err) {
       console.log(err)
     } 

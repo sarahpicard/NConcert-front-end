@@ -16,9 +16,6 @@ const Friend = (props) => {
 
   const isFriend = props.profile?.friends?.some(currentId => currentId?.profileId === friend?._id)
 
-  console.log("friend: ", friend)
-  console.log(props.profile?.friends)
-  console.log(props.profile?.friends?.indexOf(props.profile?.friends?.profileId === friend?._id))
   
   return (
     <> 
