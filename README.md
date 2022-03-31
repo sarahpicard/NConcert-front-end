@@ -6,6 +6,10 @@ The app also allows for users to customize their social profiles, to include art
 
 Being able to see all profiles on the app, users can add friends and see what events they are interested in!
 
+This CRUD application was developed using RESTful architecture principles and MERN stack technologies (MongoDB, ExpressJS, React, and Node.js)
+
+## 👀 Take a look at ShOwCIAL HERE
+
 ---
 ## Meet the Developers! 
 
@@ -23,3 +27,7 @@ During development, Sarah acted as GitHub manager, Designer, styling expert, and
 
 ![wireframe](https://i.imgur.com/SH0tmaV.png)
 Prior to project start, wireframing was completed by Sarah to show ideal project design and flow. The above screenshot details a basic design concept prior to beginning the project. 
+
+![Imgur](https://i.imgur.com/5npeF8s.png)
+The entity relationship diagram (ERD) above details schema and model relationships developed during the project planning process. 
+
