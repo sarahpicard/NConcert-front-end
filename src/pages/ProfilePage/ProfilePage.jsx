@@ -105,16 +105,16 @@ const ProfilePage = (props) => {
               </Link>
             } 
           <div className="profile-info">
-            <p>Bio: Sarah</p>
-            <p>Favorite Artists: {profile?.artist?.map(artist => 
+            <p><span className="my-bio-header">Bio:</span> Sarah</p>
+            <p><span className="my-bio-header">Favorite Artists:</span>{profile?.artist?.map(artist => 
               <>{artist?.artist}<br/></>
               )}
             </p>
-            <p>Favorite Genres: {profile?.genre?.map(genre => 
+            <p><span className="my-bio-header">Favorite Genres:</span> {profile?.genre?.map(genre => 
               <>{genre?.genre}<br/></>
               )}
             </p>
-            <p>Spotify: <a href={profile?.spotify}>My Favorite Playlist</a></p>
+            <p><span className="my-bio-header">Spotify:</span> <a href={profile?.spotify}>My Favorite Playlist</a></p>
           </div>
           <div className="friends">
             {profile?.friends?.length ? 
