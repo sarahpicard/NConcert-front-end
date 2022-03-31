@@ -1,6 +1,6 @@
-# N'Concert 
-### Welcome to N'Concert! 🎹
-N'concert delivers a social experience for event discovery, organization, and the purchasing of concert tickets. N'Concert allows users to search for concert events based on keyword and location. Users can search for Adele in Boston, Rock concerts in Detroit, or Country Music events in Dallas... the options are endless!
+# ShOwCIAL
+### Welcome to ShOwCIAL! 🎹
+ShOwCIAL delivers a social experience for event discovery, organization, and the purchasing of concert tickets. ShOwCIAL allows users to search for concert events based on keyword and location. Users can search for Adele in Boston, Rock concerts in Detroit, or Country Music events in Dallas... the options are endless!
 
 The app also allows for users to customize their social profiles, to include artists and genres they are interested in, a bio to share with friends, and even a favorite Spotify™ playlist!
 
