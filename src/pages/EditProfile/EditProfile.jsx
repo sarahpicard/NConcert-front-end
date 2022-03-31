@@ -30,13 +30,33 @@ const EditProfile = (props) => {
     evt.preventDefault()
     try {
       const data = await profileService.addGenre(profileData.genre)
-      console.log("data: ", data)
       setProfile(data)
     } catch (err) {
       console.log(err)
     }
   }
 
+  const handleDeleteArtist = async (artistId) => {
+    console.log(artistId)
+    try {
+      const data = await profileService.deleteArtist(artistId)
+      console.log("response data", data)
+      setProfile(data)
+    } catch (err) {
+      console.log(err)
+    } 
+  }
+
+  const handleDeleteGenre = async (genreId) => {
+    console.log(genreId)
+    try {
+      const data = await profileService.deleteGenre(genreId)
+      console.log("response data", data)
+      setProfile(data)
+    } catch (err) {
+      console.log(err)
+    } 
+  }
 
   const handleAddArtist = async (evt) => {
     console.log("add artist: ", profileData.artist)
@@ -111,13 +131,13 @@ const EditProfile = (props) => {
       <div className='update-profile-divs'>
         <h2>My Favorite Genres:</h2>
         {profile?.genre.map(genre => 
-          <Genre genre={genre} handleDeleteGenre={props.handleDeleteGenre}/>
+          <Genre genre={genre} handleDeleteGenre={handleDeleteGenre}/>
         )}
       </div>
       <div className='update-profile-divs'>
         <h2>My Favorite Artists:</h2>
         {profile?.artist.map(artist => 
-          <Artist artist={artist} handleDeleteArtist={props.handleDeleteArtist}/>
+          <Artist artist={artist} handleDeleteArtist={handleDeleteArtist}/>
         )}
       </div>
       <div className='update-profile-divs'>

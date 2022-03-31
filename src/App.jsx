@@ -24,8 +24,13 @@ import Friends from './pages/FriendsToggle/FriendsToggle'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [profile, setProfile] = useState()
   const navigate = useNavigate()
 
+  useEffect(() => {
+    profileService.showProfile(user.profile)
+    .then(data => setProfile(data))
+  }, [])
 
   const handleLogout = () => {
     authService.logout()
@@ -46,24 +51,9 @@ const App = () => {
     } 
   }
 
-  const handleDeleteGenre = (genreId) => {
-    console.log(genreId)
-    try {
-      profileService.deleteGenre(genreId)
-    } catch (err) {
-      console.log(err)
-    } 
-  }
 
-  const handleDeleteArtist = async (artistId) => {
-    console.log(artistId)
-    try {
-      const data = await profileService.deleteArtist(artistId)
-      //need to set State here - but to what?
-    } catch (err) {
-      console.log(err)
-    } 
-  }
+
+  
 
   
   return (
@@ -93,8 +83,8 @@ const App = () => {
         <Route path='/favorites' element={<Favorites />} />
         <Route path='/events' element={<Events />} />
         <Route path='/profile' element={<ProfilePage />} />
-        <Route path='/profile/:id' element={<ProfilePage user={user} handleDeleteFriend={handleDeleteFriend}/> }/>
-        <Route path="/profile/:id/edit" element={<EditProfile user={user} handleDeleteArtist={handleDeleteArtist} handleDeleteGenre={handleDeleteGenre}/>}/>
+        <Route path='/profile/:id' element={<ProfilePage user={user} /> }/>
+        <Route path="/profile/:id/edit" element={<EditProfile user={user} />}/>
         <Route path='/events/:id' element={<EventDetail />} />
         <Route path='/myevents' element={<MyEvents user={user} />}/>
         <Route path='/myevents/:id' element={<MyEventDetails user={user}/>}/>

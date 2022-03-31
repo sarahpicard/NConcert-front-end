@@ -7,6 +7,7 @@ import './Friend.css'
 
 const Friend = (props) => {
   const [friend, setFriend] = useState()
+  
 
   useEffect(() => {
     showProfile(props.friendsProfileId)
@@ -14,6 +15,7 @@ const Friend = (props) => {
   }, [])
 
   const isFriend = props.profile?.friends?.some(currentId => currentId?.profileId === friend?._id)
+
   
   return (
     <> 
@@ -56,13 +58,31 @@ const Friend = (props) => {
                   :
                   <p>no favorite artists yet</p>
                 }
+                {isFriend ? 
+                  <button className="unfriend-button btn btn-success" type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
+                  :
+                  <button className="unfriend-button btn btn-success" onClick={props.handleAddFriend}>Add Friend</button>
+                }
+              </div>
+              <div>
+              {isFriend ? 
+                <>
+                <h2>Friend Events Here</h2>
+                {friend?.events?.map(event =>
+                      <h6 className="btn btn-success btn-genre-artist">{event?.name}</h6>
               </div>
               <div>
                 <h2 className="friend-events">My Events:</h2>
                 {friend?.events?.map(event =>
                       <h6 className="btn  btn-genre-artist">{event.name}</h6>
                     )}
+                </>
+                :
+                  <></>
+                }
               </div>
+              <div>
+          </div>
         </div>
       </div>
       </article>

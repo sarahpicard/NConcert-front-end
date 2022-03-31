@@ -62,10 +62,20 @@ const ProfilePage = (props) => {
     evt.preventDefault()
     try {
       const data = await profileService.addFriend(location.state.profile._id, location.state.profile.name)
-      setFriends([...friends, data])
+      setProfile(data)
     } catch (err) {
       console.log(err)
     }
+  }
+
+  const handleDeleteFriend = async (friendId) => {
+    try {
+      const data = await profileService.deleteFriend(friendId)
+      console.log('response data: ', data)
+      setProfile(data)
+    } catch (err) {
+      console.log(err)
+    } 
   }
 
   const { bio } = profileData
@@ -121,7 +131,7 @@ const ProfilePage = (props) => {
               <>
                 <h2>My Friends: </h2>
                 {profile?.friends?.map(friend => 
-                  <FriendCard friend={friend} friendsProfileId={friendsProfileId}handleDeleteFriend={props.handleDeleteFriend} handleAddFriend={handleAddFriend}/>
+                  <FriendCard friend={friend} friendsProfileId={friendsProfileId}handleDeleteFriend={handleDeleteFriend} handleAddFriend={handleAddFriend}/>
                 )}
               </>
              :
@@ -132,7 +142,7 @@ const ProfilePage = (props) => {
           </div>
       </div>
       :
-      <Friend user={props.user} profile={profile} handleAddFriend={handleAddFriend} handleDeleteFriend={props.handleDeleteFriend} friendsProfileId={friendsProfileId}/>
+      <Friend user={props.user} profile={profile} handleAddFriend={handleAddFriend} friends={friends} handleDeleteFriend={handleDeleteFriend} friendsProfileId={friendsProfileId}/>
     }
   </>
   )
