@@ -55,23 +55,16 @@ const App = () => {
     } 
   }
 
-  const handleDeleteArtist = (artistId) => {
+  const handleDeleteArtist = async (artistId) => {
     console.log(artistId)
     try {
-      profileService.deleteArtist(artistId)
+      const data = await profileService.deleteArtist(artistId)
+      //need to set State here - but to what?
     } catch (err) {
       console.log(err)
     } 
   }
 
-  const handleDeleteEvent = (eventId) => {
-    console.log(eventId)
-    try {
-      profileService.deleteEvent(eventId)
-    } catch (err) {
-      console.log(err)
-    } 
-  }
   
   return (
     <>
@@ -103,8 +96,8 @@ const App = () => {
         <Route path='/profile/:id' element={<ProfilePage user={user} handleDeleteFriend={handleDeleteFriend}/> }/>
         <Route path="/profile/:id/edit" element={<EditProfile user={user} handleDeleteArtist={handleDeleteArtist} handleDeleteGenre={handleDeleteGenre}/>}/>
         <Route path='/events/:id' element={<EventDetail />} />
-        <Route path='/myevents' element={<MyEvents user={user} handleDeleteEvent={handleDeleteEvent}/>}/>
-        <Route path='/myevents/:id' element={<MyEventDetails handleDeleteEvent={handleDeleteEvent} user={user}/>}/>
+        <Route path='/myevents' element={<MyEvents user={user} />}/>
+        <Route path='/myevents/:id' element={<MyEventDetails user={user}/>}/>
         <Route path='/friends' element={<Friends user={user} handleDeleteFriend={handleDeleteFriend} />} />
       </Routes>
     </>

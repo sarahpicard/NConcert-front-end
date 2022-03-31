@@ -3,9 +3,10 @@ import { useLocation } from "react-router-dom";
 import { showProfile } from "../../services/profileService"
 import { useState, useEffect } from "react";
 
+import './Friend.css'
+
 const Friend = (props) => {
   const [friend, setFriend] = useState()
-
 
 
   console.log(friend)
@@ -37,11 +38,15 @@ const Friend = (props) => {
 
   return ( 
     <>
-      <h1>hello</h1>
-      <div>
-        <h6>Bio:</h6>
-        <p>{friend?.bio}</p>
-      </div>
+     {/* <div className="container whole-friend-component">
+      <article className="postcard card-body whole-postcard-body">
+        <img className="friend-component-avatar postcard_img" src="https://i.imgur.com/Y5qHYjd.png" alt="Avatar" />
+        <div className="friend-component-info">
+          <h1 className="">{friend?.name}</h1><br />
+        <div className="">
+        <h6 className="friend-component-header card-text"><span>Bio:</span> {friend?.bio}</h6>
+      </div><br />
+      <div className="">
       <div>
         {friend?.genre ?
         <div>
@@ -53,6 +58,18 @@ const Friend = (props) => {
         :
         <p>no favorite genres yet</p>
       }
+      </div><br />
+      <div>
+        {friend?.artist ?
+          <div>
+            <h6 className="friend-component-header">Favorite Artists:</h6>
+            {friend?.artist.map(artist =>
+              <h6 className="btn btn-success btn-genre-artist">{artist.artist}</h6>
+              )}
+          </div>
+          :
+          <p>no favorite artists yet</p>
+        }
       </div>
       <div>
         <h6>Favorite Artists:</h6>
@@ -71,10 +88,11 @@ const Friend = (props) => {
       {/* <button type="submit" onClick={() => props.handleDeleteFriend(props.friend?._id)}>Unfriend: </button> */} 
 
 
+      {/* </div> */} */}
     </>
-   );
+  );
 }
- 
+
 export {
   Friend,
 }

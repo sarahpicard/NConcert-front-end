@@ -1,0 +1,29 @@
+.whole-friend-component {
+  margin-top: 4.5%;
+}
+
+.friend-component-header {
+  font-weight: 600;
+}
+
+.btn-success {
+  background-color: #377f6e;
+}
+.btn-success:hover {
+  background-color: #317162;
+}
+.btn-genre-artist, .btn-genre-artist:hover{
+  border-radius: 70px;
+  background-color: #9d9d9d;
+  border: 2px solid #9d9d9d;
+}
+.friend-component-avatar {
+  height: 200px;
+  width: 200px;
+  margin-left: 60px;
+  margin-top: 60px;
+  margin-right: 80px
+}
+.whole-postcard-body {
+  background-color: #e2f3ef;
+}

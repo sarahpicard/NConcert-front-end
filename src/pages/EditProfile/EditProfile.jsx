@@ -12,10 +12,6 @@ const EditProfile = (props) => {
     bio: '',
     spotify: '',
   })
-  const [genreState, setGenreState] = useState([])
-  const [artistState, setArtistState] = useState([])
-  const [bioState, setBioState] = useState([])
-  const [spotifyState, setSpotifyState] = useState([])
   
   useEffect(() => {
     profileService.showProfile(props.user.profile)

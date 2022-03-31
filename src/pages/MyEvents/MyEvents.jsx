@@ -18,16 +18,27 @@ const MyEvents = (props) => {
     })
   }, [])
 
+  const handleDeleteEvent = async (eventId) => {
+    try {
+      const data = await profileService.deleteEvent(eventId)
+      console.log("response data: ", data)
+      setProfile(data)
+      console.log("profile: ", profile)
+    } catch (err) {
+      console.log(err)
+    } 
+  }
 
   return (
   <>
+    {console.log("user: ", props.user)}
     <h1>My Events</h1>
     <div>
       <h2>Interested Events!</h2>
         {profile?.events?.map(event => {
           return event?.attending === false && event?.interested === true ?
           // console.log("interested: ", event.attending)
-            <Event event={event} key={event._id} handleDeleteEvent={props.handleDeleteEvent}/>
+            <Event event={event} user={props.user} profile={profile} key={event._id} handleDeleteEvent={handleDeleteEvent}/>
             :
             <></>
           } 
@@ -39,7 +50,7 @@ const MyEvents = (props) => {
         {profile?.events?.map(event => {
           return event?.attending === true && event?.interested === true ?
             // console.log("attending: ", event.interested )
-            <Event event={event} key={event._id}/>
+            <Event event={event} user={props.user} profile={profile} key={event._id} handleDeleteEvent={handleDeleteEvent}/>
           // console.log("event.attending: ", event.attending)
             :
             <></>
