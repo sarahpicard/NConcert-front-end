@@ -69,7 +69,6 @@ const Search = (props) => {
 
   return (
     <div>
-    <h1 className='event-search-h1'>search for events:</h1>
     <div className='whole-search-component'>
       <div className='search-component-inputs'>
         <form action="#" onSubmit={handleSubmit}>
