@@ -6,6 +6,8 @@ The app also allows for users to customize their social profiles, to include art
 
 Being able to see all profiles on the app, users can add friends and see what events they are interested in!
 
+## 👀 Take a look at ShOwCIAL 
+
 ---
 ## Meet the Developers! 
 
