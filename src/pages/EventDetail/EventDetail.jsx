@@ -36,20 +36,20 @@ const EventDetail = () => {
   }
 
   return(
-    <>
+    <div className='whole-event-detail-page'>
       <img 
         src={location.state.event.images.find(image => image.height > 110 && image.width > 100).url} alt="concertImage" 
         className='event-detail-images'
       />
-      <button onClick={handleInterestedEvent}>
+      <h2 className='event-detail-name'>{location.state.event.name}</h2><br />
+      <button className='btn btn-success event-interest-btn' onClick={handleInterestedEvent}>
         Interested
       </button>
-      <button onClick={handleAttendingEvent}>
+      <button className='btn btn-success event-interest-btn' onClick={handleAttendingEvent}>
         Attending
-      </button>
-      <h2>{location.state.event.name}</h2>
+      </button><br />
     {location.state.event.classifications[0].genre.name ? 
-      <p>Genre: {location.state.event.classifications[0].genre.name}</p>
+      <p className='event-detail-genre'>Genre: {location.state.event.classifications[0].genre.name}</p>
       : 
       <p>Genre: no genre found</p>
     }
@@ -134,7 +134,7 @@ const EventDetail = () => {
     {/* <div>
       <Comments event={location.state.event} id={location.state.event.id} currentEvent={location.state.event.id}/>
     </div> */}
-    </>
+    </div>
   )
 }
 
