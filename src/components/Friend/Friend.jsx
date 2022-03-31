@@ -26,10 +26,8 @@ const Friend = (props) => {
             <h1 className="">{friend?.name}</h1><br />
                 {isFriend ? 
                   <button className="unfriend-button btn btn-success" type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
-                
                   :
                   <button className="unfriend-button btn btn-success" onClick={props.handleAddFriend}>Add Friend</button>
-
               }
             <div className="">
               <h6 className="friend-component-header card-text"><span>Bio: </span> {friend?.bio}</h6>
@@ -57,28 +55,6 @@ const Friend = (props) => {
                   </div>
                   :
                   <p>no favorite artists yet</p>
-                }
-                {isFriend ? 
-                  <button className="unfriend-button btn btn-success" type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
-                  :
-                  <button className="unfriend-button btn btn-success" onClick={props.handleAddFriend}>Add Friend</button>
-                }
-              </div>
-              <div>
-              {isFriend ? 
-                <>
-                <h2>Friend Events Here</h2>
-                {friend?.events?.map(event =>
-                      <h6 className="btn btn-success btn-genre-artist">{event?.name}</h6>
-              </div>
-              <div>
-                <h2 className="friend-events">My Events:</h2>
-                {friend?.events?.map(event =>
-                      <h6 className="btn  btn-genre-artist">{event.name}</h6>
-                    )}
-                </>
-                :
-                  <></>
                 }
               </div>
               <div>
