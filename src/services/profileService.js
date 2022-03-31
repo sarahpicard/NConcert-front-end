@@ -28,8 +28,6 @@ async function createProfileData(profile) {
 }
 
 async function addFriend (profileId, profileName) {
-  console.log("sanity check", profileName)
-  
   return await fetch(`${BASE_URL}/add/${profileId}`, 
   {
     method: 'POST',
@@ -43,6 +41,7 @@ async function addFriend (profileId, profileName) {
 }
 
 async function deleteFriend (profileObjectId) {
+  console.log(profileObjectId)
   return await fetch(`${BASE_URL}/delete/${profileObjectId}/`, 
   {
     method: 'DELETE',
@@ -80,7 +79,6 @@ async function deleteGenre (genreId) {
   },)
   .then(res => {
     res.json()
-    // console.log(res)
   })
 }
 
@@ -111,7 +109,6 @@ async function addArtist (artist) {
 }
 
 async function updateBio (bio) {
-  console.log("bio: ", bio)
   return await fetch(`${BASE_URL}/update/bio/${bio}`, 
   {
     method: 'PUT',
@@ -125,7 +122,6 @@ async function updateBio (bio) {
 }
 
 async function updateSpotify (spotify) {
-  console.log("spotify: ", spotify)
   return await fetch(`${BASE_URL}/update/spotify/${spotify}/`, 
   {
     method: 'PUT',
@@ -139,7 +135,6 @@ async function updateSpotify (spotify) {
 }
 
 async function createInterested(event) {
-  console.log('event: ', event)
   return await fetch(`${BASE_URL}/${event}/create/interested`, {
     method: 'POST',
     headers: {
@@ -152,7 +147,6 @@ async function createInterested(event) {
 }
 
 async function createAttending(event) {
-  console.log('event: ', event)
   return await fetch(`${BASE_URL}/${event}/create/attending`, {
     method: 'POST',
     headers: {
@@ -165,7 +159,6 @@ async function createAttending(event) {
 }
 
 async function deleteEvent (eventId) {
-  console.log("eventId: ",eventId)
   return await fetch(`${BASE_URL}/delete/event/${eventId}/`, 
   {
     method: 'DELETE',

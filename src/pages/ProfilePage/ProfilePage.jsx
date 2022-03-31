@@ -24,8 +24,6 @@ const ProfilePage = (props) => {
   ? location.state?.profile?._id
   : location.state
 
-  console.log("location.state?.profileId: ", location.state?.profileId)
-  console.log("location.state?.profile?._id: ", location.state?.profile?._id)
   
   useEffect(() => {
     profileService.showProfile(props.user.profile)
@@ -60,7 +58,6 @@ const ProfilePage = (props) => {
   //use filter method on existing object to find id of item we want to delete
 
   const handleAddFriend = async (evt) => {
-    console.log("hit")
     evt.preventDefault()
     try {
       const data = await profileService.addFriend(location.state.profile._id, location.state.profile.name)
@@ -77,7 +74,6 @@ const ProfilePage = (props) => {
   
   return (
     <>
-    {console.log(friendsProfileId)}
     {props.user.profile === location.state?.profile || props.user.profile === location.state?.profile?._id ? 
       <>
         <h1>My Profile</h1>
@@ -134,7 +130,7 @@ const ProfilePage = (props) => {
           </div>
       </>
       :
-      <Friend user={props.user} handleAddFriend={handleAddFriend} handleDeleteFriend={props.handleDeleteFriend} friendsProfileId={friendsProfileId}/>
+      <Friend user={props.user} profile={profile} handleAddFriend={handleAddFriend} handleDeleteFriend={props.handleDeleteFriend} friendsProfileId={friendsProfileId}/>
     }
   </>
   )

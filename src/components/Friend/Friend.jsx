@@ -13,9 +13,10 @@ const Friend = (props) => {
       .then(profileData => setFriend(profileData))
   }, [])
 
+  const isFriend = props.profile?.friends?.some(currentId => currentId?.profileId === friend?._id)
+  
   return (
     <> 
-    {console.log(props.friendsProfileId)}
       <div className="container whole-friend-component">
         <article className="postcard card-body whole-postcard-body">
           <img className="friend-component-avatar postcard_img" src="https://i.imgur.com/Y5qHYjd.png" alt="Avatar" />
@@ -48,24 +49,20 @@ const Friend = (props) => {
                   :
                   <p>no favorite artists yet</p>
                 }
-              </div>
-              {/* HIDING THIS DIV FOR NOW. DO WE WANT TO DISPLAY THEIR */}
-              {/* <div>
-                {friend?.friends ?
-                  <div>
-                    <h6 className="friend-component-header">Friends:</h6>
-                    {friend?.friends?.map(otherFriend =>
-                      <h6>{otherFriend.name}</h6>
-                    )}
-                  </div>
+                {isFriend ? 
+                  <button className="unfriend-button btn btn-success" type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
+                
                   :
-                  <p>no friends yet</p>
-                }
-              </div> */}
+                  <button className="unfriend-button btn btn-success" onClick={props.handleAddFriend}>Add Friend</button>
+
+              }
+              </div>
               <div>
-                <button className="unfriend-button btn btn-success" onClick={props.handleAddFriend}>Add Friend</button>
-                <button className="unfriend-button btn btn-success" type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
-          </div>
+                <h2>Friend Events Here</h2>
+                {friend?.events?.map(event =>
+                      <h6 className="btn btn-success btn-genre-artist">{event.name}</h6>
+                    )}
+              </div>
          </div>
        </div>
       </article>
