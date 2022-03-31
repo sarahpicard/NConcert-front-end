@@ -39,8 +39,8 @@ const Friend = (props) => {
   return ( 
     <>
     <div className="container whole-friend-component">
-      <article className="postcard card-body">
-        <img className="friend-component-avatar" src="https://i.imgur.com/Y5qHYjd.png" alt="Avatar" />
+      <article className="postcard card-body whole-postcard-body">
+        <img className="friend-component-avatar postcard_img" src="https://i.imgur.com/Y5qHYjd.png" alt="Avatar" />
       <div className="friend-component-info">
         <h1 className="">{friend?.name}</h1><br />
       <div className="">
