@@ -31,7 +31,7 @@ const Profiles = () => {
                       </Link>
                         <div className="card-body">
                           <h5 className="card-title" key={profile._id}>{profile.name.toUpperCase()}</h5>
-                          <p className="card-text">this will be where profile bio goes </p>
+                          <p className="card-text">{profile?.bio}</p>
                           <i className='bx bx-chevrons-down bx-lg profile-more-info-btn'></i>
                         </div>
                     </div>

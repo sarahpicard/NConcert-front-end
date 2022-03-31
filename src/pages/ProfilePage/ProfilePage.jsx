@@ -67,6 +67,15 @@ const ProfilePage = (props) => {
     }
   }
 
+  const handleDeleteFriend = (friendId) => {
+    console.log(friendId)
+    try {
+      profileService.deleteFriend(friendId)
+    } catch (err) {
+      console.log(err)
+    } 
+  }
+
   const { bio } = profileData
   const { genre } = profileData
   const { artist } = profileData
@@ -119,7 +128,7 @@ const ProfilePage = (props) => {
               <>
                 <h2>My Friends Here</h2>
                 {profile?.friends?.map(friend => 
-                  <FriendCard friend={friend} friendsProfileId={friendsProfileId}handleDeleteFriend={props.handleDeleteFriend} handleAddFriend={handleAddFriend}/>
+                  <FriendCard friend={friend} friendsProfileId={friendsProfileId}handleDeleteFriend={handleDeleteFriend} handleAddFriend={handleAddFriend}/>
                 )}
               </>
              :
@@ -130,7 +139,7 @@ const ProfilePage = (props) => {
           </div>
       </>
       :
-      <Friend user={props.user} profile={profile} handleAddFriend={handleAddFriend} handleDeleteFriend={props.handleDeleteFriend} friendsProfileId={friendsProfileId}/>
+      <Friend user={props.user} profile={profile} handleAddFriend={handleAddFriend} handleDeleteFriend={handleDeleteFriend} friendsProfileId={friendsProfileId}/>
     }
   </>
   )
