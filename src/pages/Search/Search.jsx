@@ -68,6 +68,8 @@ const Search = (props) => {
 
 
   return (
+    <div>
+    <h1 className='event-search-h1'>search for events:</h1>
     <div className='whole-search-component'>
       <div className='search-component-inputs'>
         <form action="#" onSubmit={handleSubmit}>
@@ -112,9 +114,11 @@ const Search = (props) => {
             <button onClick={nextPage}>Next Page</button>
           </div>
           :
-          <p className='nothing-searched-text'>search above to see event list</p>
+          <p className='nothing-searched-text'>search above using keyword and city to show events</p>
         }
       </div>
+    </div>
+
     </div>
   )
 }
