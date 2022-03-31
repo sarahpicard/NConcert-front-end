@@ -6,6 +6,7 @@ import { Friend } from "../../components/Friend/Friend"
 import { Link } from 'react-router-dom'
 import FriendCard from "../../components/FriendCard/FriendCard"
 
+import './ProfilePage.css'
 
 const ProfilePage = (props) => {
   const [profile, setProfile] = useState({})
@@ -75,26 +76,27 @@ const ProfilePage = (props) => {
   return (
     <>
     {props.user.profile === location.state?.profile || props.user.profile === location.state?.profile?._id ? 
-      <>
-        <h1>My Profile</h1>
+      <div className="whole-profile-pg">
+        <h1 className="my-profile-h1">My Profile</h1>
+        <hr />
           { !isComplete ?
             <>
-            <h1>Edit Profile</h1>
-              <h4>Add your favorite artists and genres!</h4>
+            <h1 className="edit-profile-h1">Edit Profile</h1>
+              <h4 className="add-artists-genres-h4">Add your favorite artists and genres!</h4>
                 <form onSubmit={submitProfileData}>
                   <label>Bio:
-                    <input type="text" value={bio} name="bio" autoComplete="off" onChange={handleAddProfileData}/>
+                    <input className="profile-pg-input" type="text" value={bio} name="bio" autoComplete="off" onChange={handleAddProfileData}/>
                   </label>
                   <label>Genre:
-                    <input type="text" value={genre} name="genre" autoComplete="off" onChange={handleAddProfileData}/>
+                    <input className="profile-pg-input" type="text" value={genre} name="genre" autoComplete="off" onChange={handleAddProfileData}/>
                   </label>
                   <label>Artist:
-                    <input type="text" value={artist} name="artist"  onChange={handleAddProfileData} />
+                    <input className="profile-pg-input" type="text" value={artist} name="artist"  onChange={handleAddProfileData} />
                   </label>
                   <label>Spotify Playlist:
-                    <input type="text" value={spotify} name="spotify"  onChange={handleAddProfileData} />
+                    <input className="profile-pg-input" type="text" value={spotify} name="spotify"  onChange={handleAddProfileData} />
                   </label>
-                  <button type="submit" onClick={onProfileSubmit}>Add To Profile</button>
+                  <button className="btn btn-success profile-update-btn" type="submit" onClick={onProfileSubmit}>Add To Profile</button>
                 </form>
               </>
             :
@@ -103,21 +105,21 @@ const ProfilePage = (props) => {
               </Link>
             } 
           <div className="profile-info">
-            <p>Bio: Sarah</p>
-            <p>Favorite Artists: {profile?.artist?.map(artist => 
+            <p><span className="my-bio-header">Bio:</span> Sarah</p>
+            <p><span className="my-bio-header">Favorite Artists:</span>{profile?.artist?.map(artist => 
               <>{artist?.artist}<br/></>
               )}
             </p>
-            <p>Favorite Genres: {profile?.genre?.map(genre => 
+            <p><span className="my-bio-header">Favorite Genres:</span> {profile?.genre?.map(genre => 
               <>{genre?.genre}<br/></>
               )}
             </p>
-            <p>Spotify: <a href={profile?.spotify}>My Favorite Playlist</a></p>
+            <p><span className="my-bio-header">Spotify:</span> <a href={profile?.spotify}>My Favorite Playlist</a></p>
           </div>
           <div className="friends">
             {profile?.friends?.length ? 
               <>
-                <h2>My Friends Here</h2>
+                <h2>My Friends: </h2>
                 {profile?.friends?.map(friend => 
                   <FriendCard friend={friend} friendsProfileId={friendsProfileId}handleDeleteFriend={props.handleDeleteFriend} handleAddFriend={handleAddFriend}/>
                 )}
@@ -128,7 +130,7 @@ const ProfilePage = (props) => {
               </>
             }
           </div>
-      </>
+      </div>
       :
       <Friend user={props.user} profile={profile} handleAddFriend={handleAddFriend} handleDeleteFriend={props.handleDeleteFriend} friendsProfileId={friendsProfileId}/>
     }
