@@ -4,21 +4,21 @@ import * as profileService from '../../services/profileService'
 
 
 const Event = (props) => {
-  const [friendState, setFriendState] = useState([])
+  // const [profile, setProfile] = useState()
   
-  const handleDeleteEvent = async (eventId) => {
-    try {
-      const data = await profileService.deleteEvent(props.event._id)
-      setFriendState(data)
-      console.log(data)
-    } catch (err) {
-      console.log(err)
-    } 
-  }
+  // useEffect(() => {
+  //   profileService.showProfile(props.user.profile)
+  //   .then(data => {
+  //     console.log("useEffect data: ", data)
+  //     setProfile(data)
+  //   })
+  // }, [profile?.events?.length])
+
+
 
   return ( 
     <>
-      {console.log(props.event.id)}
+      {console.log("profile: ", props.profile)}
       <div>
         <h4>{props.event.name}</h4>
         <p><a href={`${props.event.url}`}>Buy Tickets</a></p>
@@ -27,7 +27,7 @@ const Event = (props) => {
         <p>{props.event.time}</p>
         <p>{props.event.city}, {props.event.state}</p>
         <Link to={`/myevents/${props.event.eventId}`} state={props.event}>See Event</Link>
-        <button onClick={() => handleDeleteEvent(props.event._id)}>Delete Event</button>
+        <button onClick={() => props.handleDeleteEvent(props.event._id)}>Delete Event</button>
       </div>
     </>
    );
