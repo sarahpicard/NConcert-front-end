@@ -68,7 +68,7 @@ const ProfilePage = (props) => {
   }
 
   const handleDeleteFriend = (friendId) => {
-    console.log(friendId)
+    console.log("profile", friendId)
     try {
       profileService.deleteFriend(friendId)
     } catch (err) {
@@ -139,7 +139,7 @@ const ProfilePage = (props) => {
           </div>
       </>
       :
-      <Friend user={props.user} profile={profile} handleAddFriend={handleAddFriend} handleDeleteFriend={handleDeleteFriend} friendsProfileId={friendsProfileId}/>
+      <Friend user={props.user} profile={profile} handleAddFriend={handleAddFriend} friends={friends} handleDeleteFriend={handleDeleteFriend} friendsProfileId={friendsProfileId}/>
     }
   </>
   )
