@@ -3,6 +3,7 @@ import * as eventService from '../../services/eventServices'
 import { useLocation } from "react-router-dom"
 import * as profileService from '../../services/profileService'
 
+import './MyEventDetails.css'
 
 const MyEventDetails = (props) => {
   const [event,setEvent] = useState([])
@@ -35,26 +36,26 @@ const MyEventDetails = (props) => {
   }
 
   return(
-    <>
-      <h1>{props._name}</h1>
+    <div className="my-event-details-whole-page">
+      <h1 className="my-event-details-h1">{props._name}</h1>
       <img 
         src={event[0]?.images?.find(image => image.height > 110 && image.width > 100).url} alt="concertImage" 
         className='event-detail-images'
       />
-      <button onClick={handleInterestedEvent}>
+      <button className="btn btn-success btn-sm" onClick={handleInterestedEvent} style={{ margin: '5px'}}>
         Interested
       </button>
-      <button onClick={handleAttendingEvent}>
+      <button className="btn btn-success btn-sm" onClick={handleAttendingEvent}>
         Attending
       </button>
-      <button onClick={() => props.handleDeleteEvent(location.state._id)}>Delete Event</button>
+      <button className="btn btn-success btn-sm" onClick={() => props.handleDeleteEvent(location.state._id)} style={{ margin: '5px'}}>Delete Event</button>
       <h2>{location.state.name}</h2>
       <p>{location.state.venue}</p>
       <p>{location.state.city}, {location.state.state}</p>
       <p>{location.state.date}</p>
       <p>{location.state.time}</p>
       <a href={location.state.url}>Buy Tickets</a>
-    </>
+    </div>
   )
 }
  

@@ -1,0 +1,13 @@
+.my-event-details-whole-page {
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 5%;
+  background-color: #e2f3ef;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 70px;
+  padding: 50px;
+}
+.my-event-details-h1 {
+  font-size: 45px;
+  font-weight: 700;
+}
