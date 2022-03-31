@@ -108,19 +108,19 @@ const EditProfile = (props) => {
         <h2>Bio:</h2>
         <p>{profile?.bio}</p>
       </div>
-      <div>
+      <div className='update-profile-divs'>
         <h2>My Favorite Genres:</h2>
         {profile?.genre.map(genre => 
           <Genre genre={genre} handleDeleteGenre={props.handleDeleteGenre}/>
         )}
       </div>
-      <div>
+      <div className='update-profile-divs'>
         <h2>My Favorite Artists:</h2>
         {profile?.artist.map(artist => 
           <Artist artist={artist} handleDeleteArtist={props.handleDeleteArtist}/>
         )}
       </div>
-      <div>
+      <div className='update-profile-divs'>
         <h2>My Spotify Playlist</h2>
           <Link to={`/`}>Spotify</Link>
       </div>

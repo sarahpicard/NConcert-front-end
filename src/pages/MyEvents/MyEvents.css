@@ -1,0 +1,63 @@
+.whole-myevents-page {
+  margin-top: 4%;
+  margin-left: 7%;
+  margin-right: 7%;
+  background-color: #e2f3ef;
+  font-family: 'Roboto', sans-serif;
+  padding: 70px;
+  border-radius: 70px;
+}
+.my-events-h1 {
+  font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.my-events-h2 {
+  font-size: 25px;
+  font-weight: 600;
+}
+@media screen and (max-width: 1200px) {
+  .whole-myevents-page {
+    margin-left: -10%;
+  }
+}
+@media screen and (max-width: 965px) {
+  .whole-myevents-page {
+    margin-left: -20%;
+  }
+}
+@media screen and (max-width: 840px) {
+  .whole-myevents-page {
+    margin-left: -25%;
+  }
+}
+@media screen and (max-width: 675px) {
+  .whole-myevents-page {
+    margin-left: -37%;
+  }
+}
+@media screen and (max-width: 567px) {
+  .whole-myevents-page {
+    margin-left: -50%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .whole-myevents-page {
+    margin-left: -62%;
+  }
+}
+@media screen and (max-width: 465px) {
+  .whole-myevents-page {
+    margin-left: -76%;
+  }
+}
+@media screen and (max-width: 420px) {
+  .whole-myevents-page {
+    margin-left: -100%;
+  }
+}
+@media screen and (max-width: 395px) {
+  .whole-myevents-page {
+    margin-left: -120%;
+  }
+}
