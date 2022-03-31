@@ -1,7 +1,12 @@
 .whole-event-detail-page {
   margin-left: 7%;
   margin-right: 7%;
-  margin-top: 4.5%;
+  margin-top: 6%;
+  font-family: 'Roboto', sans-serif;
+  background-color: #e2f3ef;
+  border-radius: 70px;
+  padding: 80px;
+  margin-bottom: 20px;
 }
 
 .event-detail-images {
@@ -16,19 +21,40 @@
 }
 .event-detail-name {
   display: inline-flex;
-  font-size: 40px;
-  font-weight: 600;
+}
+.event-detail-h2 {
+  font-size: 45px;
+  font-weight: 700;
 }
 .event-detail-genre {
   display: inline-flex;
 }
 .btn-success {
   background-color: #377f6e;
+  color: white;
 }
 .btn-success:hover {
   background-color: #317162;
 }
 .event-interest-btn {
   margin-top: 15px;
-  margin-left: 60px;
+  margin-left: 18px;
+  margin-bottom: 30px;
+}
+.btn-a-link {
+  color: white;
+}
+.btn-a-link:hover {
+  color: white;
+}
+.date-and-time-div {
+  display: inline-flex;
+}
+.venue-information {
+  font-weight: 700;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.accessible-seating-span {
+  font-weight: 600;
 }
