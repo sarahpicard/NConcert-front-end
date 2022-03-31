@@ -12,7 +12,11 @@ const EditProfile = (props) => {
     bio: '',
     spotify: '',
   })
-
+  const [genreState, setGenreState] = useState([])
+  const [artistState, setArtistState] = useState([])
+  const [bioState, setBioState] = useState([])
+  const [spotifyState, setSpotifyState] = useState([])
+  
   useEffect(() => {
     profileService.showProfile(props.user.profile)
     .then(data => setProfile(data))
@@ -22,42 +26,43 @@ const EditProfile = (props) => {
     setProfileData({...profileData, [evt.target.name]: evt.target.value})
   }
 
-  const handleAddGenre = (evt) => {
+  const handleAddGenre = async (evt) => {
     console.log("add genre: ", profileData.genre)
     evt.preventDefault()
     try {
-      profileService.addGenre(profileData.genre)
+      const data = await profileService.addGenre(profileData.genre)
+      setGenreState([...genre, data])
     } catch (err) {
       console.log(err)
     }
   }
 
 
-  const handleAddArtist = (evt) => {
+  const handleAddArtist = async (evt) => {
     console.log("add artist: ", profileData.artist)
     evt.preventDefault()
     try {
-      profileService.addArtist(profileData.artist)
+      const data = await profileService.addArtist(profileData.artist)
     } catch (err) {
       console.log(err)
     }
   }
 
-  const handleUpdateBio = (evt) => {
+  const handleUpdateBio = async (evt) => {
     console.log("update bio: ", profileData.bio)
     evt.preventDefault()
     try {
-      profileService.updateBio(profileData.bio)
+      const data = await profileService.updateBio(profileData.bio)
     } catch (err) {
       console.log(err)
     }
   }
 
-  const handleUpdateSpotify = (evt) => {
+  const handleUpdateSpotify = async (evt) => {
     console.log("update spotify: ", profileData.spotify)
     evt.preventDefault()
     try {
-      profileService.updateSpotify(profileData.spotify)
+      const data = await profileService.updateSpotify(profileData.spotify)
     } catch (err) {
       console.log(err)
     }
