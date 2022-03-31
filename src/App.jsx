@@ -27,9 +27,11 @@ const App = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
+    if (user.profile) {
     profileService.showProfile(user.profile)
     .then(data => setProfile(data))
-  }, [])
+    }
+  }, [user])
 
   const handleLogout = () => {
     authService.logout()
