@@ -4,6 +4,7 @@ import { showProfile } from "../../services/profileService"
 import * as profileService from '../../services/profileService'
 import { Friend } from "../../components/Friend/Friend"
 import { Link } from 'react-router-dom'
+import FriendCard from "../../components/FriendCard/FriendCard"
 
 
 const ProfilePage = (props) => {
@@ -20,8 +21,6 @@ const ProfilePage = (props) => {
   const friendsProfileId = location.state.profile 
   ? location.state.profile._id
   : location.state.profileId
-
-  console.log('profile: ', profile)
   
   useEffect(() => {
     profileService.showProfile(props.user.profile)
@@ -59,6 +58,7 @@ const ProfilePage = (props) => {
   //use filter method on existing object to find id of item we want to delete
 
   const handleAddFriend = async (evt) => {
+    console.log("hit")
     evt.preventDefault()
     try {
       const data = await profileService.addFriend(location.state.profile._id, location.state.profile.name)
@@ -118,9 +118,10 @@ const ProfilePage = (props) => {
           <div className="friends">
             {profile?.friends?.length ? 
               <>
+              {/* We can't use this friend component here anymore since that's what we're building out as the main Friend page */}
                 <h2>My Friends Here</h2>
                 {profile?.friends?.map(friend => 
-                  <Friend friend={friend} handleDeleteFriend={props.handleDeleteFriend}/>
+                  <FriendCard friend={friend} friendsProfileId={friendsProfileId}handleDeleteFriend={props.handleDeleteFriend} handleAddFriend={handleAddFriend}/>
                 )}
               </>
              :
@@ -131,7 +132,7 @@ const ProfilePage = (props) => {
           </div>
       </>
       :
-      <Friend friendsProfileId={friendsProfileId}/>
+      <Friend handleAddFriend={handleAddFriend} handleDeleteFriend={props.handleDeleteFriend} friendsProfileId={friendsProfileId}/>
     }
   </>
   )

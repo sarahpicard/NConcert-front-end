@@ -43,55 +43,40 @@ const Friend = (props) => {
         <img className="friend-component-avatar postcard_img" src="https://i.imgur.com/Y5qHYjd.png" alt="Avatar" />
       <div className="friend-component-info">
         <h1 className="">{friend?.name}</h1><br />
-      <div className="">
-        <h6 className="friend-component-header card-text"><span>Bio:</span> {friend?.bio}</h6>
-      </div><br />
-      <div className="">
-      <div>
-        {friend?.genre ?
-        <div>
-          <h6 className="friend-component-header">Favorite Genres:</h6>
-            {friend?.genre.map(genre => 
-              <h6 className="btn btn-success btn-genre-artist">{genre.genre}</h6>
-              )}
-          </div>
-        :
-        <p>no favorite genres yet</p>
-      }
-      </div><br />
-      <div>
-        {friend?.artist ?
+          <div className="">
+            <h6 className="friend-component-header card-text"><span>Bio:</span> {friend?.bio}</h6>
+          </div><br />
+        <div className="">
           <div>
-            <h6 className="friend-component-header">Favorite Artists:</h6>
-            {friend?.artist.map(artist =>
-              <h6 className="btn btn-success btn-genre-artist">{artist.artist}</h6>
-              )}
-          </div>
-          :
-          <p>no favorite artists yet</p>
-        }
+            {friend?.genre ?
+              <div>
+                <h6 className="friend-component-header">Favorite Genres:</h6>
+                  {friend?.genre?.map(genre => 
+                    <h6 className="btn btn-success btn-genre-artist">{genre.genre}</h6>
+                  )}
+              </div>
+              :
+              <p>no favorite genres yet</p>
+            }
+      </div><br />
+      <div>
+        <h6 className="friend-component-header">Favorite Artists:</h6>
+          {friend?.artist?.map(artist =>
+            <h6 className="btn btn-success btn-genre-artist">{artist.artist}</h6>
+          )}
       </div>
       <div>
-        {friend?.friends ? 
-          <div>
-            <h6 className="friend-component-header">Friends:</h6>
-            {friend?.friends.map(otherFriend =>
-              <h6>{otherFriend.name}</h6>
-              )}
-          </div>
-          :
-          <p>no friends yet</p>
-        }
+        <h6  className="friend-component-header">Friends:</h6>
+        {friend?.friends?.map(otherFriend =>
+          <h6>{otherFriend.name}</h6>
+          )}
       </div>
-        <div>
-          <button className="unfriend-button btn btn-success" type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
-        </div><br />
-      </div>
-      </div>
+      <button className="unfriend-button btn btn-success" onClick={props.handleAddFriend}>Add Friend</button>
+      <button className="unfriend-button btn btn-success" type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
+//       </div>
+//       </div>
+//       </div>
       </article>
-      {/* <button type="submit" onClick={() => props.handleDeleteFriend(props.friend?._id)}>Unfriend: </button> */} 
-
-
     </div>
     </>
   );
