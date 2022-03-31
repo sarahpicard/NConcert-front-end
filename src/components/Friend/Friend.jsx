@@ -58,6 +58,21 @@ const Friend = (props) => {
                 }
               </div>
               <div>
+              {isFriend ? 
+                friend?.events ?
+                  <div>
+                    <h6 className="friend-component-header">Events:</h6>
+                    {friend?.events?.map(event =>
+                      <h6 className=" btn btn-genre-artist">{event.name}</h6>
+                    )}
+                  </div>
+                    :
+                    <p>no favorite artists yet</p>
+                  :
+                  <></>
+              }
+              </div>
+              <div>
           </div>
         </div>
       </div>
