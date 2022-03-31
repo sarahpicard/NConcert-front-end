@@ -2,8 +2,8 @@
   margin-top: 3%;
 }
 .all-profiles-avatar-img {
-  height: 300px;
-  width: 285px;
+  height: 190px;
+  width: 190px;
   border-top-left-radius: 6%;
   border-top-right-radius: 6%;
 }
@@ -23,4 +23,61 @@
 .individual-cards:hover {
   transform: scale(1.1);
   color: #377f6e;
+}
+@media screen and (max-width: 1200px) {
+  .profiles-cards {
+    margin-left: -10%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .profiles-cards {
+    margin-left: -35%;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 457px) {
+  .profiles-cards {
+    margin-left: -55%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .profiles-cards {
+    margin-left: -75%;
+  }
+}
+@media screen and (max-width: 390px) {
+  .profiles-cards {
+    margin-left: -95%;
+  }
+}
+@media screen and (max-width: 370px) {
+  .profiles-cards {
+    margin-left: -120%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .profiles-cards {
+    margin-left: -160%;
+  }
+}
+@media screen and (max-width: 330px) {
+  .profiles-cards {
+    margin-left: -190%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .profiles-cards {
+    margin-left: -230%;
+  }
+}
+@media screen and (max-width: 310px) {
+  .profiles-cards {
+    margin-left: -270%;
+  }
+}
+@media screen and (max-width: 300px) {
+  .profiles-cards {
+    margin-left: -320%;
+  }
 }

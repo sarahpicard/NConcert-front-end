@@ -27,7 +27,7 @@ const Event = (props) => {
         <p>{props.event.time}</p>
         <p>{props.event.city}, {props.event.state}</p>
         <Link to={`/myevents/${props.event.eventId}`} state={props.event}>See Event</Link>
-        <button onClick={() => props.handleDeleteEvent(props.event._id)}>Delete Event</button>
+        <button className="btn btn-success btn-sm" onClick={() => props.handleDeleteEvent(props.event._id)} style={{ margin: '6px'}}>Delete Event</button>
       </div>
     </>
    );

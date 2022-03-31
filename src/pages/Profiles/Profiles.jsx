@@ -25,7 +25,7 @@ const Profiles = () => {
               <Col>
                 <div>
                   <Link to={`/profile/${profile._id}`} state={{profile}}>
-                    <div className="card individual-cards" style={{ width: '18rem'}}>
+                    <div className="card individual-cards" style={{ width: '12rem'}}>
                       <Link to={`/profile/${profile._id}`} state={{profile}}>
                         <img src="https://i.imgur.com/Wk1vQtF.png" alt="avatar" className='all-profiles-avatar-img'/>
                       </Link>
