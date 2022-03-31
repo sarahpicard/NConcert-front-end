@@ -3,9 +3,10 @@ import { useLocation } from "react-router-dom";
 import { showProfile } from "../../services/profileService"
 import { useState, useEffect } from "react";
 
+import './Friend.css'
+
 const Friend = (props) => {
   const [friend, setFriend] = useState()
-
 
 
   console.log(friend)
@@ -36,18 +37,17 @@ const Friend = (props) => {
 // </>
 
   return ( 
-    <>
-      <h1>hello</h1>
+    <div className="whole-friend-component">
+      <h1>{friend.name}</h1>
       <div>
-        <h6>Bio:</h6>
-        <p>{friend?.bio}</p>
+        <h6>Bio: {friend?.bio}</h6>
       </div>
       <div>
         {friend?.genre ?
         <div>
           <h6>Favorite Genres:</h6>
             {friend?.genre.map(genre => 
-              <h6>genre</h6>
+              <h6>{genre.genre}</h6>
             )}
           </div>
         :
@@ -55,22 +55,34 @@ const Friend = (props) => {
       }
       </div>
       <div>
-        <h6>Favorite Artists:</h6>
-        {friend?.artist.map(artist =>
-          <h6>artist</h6>
-          )}
+        {friend?.artist ?
+          <div>
+            <h6>Favorite Artists:</h6>
+            {friend?.artist.map(artist =>
+              <h6>{artist.artist}</h6>
+            )}
+          </div>
+          :
+          <p>no favorite artists yet</p>
+        }
       </div>
       <div>
-        <h6>Friends:</h6>
-        {friend?.friends.map(otherFriend =>
-          <h6>other friend</h6>
-          )}
+        {friend?.friends ? 
+          <div>
+            <h6>Friends:</h6>
+            {friend?.friends.map(otherFriend =>
+              <h6>{otherFriend.name}</h6>
+              )}
+          </div>
+          :
+          <p>no friends yet</p>
+        }
       </div>
       <button type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
       {/* <button type="submit" onClick={() => props.handleDeleteFriend(props.friend?._id)}>Unfriend: </button> */} 
 
 
-    </>
+    </div>
    );
 }
  
