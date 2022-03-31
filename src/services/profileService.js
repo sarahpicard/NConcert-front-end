@@ -52,7 +52,7 @@ async function deleteFriend (profileObjectId) {
     },
     body: JSON.stringify()
   },)
-  .then(res => res.json)
+  .then(res => res.json())
 }
 
 async function deleteArtist (artistId) {
@@ -65,7 +65,7 @@ async function deleteArtist (artistId) {
     },
     body: JSON.stringify()
   },)
-  .then(res => res.json)
+  .then(res => res.json())
 }
 
 async function deleteGenre (genreId) {
@@ -78,7 +78,10 @@ async function deleteGenre (genreId) {
     },
     body: JSON.stringify()
   },)
-  .then(res => res.json)
+  .then(res => {
+    res.json()
+    // console.log(res)
+  })
 }
 
 async function addGenre (genre) {
@@ -91,7 +94,7 @@ async function addGenre (genre) {
     },
     body: JSON.stringify()
   },)
-  .then(res => res.json)
+  .then(res => res.json())
 }
 
 async function addArtist (artist) {
@@ -104,7 +107,7 @@ async function addArtist (artist) {
     },
     body: JSON.stringify()
   },)
-  .then(res => res.json)
+  .then(res => res.json())
 }
 
 async function updateBio (bio) {
@@ -118,7 +121,7 @@ async function updateBio (bio) {
     },
     body: JSON.stringify()
   },)
-  .then(res => res.json)
+  .then(res => res.json())
 }
 
 async function updateSpotify (spotify) {
@@ -132,7 +135,7 @@ async function updateSpotify (spotify) {
     },
     body: JSON.stringify()
   },)
-  .then(res => res.json)
+  .then(res => res.json())
 }
 
 async function createInterested(event) {
@@ -172,7 +175,7 @@ async function deleteEvent (eventId) {
     },
     body: JSON.stringify()
   },)
-  .then(res => res.json)
+  .then(res => res.json())
 }
 
 export {

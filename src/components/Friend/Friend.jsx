@@ -46,7 +46,7 @@ const Friend = (props) => {
         {friend?.genre ?
         <div>
           <h6>Favorite Genres:</h6>
-            {friend?.genre.map(genre => 
+            {friend?.genre?.map(genre => 
               <h6>genre</h6>
             )}
           </div>
@@ -56,16 +56,17 @@ const Friend = (props) => {
       </div>
       <div>
         <h6>Favorite Artists:</h6>
-        {friend?.artist.map(artist =>
+        {friend?.artist?.map(artist =>
           <h6>artist</h6>
           )}
       </div>
       <div>
         <h6>Friends:</h6>
-        {friend?.friends.map(otherFriend =>
+        {friend?.friends?.map(otherFriend =>
           <h6>other friend</h6>
           )}
       </div>
+      <button onClick={props.handleAddFriend}>Add Friend</button>
       <button type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
       {/* <button type="submit" onClick={() => props.handleDeleteFriend(props.friend?._id)}>Unfriend: </button> */} 
 

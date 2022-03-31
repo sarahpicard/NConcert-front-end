@@ -20,7 +20,7 @@ const EditProfile = (props) => {
   useEffect(() => {
     profileService.showProfile(props.user.profile)
     .then(data => setProfile(data))
-  }, [profileData])
+  }, [profile])
 
   const handleUpdateProfileData = (evt) => {
     setProfileData({...profileData, [evt.target.name]: evt.target.value})
@@ -31,6 +31,7 @@ const EditProfile = (props) => {
     evt.preventDefault()
     try {
       const data = await profileService.addGenre(profileData.genre)
+      console.log("data: ", data)
       setGenreState([...genre, data])
     } catch (err) {
       console.log(err)
@@ -43,6 +44,7 @@ const EditProfile = (props) => {
     evt.preventDefault()
     try {
       const data = await profileService.addArtist(profileData.artist)
+      setArtistState([...genre, data])
     } catch (err) {
       console.log(err)
     }
@@ -53,6 +55,7 @@ const EditProfile = (props) => {
     evt.preventDefault()
     try {
       const data = await profileService.updateBio(profileData.bio)
+      setBioState(data)
     } catch (err) {
       console.log(err)
     }
@@ -63,6 +66,7 @@ const EditProfile = (props) => {
     evt.preventDefault()
     try {
       const data = await profileService.updateSpotify(profileData.spotify)
+      setSpotifyState(data)
     } catch (err) {
       console.log(err)
     }

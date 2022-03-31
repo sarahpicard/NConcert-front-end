@@ -18,7 +18,6 @@ const MyEvents = (props) => {
     })
   }, [])
 
-  
 
   return (
   <>
