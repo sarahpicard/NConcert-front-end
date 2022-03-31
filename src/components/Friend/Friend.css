@@ -1,40 +1,26 @@
 .whole-friend-component {
-  margin-left: 7%;
-  margin-right: 7%;
-  margin-top: 170px;
-  padding: 50px;
-  padding-left: 100px;
-  font-family: 'Roboto', sans-serif;
-  background-color: #e2f3ef;
-  border-radius: 70px;
+  margin-top: 4.5%;
 }
+
 .friend-component-header {
   font-weight: 600;
 }
-.avatar-friend-component {
-  height: 300px;
-  width: 300px;
-}
-.image-div-friend-component {
-  display: block;
-  float: left;
-}
-.friend-component-h1 {
-  font-weight: 600;
-  font-size: 60px;
-}
-.whole-bio-component {
-  display: block;
-  margin-left: 28%;
-}
-.unfriend-button {
-  float: right;
-  margin-top: -23%;
-  margin-right: 22%;
-}
+
 .btn-success {
   background-color: #377f6e;
 }
 .btn-success:hover {
   background-color: #317162;
+}
+.btn-genre-artist, .btn-genre-artist:hover{
+  border-radius: 70px;
+  background-color: #9d9d9d;
+  border: 2px solid #9d9d9d;
+}
+.friend-component-avatar {
+  height: 200px;
+  width: 200px;
+  margin-left: 60px;
+  margin-top: 60px;
+  margin-right: 80px
 }
