@@ -16,7 +16,7 @@ const NavBar = ({ user, handleLogout }) => {
               <Link to='/' 
               className='link_tag_destination_home'>
                 <i className="bx bxl-deezer nav_icon_item">
-                  </i><span className='nconcert-h1'>N'Concert</span></Link>
+                  </i><span className='nconcert-h1'>ShOwCIAL</span></Link>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ const NavBar = ({ user, handleLogout }) => {
         <div className="logo">
           <i className="bx bxl-deezer nav_icon_item"></i>
           <div className="logo_name">
-            <Link to='/' className='link_tag_destination_home'>N'Concert</Link>
+            <Link to='/' className='link_tag_destination_home'>ShOwCIAL</Link>
           </div>
         </div>
       </div>
