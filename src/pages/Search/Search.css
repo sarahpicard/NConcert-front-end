@@ -87,7 +87,6 @@ a, a:hover {
   text-align: center;
   padding-top: 50px;
 }
-
 @media screen and (min-width: 420px) {
   .postcard {
     flex-wrap: inherit;

@@ -38,12 +38,36 @@ const Friend = (props) => {
   return ( 
     <>
       <h1>hello</h1>
-      {/* {console.log(props.friend)}
-      <h2>{props.friend?.name}</h2>
-      <Link to={`/profile/${props.friend?.profileId}`} state={props.friend}>
-        link to profile
-      </Link>
-      <button type="submit" onClick={() => props.handleDeleteFriend(props.friend?._id)}>Unfriend: </button> */}
+      <div>
+        <h6>Bio:</h6>
+        <p>{friend?.bio}</p>
+      </div>
+      <div>
+        {friend?.genre ?
+        <div>
+          <h6>Favorite Genres:</h6>
+            {friend?.genre.map(genre => 
+              <h6>genre</h6>
+            )}
+          </div>
+        :
+        <p>no favorite genres yet</p>
+      }
+      </div>
+      <div>
+        <h6>Favorite Artists:</h6>
+        {friend?.artist.map(artist =>
+          <h6>artist</h6>
+          )}
+      </div>
+      <div>
+        <h6>Friends:</h6>
+        {friend?.friends.map(otherFriend =>
+          <h6>other friend</h6>
+          )}
+      </div>
+      <button type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
+      {/* <button type="submit" onClick={() => props.handleDeleteFriend(props.friend?._id)}>Unfriend: </button> */} 
 
 
     </>
