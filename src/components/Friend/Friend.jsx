@@ -51,17 +51,25 @@ const Friend = (props) => {
                 }
                 {isFriend ? 
                   <button className="unfriend-button btn btn-success" type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
-                
                   :
                   <button className="unfriend-button btn btn-success" onClick={props.handleAddFriend}>Add Friend</button>
-
-              }
+                }
               </div>
               <div>
+              {isFriend ? 
+                <>
                 <h2>Friend Events Here</h2>
                 {friend?.events?.map(event =>
-                      <h6 className="btn btn-success btn-genre-artist">{event.name}</h6>
+                      <h6 className="btn btn-success btn-genre-artist">{event?.name}</h6>
                     )}
+                </>
+                :
+                  <></>
+                }
+                {/* <h2>Friend Events Here</h2>
+                {friend?.events?.map(event =>
+                      <h6 className="btn btn-success btn-genre-artist">{event.name}</h6>
+                    )} */}
               </div>
          </div>
        </div>
