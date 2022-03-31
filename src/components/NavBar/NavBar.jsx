@@ -12,9 +12,11 @@ const NavBar = ({ user, handleLogout }) => {
       <div className="sidebar whole-navigation-bar">
         <div className="logo-content">
           <div className="logo">
-            <i className="bx bxl-deezer nav_icon_item"></i>
             <div className="logo_name">
-              <Link to='/' className='link_tag_destination_home'>N'Concert</Link>
+              <Link to='/' 
+              className='link_tag_destination_home'>
+                <i className="bx bxl-deezer nav_icon_item">
+                  </i><span className='nconcert-h1'>N'Concert</span></Link>
             </div>
           </div>
         </div>
