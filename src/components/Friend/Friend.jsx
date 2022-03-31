@@ -71,7 +71,11 @@ const Friend = (props) => {
                       <h6 className="btn btn-success btn-genre-artist">{event.name}</h6>
                     )} */}
               </div>
-         </div>
+              <div>
+                <button className="unfriend-button btn btn-success" onClick={props.handleAddFriend}>Add Friend</button>
+                <button className="unfriend-button btn btn-success" type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
+          </div>
+        </div>
        </div>
       </article>
     </div>
