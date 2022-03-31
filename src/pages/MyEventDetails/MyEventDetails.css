@@ -15,3 +15,59 @@
 .event-detail-images {
   margin-bottom: 30px;
 }
+
+@media screen and (max-width: 1200px) {
+  .my-event-details-whole-page {
+    margin-left: -11%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .my-event-details-whole-page {
+    margin-left: -20%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .my-event-details-whole-page {
+    margin-left: -30%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .my-event-details-whole-page {
+    margin-left: -40%;
+  }
+}
+@media screen and (max-width: 612px) {
+  .my-event-details-whole-page {
+    margin-left: -48%;
+    padding-left: 25px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .my-event-details-whole-page {
+    margin-left: -58%;
+    padding-left: 15px;
+  }
+  .event-detail-images {
+    display: none;
+  }
+}
+@media screen and (max-width: 465px) {
+  .my-event-details-whole-page {
+    margin-left: -80%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .my-event-details-whole-page {
+    margin-left: -95%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .my-event-details-whole-page {
+    margin-left: -115%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .my-event-details-whole-page {
+    margin-left: -145%;
+  }
+}
