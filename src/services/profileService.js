@@ -77,9 +77,7 @@ async function deleteGenre (genreId) {
     },
     body: JSON.stringify()
   },)
-  .then(res => {
-    res.json()
-  })
+  .then(res => res.json())
 }
 
 async function addGenre (genre) {
