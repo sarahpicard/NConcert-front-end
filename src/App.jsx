@@ -27,7 +27,7 @@ const App = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (user.profile) {
+    if (user?.profile) {
     profileService.showProfile(user.profile)
     .then(data => setProfile(data))
     }
