@@ -1,8 +1,119 @@
+.whole-event-detail-page {
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 6%;
+  font-family: 'Roboto', sans-serif;
+  background-color: #e2f3ef;
+  border-radius: 70px;
+  padding: 80px;
+  margin-bottom: 20px;
+}
+
 .event-detail-images {
   height: 300px;
   width: 420px;
+  border-radius: 70px;
+  margin-right: 30px;
 }
 .seatmap-image {
   height: 300px;
   width: 400px;
+}
+.event-detail-name {
+  display: inline-flex;
+}
+.event-detail-h2 {
+  font-size: 45px;
+  font-weight: 700;
+}
+.event-detail-genre {
+  display: inline-flex;
+}
+.btn-success {
+  background-color: #377f6e;
+  color: white;
+}
+.btn-success:hover {
+  background-color: #317162;
+}
+.event-interest-btn {
+  margin-top: 15px;
+  margin-left: 18px;
+  margin-bottom: 30px;
+}
+.btn-a-link {
+  color: white;
+}
+.btn-a-link:hover {
+  color: white;
+}
+.date-and-time-div {
+  display: inline-flex;
+}
+.venue-information {
+  font-weight: 700;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.accessible-seating-span {
+  font-weight: 600;
+}
+@media screen and (max-width: 1200px) {
+  .whole-event-detail-page {
+    padding-left: 20;
+    margin-left: -10%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .whole-event-detail-page {
+    padding-left: 20;
+    margin-left: -18%;
+  }
+}
+@media screen and (max-width: 830px) {
+  .whole-event-detail-page {
+    padding-left: 20;
+    margin-left: -28%;
+    margin-right: 3%;
+  }
+}
+@media screen and (max-width: 761px) {
+  .whole-event-detail-page {
+    padding-left: 15;
+    margin-left: -32%;
+    margin-right: 3%;
+  }
+  .event-detail-h2 {
+    font-size: 30px;
+  }
+  .event-interest-btn {
+    display: block;
+  }
+}
+@media screen and (max-width: 700px) {
+  .whole-event-detail-page {
+    padding-left: 20;
+    margin-left: -37%;
+    margin-right: 3%;
+  }
+  .event-detail-h2 {
+    font-size: 28px;
+  }
+  .venue-information {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .whole-event-detail-page {
+    padding-left: 35px;
+    margin-left: -44%;
+    margin-right: 3%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .whole-event-detail-page {
+    padding-left: 25px;
+    margin-left: -55%;
+    margin-right: 3%;
+  }
 }

@@ -60,6 +60,13 @@ const NavBar = ({ user, handleLogout }) => {
             </Link>
           </div>
         </div>
+        <div className='mobile-response-logout'>
+        <Link to='' onClick={handleLogout} className='link_tag_destination'>
+          <div  id="logout">
+            <i className="bx bxs-log-out nav_icon_item_logout"></i>
+          </div>
+        </Link>
+      </div>
       </div> 
       : 
       <div className="sidebar whole-navigation-bar">

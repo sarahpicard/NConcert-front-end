@@ -1,0 +1,14 @@
+.signup-input {
+  border-radius: 70px;
+  border: none;
+  text-indent: 20px;
+}
+.btn-success {
+  background-color: #377f6e;
+}
+.btn-success:hover {
+  background-color: #317162;
+}
+.signup-btn {
+  margin-right: 10px;
+}
