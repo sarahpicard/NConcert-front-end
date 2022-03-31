@@ -1,11 +1,9 @@
 .whole-friend-component {
   margin-top: 4.5%;
 }
-
 .friend-component-header {
   font-weight: 600;
 }
-
 .btn-success {
   background-color: #377f6e;
 }
@@ -14,8 +12,11 @@
 }
 .btn-genre-artist, .btn-genre-artist:hover{
   border-radius: 70px;
-  background-color: #9d9d9d;
-  border: 2px solid #9d9d9d;
+  background-color: #bababa;
+  border: 2px solid #bababa;
+}
+.btn-genre-artist {
+  width: fit-content;
 }
 .friend-component-avatar {
   height: 200px;
@@ -26,4 +27,11 @@
 }
 .whole-postcard-body {
   background-color: #e2f3ef;
+}
+.unfriend-button {
+  margin-bottom: 20px;
+}
+.friend-events {
+  margin-top: 20px;
+  font-size: 30px;
 }

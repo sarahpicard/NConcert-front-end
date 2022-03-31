@@ -1,0 +1,37 @@
+.whole-profile-pg {
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 4%;
+  background-color: #e2f3ef;
+  padding: 60px;
+  border-radius: 70px;
+  font-family: 'Roboto', sans-serif;
+}
+.profile-pg-input {
+  border-radius: 70px;
+  border: none;
+  text-indent: 20px;
+  height: 30px
+}
+.btn-success {
+  background-color: #377f6e;
+}
+.btn-success:hover {
+  background-color: #317162;
+}
+.profile-update-btn {
+  margin-left: 10px;
+}
+.my-profile-h1 {
+  font-weight: 600;
+  font-size: 50px;
+  margin-bottom: 35px;
+}
+.edit-profile-h1 {
+  font-size: 30px;
+  margin-top: 30px;
+}
+.add-artists-genres-h4 {
+  font-size: 20px;
+  font-style: italic;
+}
