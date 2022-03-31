@@ -51,7 +51,7 @@ const Friend = (props) => {
                 {friend?.genre ?
                   <div>
                     <h6 className="friend-component-header">Favorite Genres:</h6>
-                    {friend?.genre.map(genre =>
+                    {friend?.genre?.map(genre =>
                       <h6 className="btn btn-success btn-genre-artist">{genre.genre}</h6>
                     )}
                   </div>
@@ -63,7 +63,7 @@ const Friend = (props) => {
                 {friend?.artist ?
                   <div>
                     <h6 className="friend-component-header">Favorite Artists:</h6>
-                    {friend?.artist.map(artist =>
+                    {friend?.artist?.map(artist =>
                       <h6 className="btn btn-success btn-genre-artist">{artist.artist}</h6>
                     )}
                   </div>
@@ -75,7 +75,7 @@ const Friend = (props) => {
                 {friend?.friends ?
                   <div>
                     <h6 className="friend-component-header">Friends:</h6>
-                    {friend?.friends.map(otherFriend =>
+                    {friend?.friends?.map(otherFriend =>
                       <h6>{otherFriend.name}</h6>
                     )}
                   </div>
@@ -84,15 +84,13 @@ const Friend = (props) => {
                 }
               </div>
               <div>
+                <button className="unfriend-button btn btn-success" onClick={props.handleAddFriend}>Add Friend</button>
                 <button className="unfriend-button btn btn-success" type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
-              </div><br />
-            </div>
           </div>
-        </article>
-        {/* <button type="submit" onClick={() => props.handleDeleteFriend(props.friend?._id)}>Unfriend: </button> */}
-
-
-      </div>
+//       </div>
+//       </div>
+      </article>
+    </div>
     </>
   );
 }

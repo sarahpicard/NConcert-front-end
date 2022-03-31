@@ -4,12 +4,13 @@ import * as profileService from '../../services/profileService'
 
 
 const Event = (props) => {
-
+  const [friendState, setFriendState] = useState([])
   
-  const handleDeleteEvent = (eventId) => {
-    console.log(props.event._id)
+  const handleDeleteEvent = async (eventId) => {
     try {
-      profileService.deleteEvent(props.event._id)
+      const data = await profileService.deleteEvent(props.event._id)
+      setFriendState(data)
+      console.log(data)
     } catch (err) {
       console.log(err)
     } 
@@ -17,7 +18,7 @@ const Event = (props) => {
 
   return ( 
     <>
-      {console.log(props)}
+      {console.log(props.event.id)}
       <div>
         <h4>{props.event.name}</h4>
         <p><a href={`${props.event.url}`}>Buy Tickets</a></p>
