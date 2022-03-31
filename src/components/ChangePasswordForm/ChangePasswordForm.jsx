@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import styles from './ChangePasswordForm.module.css'
 import * as authService from '../../services/authService'
 
+import './ChangePasswordForm.css'
+
 const ChangePasswordForm = props => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
@@ -51,6 +53,7 @@ const ChangePasswordForm = props => {
           value={pw}
           name="pw"
           onChange={handleChange}
+          className='change-password-input'
         />
       </div>
       <div className={styles.inputContainer}>
@@ -64,6 +67,7 @@ const ChangePasswordForm = props => {
           value={newPw}
           name="newPw"
           onChange={handleChange}
+          className='change-password-input'
         />
       </div>
       <div className={styles.inputContainer}>
@@ -77,14 +81,15 @@ const ChangePasswordForm = props => {
           value={newPwConf}
           name="newPwConf"
           onChange={handleChange}
+          className='change-password-input'
         />
       </div>
       <div className={styles.inputContainer}>
-        <button disabled={isFormInvalid()} className={styles.button}>
+        <button disabled={isFormInvalid()} className='btn btn-success change-password-btn'>
           Change Password
         </button>
         <Link to="/">
-          <button>Cancel</button>
+          <button className='btn btn-success'>Cancel</button>
         </Link>
       </div>
     </form>

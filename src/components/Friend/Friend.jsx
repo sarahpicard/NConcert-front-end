@@ -87,8 +87,8 @@ const Friend = (props) => {
                 <button className="unfriend-button btn btn-success" onClick={props.handleAddFriend}>Add Friend</button>
                 <button className="unfriend-button btn btn-success" type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
           </div>
-//       </div>
-//       </div>
+        </div>
+       </div>
       </article>
     </div>
     </>

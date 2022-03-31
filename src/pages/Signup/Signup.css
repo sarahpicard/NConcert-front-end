@@ -1,0 +1,9 @@
+.whole-signup-page {
+  margin-top: 10%;
+  background: rgba(0, 0, 0, 0.2);
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 70px;
+  padding: 30px;
+  font-family: 'Roboto', sans-serif;
+}
