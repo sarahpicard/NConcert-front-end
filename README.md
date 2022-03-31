@@ -1,68 +1,25 @@
-# Decoupled MERN Stack with JWT Auth Template - Front End
+# N'Concert 
+### Welcome to N'Concert! 🎹
+N'concert delivers a social experience for event discovery, organization, and the purchasing of concert tickets. N'Concert allows users to search for concert events based on keyword and location. Users can search for Adele in Boston, Rock concerts in Detroit, or Country Music events in Dallas... the options are endless!
 
-This is the front end of a decoupled MERN Stack app that includes JWT Authentication.
+The app also allows for users to customize their social profiles, to include artists and genres they are interested in, a bio to share with friends, and even a favorite Spotify™ playlist!
 
-When combined with the back end found [here](https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-back-end), you'll have all you need to build a full stack MERN app!
+Being able to see all profiles on the app, users can add friends and see what events they are interested in!
 
-Use this to go build things! 🚀
+---
+## Meet the Developers! 
 
-## To Use This Template
+### 🧑‍💻 Howard Barrons
+During development, Howard acted as Database and API manager, back-end connoisseur, and full stack developer.
 
-**Replace `<name-of-your-app-here>` in the commands below with the name of your app!**
+    🏆 project commits to date: 
 
-```bash
-git clone https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-front-end <name-of-your-app-here>-front-end
-cd <name-of-your-app-here>-front-end
-```
+### 👩‍💻 Sarah Picard 
+During development, Sarah acted as GitHub manager, Designer, styling expert, and full stack developer.
 
-Once you are in the project directory:
+    🏆 project commits to date:
 
-```bash
-rm -rf .git
-```
+## Wireframing & Concept 
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
-
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
-
-Re-initialize a git repository:
-
-```bash
-git init
-```
-
-Use the GitHub CLI to create a new project repository on GitHub:
-
-```bash
-gh repo create <name-of-your-app-here>-front-end
-```
-
-Run `npm i` to fetch the template's dependencies:
-
-```bash
-npm i
-```
-
-touch a `.env` file:
-
-```bash
-touch .env
-```
-
-Fill it with the following:
-
-```
-REACT_APP_BACKEND_SERVER_URL=http://localhost:3001
-```
-
-> 🚨 DO NOT place secrets in this `.env` file. The contents of this file WILL be exposed to site visitors.
-
-Delete this README.md, then make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
-You're done!
+![wireframe](https://i.imgur.com/SH0tmaV.png)
+Prior to project start, wireframing was completed by Sarah to show ideal project design and flow. The above screenshot details a basic design concept prior to beginning the project. 
