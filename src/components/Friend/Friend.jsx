@@ -8,43 +8,21 @@ import './Friend.css'
 const Friend = (props) => {
   const [friend, setFriend] = useState()
 
-
-  console.log(friend)
-
   useEffect(() => {
     showProfile(props.friendsProfileId)
       .then(profileData => setFriend(profileData))
   }, [])
 
-
-  //   <>
-  //   <h1>hello</h1>
-  //   <h1>Profile</h1>
-  //   <div>
-  //     <p>Bio: {location.state.profile?.bio}</p>
-  //     <p>Favorite Artists: {location.state.profile?.artist?.map(artist => 
-  //        <>{artist.artist}</>
-  //       )}
-  //     </p>
-  //     <p>Favorite Genres: {location.state.profile?.genre?.map(genre => 
-  //       <>{genre.genre}</>
-  //       )}
-  //     </p>
-  //     <p>Spotify: <a href={location.state.profile?.spotify}>{location.state.profile?.name}'s Playlist</a></p>
-  //     <button onClick={handleAddFriend}>Add Friend</button>
-  //     <p>(Note: this will allow {location.state.profile?.name} to see the events you are interested in and attending)</p>
-  //   </div>
-  // </>
-
   return (
-    <>
+    <> 
+    {console.log(props.friendsProfileId)}
       <div className="container whole-friend-component">
         <article className="postcard card-body whole-postcard-body">
           <img className="friend-component-avatar postcard_img" src="https://i.imgur.com/Y5qHYjd.png" alt="Avatar" />
           <div className="friend-component-info">
             <h1 className="">{friend?.name}</h1><br />
             <div className="">
-              <h6 className="friend-component-header card-text"><span>Bio:</span> {friend?.bio}</h6>
+              <h6 className="friend-component-header card-text"><span>Bio: </span> {friend?.bio}</h6>
             </div><br />
             <div className="">
               <div>
@@ -71,7 +49,8 @@ const Friend = (props) => {
                   <p>no favorite artists yet</p>
                 }
               </div>
-              <div>
+              {/* HIDING THIS DIV FOR NOW. DO WE WANT TO DISPLAY THEIR */}
+              {/* <div>
                 {friend?.friends ?
                   <div>
                     <h6 className="friend-component-header">Friends:</h6>
@@ -82,13 +61,13 @@ const Friend = (props) => {
                   :
                   <p>no friends yet</p>
                 }
-              </div>
+              </div> */}
               <div>
                 <button className="unfriend-button btn btn-success" onClick={props.handleAddFriend}>Add Friend</button>
                 <button className="unfriend-button btn btn-success" type='submit' onClick={() => props.handleDeleteFriend(friend?._id)}>Unfriend</button>
           </div>
-//       </div>
-//       </div>
+         </div>
+       </div>
       </article>
     </div>
     </>

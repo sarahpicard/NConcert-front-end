@@ -18,21 +18,23 @@ const ProfilePage = (props) => {
     bio: '',
     spotify: '',
   })
-  const friendsProfileId = location.state.profile 
-  ? location.state.profile._id
-  : location.state.profileId
+
+
+  const friendsProfileId = location.state?.profile 
+  ? location.state?.profile?._id
+  : location.state
+
+  console.log("location.state?.profileId: ", location.state?.profileId)
+  console.log("location.state?.profile?._id: ", location.state?.profile?._id)
   
   useEffect(() => {
     profileService.showProfile(props.user.profile)
     .then(data => {
-      console.log('usEfffect data: ', data)
       setProfile(data)
       setFriends(data.friends)
       data.bio ? setIsComplete(true) : setIsComplete(false)
     })
   }, [props.user.profile, isComplete])
-
-  console.log(friends)
 
   const handleAddProfileData = (evt) => {
     setProfileData({...profileData, [evt.target.name]: evt.target.value})
@@ -75,7 +77,8 @@ const ProfilePage = (props) => {
   
   return (
     <>
-    {props.user.profile === location.state.profile || props.user.profile === location.state.profile?._id ? 
+    {console.log(friendsProfileId)}
+    {props.user.profile === location.state?.profile || props.user.profile === location.state?.profile?._id ? 
       <>
         <h1>My Profile</h1>
           { !isComplete ?
@@ -104,7 +107,7 @@ const ProfilePage = (props) => {
               </Link>
             } 
           <div className="profile-info">
-            <p>Bio: {profile?.bio}</p>
+            <p>Bio: Sarah</p>
             <p>Favorite Artists: {profile?.artist?.map(artist => 
               <>{artist?.artist}<br/></>
               )}
@@ -118,7 +121,6 @@ const ProfilePage = (props) => {
           <div className="friends">
             {profile?.friends?.length ? 
               <>
-              {/* We can't use this friend component here anymore since that's what we're building out as the main Friend page */}
                 <h2>My Friends Here</h2>
                 {profile?.friends?.map(friend => 
                   <FriendCard friend={friend} friendsProfileId={friendsProfileId}handleDeleteFriend={props.handleDeleteFriend} handleAddFriend={handleAddFriend}/>
@@ -132,7 +134,7 @@ const ProfilePage = (props) => {
           </div>
       </>
       :
-      <Friend handleAddFriend={handleAddFriend} handleDeleteFriend={props.handleDeleteFriend} friendsProfileId={friendsProfileId}/>
+      <Friend user={props.user} handleAddFriend={handleAddFriend} handleDeleteFriend={props.handleDeleteFriend} friendsProfileId={friendsProfileId}/>
     }
   </>
   )
