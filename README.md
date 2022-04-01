@@ -8,7 +8,6 @@ Being able to see all profiles on the app, users can add friends and see what ev
 
 ## 👀 Take a look at ShOwCIAL [HERE](https://nconcert-front-end.herokuapp.com/)
 
----
 ## Meet the Developers! 🤝
 
 ### 🧑‍💻 Howard Barrons
