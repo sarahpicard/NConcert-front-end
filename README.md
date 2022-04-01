@@ -15,12 +15,12 @@ Being able to see all profiles on the app, users can add friends and see what ev
 ### 🧑‍💻 Howard Barrons
 During development, Howard acted as Database and API manager, back-end connoisseur, and full stack developer.
 
-    🏆 project commits to date: 
+    🏆 project commits to date: 78
 
 ### 👩‍💻 Sarah Picard 
 During development, Sarah acted as GitHub manager, Designer, styling expert, and full stack developer.
 
-    🏆 project commits to date:
+    🏆 project commits to date: 75
 
 ## Wireframing & Concept 📝
 
