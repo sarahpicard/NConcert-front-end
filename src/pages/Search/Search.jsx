@@ -100,9 +100,6 @@ const Search = (props) => {
                         <p>{event.dates.start.localTime}</p>
                         <p>{event.dates.start.localDate}</p>
                       </div>
-                      <div className="postcard_preview-txt">
-                        some information about the event...
-                      </div>
                     </div>
                   </article>
                 </div>
