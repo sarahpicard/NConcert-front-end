@@ -42,13 +42,6 @@ const MyEventDetails = (props) => {
         src={event[0]?.images?.find(image => image.height > 110 && image.width > 100).url} alt="concertImage" 
         className='event-detail-images'
       />
-      <button className="btn btn-success" onClick={handleInterestedEvent} style={{ margin: '5px'}}>
-        Interested
-      </button>
-      <button className="btn btn-success" onClick={handleAttendingEvent}>
-        Attending
-      </button>
-      <button className="btn btn-success" onClick={() => props.handleDeleteEvent(location.state._id)} style={{ margin: '5px'}}>Delete Event</button>
       <h2>{location.state.name}</h2>
       <p>{location.state.venue}</p>
       <p>{location.state.city}, {location.state.state}</p>
