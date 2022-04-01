@@ -6,6 +6,8 @@ The app also allows for users to customize their social profiles, to include art
 
 Being able to see all profiles on the app, users can add friends and see what events they are interested in!
 
+** This project is part of a decoupled full stack application. The backend code can be found [here](https://github.com/sarahpicard/NConcert-back-end)
+
 ## 👀 Take a look at ShOwCIAL [HERE](https://nconcert-front-end.herokuapp.com/)
 
 ## Meet the Developers! 🤝
