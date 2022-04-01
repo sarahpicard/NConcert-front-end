@@ -15,12 +15,9 @@ Being able to see all profiles on the app, users can add friends and see what ev
 ### 🧑‍💻 Howard Barrons
 During development, Howard acted as Database and API manager, back-end connoisseur, and full stack developer.
 
-    🏆 project commits to date: 78
-
 ### 👩‍💻 Sarah Picard 
 During development, Sarah acted as GitHub manager, Designer, styling expert, and full stack developer.
 
-    🏆 project commits to date: 75
 
 ## Wireframing & Concept 📝
 
@@ -102,3 +99,4 @@ There are a number of icebox features the developers would like to add as time p
 - Allow users to upload a profile image 
 - Implement dark-mode theme 
 - Allow users to approve or deny friend requests 
+- Allow users to add their own events (this will allow for small venues and house shows to be incorporated)
