@@ -80,4 +80,24 @@ This app was created for everyone who enjoys music events, so get out and be ShO
 ![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
 
+---
+## Credits 🙏
+- [Boxicons](https://boxicons.com/) - navigation icon items 
+- Google Fonts: utilized ['Roboto'](https://fonts.google.com/specimen/Roboto) and ['League Spartan'](https://fonts.google.com/specimen/League+Spartan?p=944&reviews_page=0)
+- Bootstrap Library: utilized buttons and cards (more information [here](https://getbootstrap.com/))
+
+--- 
+## Icebox Features 🧊
+
+There are a number of icebox features the developers would like to add as time permits...
+
+- Find and adjust for event rendering edge cases 
+- Add comment functionality to event detail pages so that users are able to discuss the event with friends and non-friend users
+- Allow users to set search radius and other event search parameter settings
+- Allow users to upload a profile image 
+- Implement dark-mode theme 
+- Allow users to approve or deny friend requests 
