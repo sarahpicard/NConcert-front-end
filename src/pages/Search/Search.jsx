@@ -113,7 +113,7 @@ const Search = (props) => {
             <button className='btn btn-success' onClick={nextPage} style={{ margin: '15px'}}>Next Page</button>
           </div>
           :
-          <p className='nothing-searched-text'>search above using keyword and city to show events</p>
+          <p className='nothing-searched-text'>Search above using keyword and city to show events</p>
         }
       </div>
     </div>

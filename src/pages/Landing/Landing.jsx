@@ -34,7 +34,7 @@ const Landing = ({ user }) => {
       </div>
     }
 
-      <h1 className='h1-for-landing-search'>search for your next event here:</h1>
+      <h1 className='h1-for-landing-search'>Search for a Show!</h1>
       <Search />
     </div>
   )
